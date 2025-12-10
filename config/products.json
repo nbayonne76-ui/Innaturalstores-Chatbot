@@ -1,0 +1,163 @@
+{
+  "products": [
+    {
+      "id": "mixoil-rosemary",
+      "name": {
+        "en": "MixOil Rosemary Hair Oil",
+        "ar": "زيت ميكس اويل بالروزماري للشعر"
+      },
+      "description": {
+        "en": "Natural hair oil enriched with rosemary extract to promote hair growth and prevent hair loss",
+        "ar": "زيت طبيعي للشعر غني بخلاصة الروزماري لتعزيز نمو الشعر ومنع تساقطه"
+      },
+      "benefits": {
+        "en": ["Stimulates hair growth", "Reduces hair loss", "Strengthens hair roots", "Improves blood circulation to scalp"],
+        "ar": ["يحفز نمو الشعر", "يقلل تساقط الشعر", "يقوي جذور الشعر", "يحسن الدورة الدموية لفروة الرأس"]
+      },
+      "hairTypes": ["all", "thin", "hair-loss"],
+      "concerns": ["hair-loss", "slow-growth", "weak-hair"],
+      "price": "EGP 250",
+      "size": "100ml"
+    },
+    {
+      "id": "mixoil-castor",
+      "name": {
+        "en": "MixOil Castor Hair Oil",
+        "ar": "زيت ميكس اويل بزيت الخروع للشعر"
+      },
+      "description": {
+        "en": "Rich castor oil blend for deep nourishment and promoting thick, healthy hair growth",
+        "ar": "مزيج غني من زيت الخروع للتغذية العميقة وتعزيز نمو الشعر الكثيف والصحي"
+      },
+      "benefits": {
+        "en": ["Deep conditioning", "Promotes thickness", "Prevents breakage", "Adds shine"],
+        "ar": ["ترطيب عميق", "يعزز كثافة الشعر", "يمنع التقصف", "يضيف لمعان"]
+      },
+      "hairTypes": ["dry", "damaged", "thin"],
+      "concerns": ["dryness", "breakage", "thin-hair", "dullness"],
+      "price": "EGP 250",
+      "size": "100ml"
+    },
+    {
+      "id": "mixoil-coconut",
+      "name": {
+        "en": "MixOil Coconut Hair Oil",
+        "ar": "زيت ميكس اويل بجوز الهند للشعر"
+      },
+      "description": {
+        "en": "Pure coconut oil for intense moisture, frizz control, and silky smooth hair",
+        "ar": "زيت جوز الهند النقي للترطيب المكثف والتحكم في التجعد والشعر الناعم الحريري"
+      },
+      "benefits": {
+        "en": ["Controls frizz", "Deep moisturizing", "Adds softness", "Protects from damage"],
+        "ar": ["يتحكم في التجعد", "ترطيب عميق", "يضيف نعومة", "يحمي من التلف"]
+      },
+      "hairTypes": ["dry", "frizzy", "curly"],
+      "concerns": ["frizz", "dryness", "rough-texture"],
+      "price": "EGP 250",
+      "size": "100ml"
+    },
+    {
+      "id": "cocoshea-body-butter",
+      "name": {
+        "en": "Cocoshea Body Butter",
+        "ar": "زبدة الجسم كوكوشيا"
+      },
+      "description": {
+        "en": "Luxurious body butter with coconut oil and shea butter for deeply nourished, soft skin",
+        "ar": "زبدة جسم فاخرة بزيت جوز الهند وزبدة الشيا لبشرة ناعمة ومغذية بعمق"
+      },
+      "benefits": {
+        "en": ["Deep hydration", "Softens skin", "Long-lasting moisture", "Natural ingredients"],
+        "ar": ["ترطيب عميق", "ينعم البشرة", "ترطيب طويل الأمد", "مكونات طبيعية"]
+      },
+      "skinTypes": ["dry", "normal", "sensitive"],
+      "concerns": ["dry-skin", "rough-skin", "dullness"],
+      "price": "EGP 300",
+      "size": "200ml"
+    },
+    {
+      "id": "hair-care-set",
+      "name": {
+        "en": "Complete Hair Care Set",
+        "ar": "طقم العناية الكاملة بالشعر"
+      },
+      "description": {
+        "en": "Complete set with shampoo, conditioner, and treatment oil for comprehensive hair care",
+        "ar": "طقم كامل مع الشامبو والبلسم وزيت العلاج للعناية الشاملة بالشعر"
+      },
+      "benefits": {
+        "en": ["Complete routine", "Cost-effective", "All-in-one solution", "Better results"],
+        "ar": ["روتين كامل", "اقتصادي", "حل شامل", "نتائج أفضل"]
+      },
+      "hairTypes": ["all"],
+      "concerns": ["all"],
+      "price": "EGP 650",
+      "size": "Set of 3"
+    }
+  ],
+  "hairTypeMapping": {
+    "dry": {
+      "en": "Dry Hair",
+      "ar": "شعر جاف",
+      "recommendations": ["mixoil-castor", "mixoil-coconut", "hair-care-set"]
+    },
+    "oily": {
+      "en": "Oily Hair",
+      "ar": "شعر دهني",
+      "recommendations": ["mixoil-rosemary"]
+    },
+    "normal": {
+      "en": "Normal Hair",
+      "ar": "شعر عادي",
+      "recommendations": ["mixoil-rosemary", "hair-care-set"]
+    },
+    "curly": {
+      "en": "Curly Hair",
+      "ar": "شعر مجعد",
+      "recommendations": ["mixoil-coconut", "mixoil-castor"]
+    },
+    "thin": {
+      "en": "Thin Hair",
+      "ar": "شعر خفيف",
+      "recommendations": ["mixoil-rosemary", "mixoil-castor"]
+    },
+    "damaged": {
+      "en": "Damaged Hair",
+      "ar": "شعر تالف",
+      "recommendations": ["mixoil-castor", "hair-care-set"]
+    },
+    "frizzy": {
+      "en": "Frizzy Hair",
+      "ar": "شعر مجعد",
+      "recommendations": ["mixoil-coconut"]
+    }
+  },
+  "concernMapping": {
+    "hair-loss": {
+      "en": "Hair Loss",
+      "ar": "تساقط الشعر",
+      "recommendations": ["mixoil-rosemary"]
+    },
+    "dryness": {
+      "en": "Dryness",
+      "ar": "جفاف",
+      "recommendations": ["mixoil-castor", "mixoil-coconut"]
+    },
+    "frizz": {
+      "en": "Frizz",
+      "ar": "تجعد",
+      "recommendations": ["mixoil-coconut"]
+    },
+    "breakage": {
+      "en": "Breakage & Split Ends",
+      "ar": "تقصف وتكسر",
+      "recommendations": ["mixoil-castor", "hair-care-set"]
+    },
+    "slow-growth": {
+      "en": "Slow Growth",
+      "ar": "نمو بطيء",
+      "recommendations": ["mixoil-rosemary"]
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "faqs": [
+    {
+      "question": {
+        "en": "What are your shipping options?",
+        "ar": "ما هي خيارات الشحن المتاحة؟"
+      },
+      "answer": {
+        "en": "We deliver all over Egypt! Shipping usually takes 2-5 business days. We work with reliable delivery services like Bosta and Aramex. Shipping costs depend on your location.",
+        "ar": "نقوم بالتوصيل في جميع أنحاء مصر! عادة ما يستغرق الشحن من 2 إلى 5 أيام عمل. نعمل مع خدمات توصيل موثوقة مثل بوسطة وأرامكس. تعتمد تكاليف الشحن على موقعك."
+      },
+      "keywords": ["shipping", "delivery", "توصيل", "شحن"]
+    },
+    {
+      "question": {
+        "en": "Do you offer cash on delivery?",
+        "ar": "هل تقدمون خدمة الدفع عند الاستلام؟"
+      },
+      "answer": {
+        "en": "Yes! We accept cash on delivery (COD) for your convenience. You can pay when you receive your order.",
+        "ar": "نعم! نقبل الدفع عند الاستلام لراحتك. يمكنك الدفع عند استلام طلبك."
+      },
+      "keywords": ["payment", "cash on delivery", "cod", "دفع", "الدفع عند الاستلام"]
+    },
+    {
+      "question": {
+        "en": "Are your products 100% natural?",
+        "ar": "هل منتجاتكم طبيعية 100%؟"
+      },
+      "answer": {
+        "en": "Yes! All INnatural products are made with 100% natural ingredients. We use premium oils like rosemary, castor oil, coconut oil, and shea butter. No harmful chemicals, parabens, or sulfates.",
+        "ar": "نعم! جميع منتجات INnatural مصنوعة من مكونات طبيعية 100%. نستخدم زيوت فاخرة مثل الروزماري وزيت الخروع وجوز الهند وزبدة الشيا. لا توجد مواد كيميائية ضارة أو بارابين أو كبريتات."
+      },
+      "keywords": ["natural", "ingredients", "طبيعي", "مكونات"]
+    },
+    {
+      "question": {
+        "en": "How do I use the hair oils?",
+        "ar": "كيف أستخدم زيوت الشعر؟"
+      },
+      "answer": {
+        "en": "Apply the oil to your scalp and hair, massage gently for 5-10 minutes, leave it for at least 2 hours (or overnight for best results), then wash with shampoo. Use 2-3 times per week.",
+        "ar": "ضعي الزيت على فروة رأسك وشعرك، ودلكي بلطف لمدة 5-10 دقائق، اتركيه لمدة ساعتين على الأقل (أو طوال الليل للحصول على أفضل النتائج)، ثم اغسليه بالشامبو. استخدميه 2-3 مرات في الأسبوع."
+      },
+      "keywords": ["how to use", "usage", "application", "كيفية الاستخدام", "طريقة الاستعمال"]
+    },
+    {
+      "question": {
+        "en": "When will I see results?",
+        "ar": "متى سأرى النتائج؟"
+      },
+      "answer": {
+        "en": "Most customers notice improvements within 2-4 weeks of regular use. For hair growth and thickness, visible results typically appear after 6-8 weeks. Consistency is key!",
+        "ar": "يلاحظ معظم العملاء تحسينات خلال 2-4 أسابيع من الاستخدام المنتظم. بالنسبة لنمو الشعر والكثافة، تظهر النتائج المرئية عادة بعد 6-8 أسابيع. الانتظام هو المفتاح!"
+      },
+      "keywords": ["results", "how long", "effectiveness", "نتائج", "متى", "فعالية"]
+    },
+    {
+      "question": {
+        "en": "Can I use the products during pregnancy?",
+        "ar": "هل يمكنني استخدام المنتجات أثناء الحمل؟"
+      },
+      "answer": {
+        "en": "Our products are made with natural ingredients and are generally safe. However, we recommend consulting your doctor before using any new products during pregnancy or breastfeeding.",
+        "ar": "منتجاتنا مصنوعة من مكونات طبيعية وآمنة بشكل عام. ومع ذلك، نوصي باستشارة طبيبك قبل استخدام أي منتجات جديدة أثناء الحمل أو الرضاعة."
+      },
+      "keywords": ["pregnancy", "safety", "حمل", "أمان"]
+    },
+    {
+      "question": {
+        "en": "Do you have a physical store?",
+        "ar": "هل لديكم متجر فعلي؟"
+      },
+      "answer": {
+        "en": "We are based in 6th October City. We primarily sell online for your convenience, but you can contact us at +20 15 55590333 for more information about visiting.",
+        "ar": "نحن موجودون في مدينة السادس من أكتوبر. نبيع بشكل أساسي عبر الإنترنت لراحتك، ولكن يمكنك الاتصال بنا على +20 15 55590333 لمزيد من المعلومات حول الزيارة."
+      },
+      "keywords": ["store", "location", "address", "متجر", "موقع", "عنوان"]
+    },
+    {
+      "question": {
+        "en": "What is your return policy?",
+        "ar": "ما هي سياسة الإرجاع؟"
+      },
+      "answer": {
+        "en": "We want you to be completely satisfied! If you're not happy with your purchase, please contact us within 7 days of delivery. Products must be unopened and in original condition for returns.",
+        "ar": "نريدك أن تكوني راضية تمامًا! إذا لم تكوني راضية عن شرائك، يرجى الاتصال بنا خلال 7 أيام من التسليم. يجب أن تكون المنتجات غير مفتوحة وفي حالتها الأصلية للإرجاع."
+      },
+      "keywords": ["return", "refund", "exchange", "إرجاع", "استرداد", "استبدال"]
+    },
+    {
+      "question": {
+        "en": "How can I contact customer service?",
+        "ar": "كيف يمكنني الاتصال بخدمة العملاء؟"
+      },
+      "answer": {
+        "en": "You can reach us via WhatsApp or call at +20 15 55590333. We're here to help with any questions!",
+        "ar": "يمكنك التواصل معنا عبر الواتساب أو الاتصال على +20 15 55590333. نحن هنا للمساعدة في أي أسئلة!"
+      },
+      "keywords": ["contact", "support", "help", "phone", "اتصال", "دعم", "مساعدة", "هاتف"]
+    },
+    {
+      "question": {
+        "en": "Do you ship outside Egypt?",
+        "ar": "هل تشحنون خارج مصر؟"
+      },
+      "answer": {
+        "en": "Currently, we only ship within Egypt. However, we're working on expanding to other countries soon! Follow us on social media for updates.",
+        "ar": "حاليًا، نشحن فقط داخل مصر. ومع ذلك، نعمل على التوسع إلى دول أخرى قريبًا! تابعونا على وسائل التواصل الاجتماعي للحصول على التحديثات."
+      },
+      "keywords": ["international shipping", "outside egypt", "شحن دولي", "خارج مصر"]
+    }
+  ],
+  "shippingInfo": {
+    "deliveryTime": {
+      "en": "2-5 business days",
+      "ar": "2-5 أيام عمل"
+    },
+    "serviceProviders": ["Bosta", "Aramex"],
+    "contact": "+20 15 55590333"
+  },
+  "businessInfo": {
+    "name": "INnatural",
+    "location": {
+      "en": "6th October City, Egypt",
+      "ar": "مدينة السادس من أكتوبر، مصر"
+    },
+    "phone": "+20 15 55590333",
+    "website": "innaturalstores.com",
+    "established": "2017",
+    "specialization": {
+      "en": "Natural hair and body care products",
+      "ar": "منتجات العناية الطبيعية بالشعر والجسم"
+    }
+  }
+}
