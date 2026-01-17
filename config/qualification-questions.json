@@ -1,0 +1,464 @@
+{
+  "metadata": {
+    "version": "5.0.0",
+    "qualificationSystem": "Simplified 4-Step Qualification",
+    "lastUpdated": "2026-01-17",
+    "description": "Simplified flow: Step 1-2 capture hair type, Step 3 identifies main problem (maps to collection), Step 4 optional secondary goal for ranking."
+  },
+  "hair": {
+    "totalSteps": 4,
+    "phases": {
+      "phase1": {
+        "name": "Hair Profile",
+        "description": "Capture hair texture and thickness for product weight matching",
+        "steps": [1, 2],
+        "microcopy": {
+          "ar": "أخبرينا عن نوع شعرك",
+          "en": "Tell us about your hair type"
+        }
+      },
+      "phase2": {
+        "name": "Main Problem",
+        "description": "Core concern that determines which product collection to recommend",
+        "steps": [3],
+        "microcopy": {
+          "ar": "ما هي أكبر مشكلة في شعرك؟",
+          "en": "What's your biggest hair concern?"
+        }
+      },
+      "phase3": {
+        "name": "Secondary Goal (Optional)",
+        "description": "Optional refinement for product ranking",
+        "steps": [4],
+        "microcopy": {
+          "ar": "هل تريدين شيئاً إضافياً؟ (اختياري)",
+          "en": "Anything else you'd like? (Optional)"
+        }
+      }
+    },
+    "steps": [
+      {
+        "id": 1,
+        "phase": 1,
+        "type": "single_select",
+        "category": "hair_texture",
+        "question": {
+          "ar": "ما هو نسيج شعرك الطبيعي؟",
+          "en": "What is your natural hair texture?"
+        },
+        "options": [
+          {
+            "id": "straight",
+            "label": { "ar": "مستقيم", "en": "Straight" },
+            "icon": "━",
+            "weightClass": "lightweight",
+            "weight": 1
+          },
+          {
+            "id": "wavy",
+            "label": { "ar": "مموج", "en": "Wavy" },
+            "icon": "〰",
+            "weightClass": "lightweight-medium",
+            "weight": 1
+          },
+          {
+            "id": "curly",
+            "label": { "ar": "مجعد", "en": "Curly" },
+            "icon": "🌀",
+            "weightClass": "medium-rich",
+            "weight": 1
+          },
+          {
+            "id": "coily",
+            "label": { "ar": "ملفوف / أفريقي", "en": "Coily / African" },
+            "icon": "🔄",
+            "weightClass": "rich",
+            "preferredCollections": ["africa", "cocoshea"],
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "phase": 1,
+        "type": "single_select",
+        "category": "hair_thickness",
+        "question": {
+          "ar": "ما هو سُمك شعرك؟",
+          "en": "What is your hair thickness?"
+        },
+        "options": [
+          {
+            "id": "fine",
+            "label": { "ar": "رفيع", "en": "Fine" },
+            "icon": "▫️",
+            "contraindications": ["heavy-oils", "heavy-butters"],
+            "weightClass": "lightweight",
+            "weight": 1
+          },
+          {
+            "id": "medium",
+            "label": { "ar": "متوسط", "en": "Medium" },
+            "icon": "▪️",
+            "weightClass": "medium",
+            "weight": 1
+          },
+          {
+            "id": "thick",
+            "label": { "ar": "سميك", "en": "Thick" },
+            "icon": "⬛",
+            "weightClass": "rich",
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "phase": 2,
+        "type": "single_select",
+        "category": "main_problem",
+        "required_benefit_tag": true,
+        "question": {
+          "ar": "ما هي أكبر مشكلة في شعرك؟",
+          "en": "What's your biggest hair concern?"
+        },
+        "options": [
+          {
+            "id": "dryness",
+            "label": { "ar": "جفاف وقلة رطوبة 💧", "en": "Dryness & Lack of Moisture 💧" },
+            "icon": "💧",
+            "requiredTags": ["hydration", "deep-moisture", "moisturize"],
+            "weight": 10,
+            "recommendedProducts": [
+              "CocoShea Shampoo",
+              "CocoShea Conditioner",
+              "CocoShea Hair Mask",
+              "CocoShea Leave-In",
+              "MixOil Castor + Coconut + Jojoba Shampoo",
+              "MixOil Castor + Coconut + Jojoba Conditioner"
+            ],
+            "collection": "cocoshea",
+            "description": { "ar": "شعر جاف يحتاج ترطيب عميق", "en": "Dry hair needing deep hydration" }
+          },
+          {
+            "id": "hair-loss",
+            "label": { "ar": "تساقط وترقق الشعر 🍂", "en": "Hair Loss & Thinning 🍂" },
+            "icon": "🍂",
+            "requiredTags": ["anti-hair-loss", "growth-stimulation", "density"],
+            "weight": 10,
+            "recommendedProducts": [
+              "MixOil Rosemary + Almond Shampoo",
+              "MixOil Rosemary + Almond Hair Oil",
+              "MixOil Rosemary + Almond Leave-In",
+              "MixOil Rosemary Hair Mist",
+              "MixOil Rosemary + Almond Hair Mask"
+            ],
+            "collection": "mixoil-rosemary-almond",
+            "description": { "ar": "تساقط الشعر يحتاج تحفيز النمو", "en": "Hair loss needing growth stimulation" }
+          },
+          {
+            "id": "breakage",
+            "label": { "ar": "تقصف وأطراف متقصفة ✂️", "en": "Breakage & Split Ends ✂️" },
+            "icon": "✂️",
+            "requiredTags": ["split-end-repair", "breakage-repair", "repair", "strengthen"],
+            "weight": 10,
+            "recommendedProducts": [
+              "CocoShea Shampoo",
+              "CocoShea Conditioner",
+              "CocoShea Leave-In",
+              "CocoShea Hair Mask",
+              "MixOil Rosemary + Almond Hair Mask"
+            ],
+            "collection": "cocoshea",
+            "description": { "ar": "شعر متقصف يحتاج إصلاح", "en": "Damaged hair needing repair" }
+          },
+          {
+            "id": "scalp-issues",
+            "label": { "ar": "مشاكل فروة الرأس (قشرة/حكة) 💫", "en": "Scalp Issues (dandruff/itching) 💫" },
+            "icon": "💫",
+            "requiredTags": ["scalp-health", "anti-dandruff", "scalp-soothing"],
+            "weight": 10,
+            "recommendedProducts": [
+              "MixOil Castor + Coconut + Jojoba Shampoo",
+              "Africa Shampoo",
+              "Africa Conditioner",
+              "MixOil Rosemary Hair Mist"
+            ],
+            "collection": "mixoil-castor-coconut-jojoba",
+            "description": { "ar": "قشرة أو حكة أو حساسية", "en": "Dandruff, itching, or sensitivity" }
+          },
+          {
+            "id": "damage",
+            "label": { "ar": "تلف (حرارة/صبغة/كيميائي) 🔥", "en": "Damage (heat/color/chemical) 🔥" },
+            "icon": "🔥",
+            "requiredTags": ["damage-repair", "restore", "heat-protect"],
+            "weight": 10,
+            "recommendedProducts": [
+              "Africa Treatment",
+              "Africa Hair Mask",
+              "Africa Shampoo",
+              "Africa Conditioner",
+              "CocoShea Hair Mask",
+              "CocoShea Serum"
+            ],
+            "collection": "africa",
+            "description": { "ar": "شعر تالف من الحرارة أو الصبغة", "en": "Hair damaged by heat, color, or chemicals" }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "phase": 3,
+        "type": "multi_select",
+        "category": "secondary_goal",
+        "min": 0,
+        "max": 2,
+        "optional": true,
+        "question": {
+          "ar": "هل تريدين شيئاً إضافياً؟ (اختياري)",
+          "en": "Anything else you'd like? (Optional - pick up to 2)"
+        },
+        "options": [
+          {
+            "id": "shine",
+            "label": { "ar": "لمعان أكثر ✨", "en": "More Shine ✨" },
+            "icon": "✨",
+            "benefitTags": ["shine", "luster", "glossy"],
+            "weight": 4,
+            "recommendedProducts": ["CocoShea Serum", "CocoShea Leave-In", "MixOil Castor + Coconut + Jojoba Hair Serum"]
+          },
+          {
+            "id": "heat-protection",
+            "label": { "ar": "حماية من الحرارة 🛡️", "en": "Heat Protection 🛡️" },
+            "icon": "🛡️",
+            "benefitTags": ["heat-protect", "thermal-protect"],
+            "weight": 4,
+            "recommendedProducts": ["CocoShea Serum", "CocoShea Leave-In", "MixOil Rosemary + Almond Leave-In"]
+          },
+          {
+            "id": "deep-nourishment",
+            "label": { "ar": "تغذية عميقة 🌿", "en": "Deep Nourishment 🌿" },
+            "icon": "🌿",
+            "benefitTags": ["nourish", "deep-nourish"],
+            "weight": 5,
+            "recommendedProducts": ["MixOil Rosemary + Almond Hair Mask", "CocoShea Hair Mask", "Africa Hair Mask", "MixOil Rosemary + Almond Hair Oil"]
+          },
+          {
+            "id": "skip",
+            "label": { "ar": "تخطي ➡️", "en": "Skip ➡️" },
+            "icon": "➡️",
+            "benefitTags": [],
+            "weight": 0,
+            "recommendedProducts": []
+          }
+        ]
+      }
+    ]
+  },
+  "body": {
+    "totalSteps": 3,
+    "phases": {
+      "phase1": {
+        "name": "Skin Type & Context",
+        "description": "Capture skin characteristics",
+        "steps": [1],
+        "microcopy": {
+          "ar": "أخبرينا عن بشرتك",
+          "en": "Tell us about your skin"
+        }
+      },
+      "phase2": {
+        "name": "Primary Need",
+        "description": "Main skin need",
+        "steps": [2],
+        "microcopy": {
+          "ar": "ما هي أكبر احتياجات بشرتك؟",
+          "en": "What's your biggest skin need?"
+        }
+      },
+      "phase3": {
+        "name": "Goals",
+        "description": "Additional goals",
+        "steps": [3],
+        "microcopy": {
+          "ar": "ما الذي تريدين تحقيقه؟",
+          "en": "What would you like to achieve?"
+        }
+      }
+    },
+    "steps": [
+      {
+        "id": 1,
+        "phase": 1,
+        "type": "single_select",
+        "category": "skin_type",
+        "question": {
+          "ar": "ما هو نوع بشرتك؟",
+          "en": "What is your skin type?"
+        },
+        "options": [
+          {
+            "id": "normal",
+            "label": {
+              "ar": "عادية | Normal",
+              "en": "Normal"
+            },
+            "icon": "✨",
+            "contextMatch": ["normal-skin"],
+            "weight": 1,
+            "recommendedProducts": []
+          },
+          {
+            "id": "dry",
+            "label": {
+              "ar": "جافة | Dry",
+              "en": "Dry"
+            },
+            "icon": "🏜️",
+            "contextMatch": ["dry-skin"],
+            "weight": 1,
+            "recommendedProducts": ["Body Butter", "Body Cream", "Body Oil"]
+          },
+          {
+            "id": "sensitive",
+            "label": {
+              "ar": "حساسة | Sensitive",
+              "en": "Sensitive"
+            },
+            "icon": "🌸",
+            "contextMatch": ["sensitive-skin"],
+            "contraindications": ["harsh-exfoliants"],
+            "weight": 1,
+            "recommendedProducts": ["Cocoshea Body Butter", "Almond Body Cream"]
+          },
+          {
+            "id": "rough",
+            "label": {
+              "ar": "خشنة | Rough",
+              "en": "Rough"
+            },
+            "icon": "🪨",
+            "contextMatch": ["rough-skin"],
+            "weight": 1,
+            "recommendedProducts": ["Body Scrub", "Body Butter", "Body Oil"]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "phase": 2,
+        "type": "single_select",
+        "category": "primary_need",
+        "required_benefit_tag": true,
+        "question": {
+          "ar": "ما هي احتياجاتك الرئيسية؟",
+          "en": "What is your primary need?"
+        },
+        "options": [
+          {
+            "id": "intense-moisture",
+            "label": {
+              "ar": "ترطيب مكثف 💦",
+              "en": "Intense Moisture 💦"
+            },
+            "icon": "💦",
+            "requiredTags": ["intense-hydration", "deep-moisture", "moisturize"],
+            "weight": 10,
+            "recommendedProducts": ["Body Butter Almond", "Body Butter Cocoshea", "Body Cream"]
+          },
+          {
+            "id": "gentle-exfoliation",
+            "label": {
+              "ar": "تقشير لطيف 🌸",
+              "en": "Gentle Exfoliation 🌸"
+            },
+            "icon": "🌸",
+            "requiredTags": ["exfoliation", "dead-skin-removal"],
+            "weight": 10,
+            "recommendedProducts": ["Body Scrub Coffee", "Body Scrub Sugar"]
+          },
+          {
+            "id": "soothing",
+            "label": {
+              "ar": "تهدئة وراحة 🌿",
+              "en": "Soothing & Comfort 🌿"
+            },
+            "icon": "🌿",
+            "requiredTags": ["soothing", "calming", "skin-comfort"],
+            "weight": 10,
+            "recommendedProducts": ["Almond Body Cream", "Cocoshea Body Butter"]
+          },
+          {
+            "id": "nourishment",
+            "label": {
+              "ar": "تغذية عميقة 🥥",
+              "en": "Deep Nourishment 🥥"
+            },
+            "icon": "🥥",
+            "requiredTags": ["nourish", "nutrient-rich", "skin-food"],
+            "weight": 10,
+            "recommendedProducts": ["Body Butter", "Body Oil", "Hand Cream"]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "phase": 3,
+        "type": "multi_select",
+        "category": "secondary_goals",
+        "min": 0,
+        "max": 3,
+        "question": {
+          "ar": "ما الذي تريدين تحقيقه أيضاً؟ (اختاري حتى 3)",
+          "en": "What else would you like to achieve? (Pick up to 3)"
+        },
+        "options": [
+          {
+            "id": "softness",
+            "label": {
+              "ar": "نعومة 🤍",
+              "en": "Softness 🤍"
+            },
+            "icon": "🤍",
+            "benefitTags": ["soft", "smooth", "silky"],
+            "weight": 4,
+            "recommendedProducts": ["Body Butter", "Body Cream"]
+          },
+          {
+            "id": "radiance",
+            "label": {
+              "ar": "إشراق ونضارة ✨",
+              "en": "Radiance & Glow ✨"
+            },
+            "icon": "✨",
+            "benefitTags": ["radiance", "glow", "luminous"],
+            "weight": 4,
+            "recommendedProducts": ["Body Oil", "Body Scrub"]
+          },
+          {
+            "id": "texture-improvement",
+            "label": {
+              "ar": "تحسين الملمس 🎯",
+              "en": "Texture Improvement 🎯"
+            },
+            "icon": "🎯",
+            "benefitTags": ["texture", "even-skin", "refinement"],
+            "weight": 3,
+            "recommendedProducts": ["Body Scrub", "Body Butter"]
+          },
+          {
+            "id": "natural-ingredients",
+            "label": {
+              "ar": "مكونات طبيعية 🍃",
+              "en": "Natural Ingredients 🍃"
+            },
+            "icon": "🍃",
+            "benefitTags": ["natural", "clean", "organic"],
+            "weight": 3,
+            "recommendedProducts": ["Cocoshea Body Butter", "Almond Body Cream"]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+services:
+  # PostgreSQL Database - Production
+  postgres:
+    image: postgres:16-alpine
+    container_name: innatural-postgres-prod
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data_prod:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - innatural-network
+    # Don't expose port in production (only backend can access)
+
+  # Redis Cache - Production
+  redis:
+    image: redis:7-alpine
+    container_name: innatural-redis-prod
+    restart: always
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data_prod:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "--pass", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    networks:
+      - innatural-network
+    # Don't expose port in production
+
+  # Backend API - Production
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: production
+    container_name: innatural-backend-prod
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+
+      # Database (use strong password in .env)
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+
+      # Redis (use strong password in .env)
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+
+      # AI API Keys (from .env)
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+
+      # Security (use strong secrets in .env)
+      JWT_SECRET: ${JWT_SECRET}
+      SESSION_SECRET: ${SESSION_SECRET}
+
+      # CORS (production domains)
+      CORS_ORIGINS: ${CORS_ORIGINS}
+
+      # Monitoring
+      SENTRY_DSN: ${SENTRY_DSN}
+
+      # Rate Limiting (more strict in production)
+      RATE_LIMIT_WINDOW_MS: 900000  # 15 minutes
+      RATE_LIMIT_MAX_REQUESTS: 100
+
+      # Logging
+      LOG_LEVEL: warn  # Less verbose in production
+
+    ports:
+      - "5000:5000"
+    volumes:
+      # Only persist logs in production (no source code mount)
+      - backend_logs_prod:/app/logs
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:5000/api/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - innatural-network
+    # Resource limits for production
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+volumes:
+  postgres_data_prod:
+    driver: local
+  redis_data_prod:
+    driver: local
+  backend_logs_prod:
+    driver: local
+
+networks:
+  innatural-network:
+    driver: bridge
+    name: innatural-network-prod

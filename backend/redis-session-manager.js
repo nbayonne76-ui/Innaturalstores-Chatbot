@@ -15,6 +15,11 @@ class RedisSessionManager {
       keyPrefix: process.env.REDIS_KEY_PREFIX || config.keyPrefix || 'innatural:',
       ttl: parseInt(process.env.SESSION_TTL || config.ttl || 3600), // 1 hour default
       retryStrategy: (times) => {
+        // Give up after 20 attempts
+        if (times > 20) {
+          console.log('❌ Redis retry limit reached, giving up');
+          return null; // Stop retrying
+        }
         const delay = Math.min(times * 50, 2000);
         console.log(`⏳ Redis retry attempt ${times}, waiting ${delay}ms`);
         return delay;

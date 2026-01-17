@@ -39,10 +39,44 @@ class ProductKnowledge {
   }
 
   /**
+   * Get product recommendations based on qualification system scoring
+   * Uses intelligent scoring algorithm that matches user's concerns and objectives
+   * @param {Object} qualification - Qualification data from QualificationSystem
+   * @param {number} topN - Number of top products to return (default 3)
+   * @returns {Array} Scored and sorted products
+   */
+  static getQualifiedRecommendations(qualification, topN = 3) {
+    const QualificationSystem = require('./qualification-system');
+    const qualSys = new QualificationSystem();
+
+    const products = this.getAllProducts();
+    const scoredProducts = products
+      .map(p => ({
+        ...p,
+        scoring: qualSys.scoreProduct(p, qualification)
+      }))
+      .filter(p => p.scoring.score > 0)
+      .sort((a, b) => b.scoring.score - a.scoring.score);
+
+    return scoredProducts.slice(0, topN);
+  }
+
+  /**
    * Get all products
    */
   static getAllProducts() {
     return productsData.products;
+  }
+
+  /**
+   * Get products by type (e.g., "body-cream", "shampoo", "body-butter")
+   */
+  static getProductsByType(productType) {
+    if (!productType) return [];
+
+    return productsData.products.filter(product =>
+      product.type === productType.toLowerCase()
+    );
   }
 
   /**
@@ -100,11 +134,17 @@ class ProductKnowledge {
   static formatProduct(product, language = 'en') {
     if (!product) return '';
 
-    const name = product.name[language];
-    const description = product.description[language];
-    const benefits = product.benefits[language].join(', ');
+    // Safely access product fields
+    const name = (typeof product.name === 'object') ? (product.name[language] || product.name.ar || product.name.en) : product.name;
+    const description = product.description ? ((typeof product.description === 'object') ? (product.description[language] || product.description.ar || product.description.en) : product.description) : '';
+    const benefits = product.benefits ? ((typeof product.benefits === 'object') ? (product.benefits[language] || []).join(', ') : product.benefits) : '';
 
-    return `**${name}**\n${description}\n\n**Benefits:** ${benefits}\n**Price:** ${product.price}\n**Size:** ${product.size}`;
+    let result = `**${name}** - LE ${product.price}`;
+    if (product.size) result += ` (${product.size})`;
+    if (description) result += `\n${description}`;
+    if (benefits) result += `\n**Benefits:** ${benefits}`;
+
+    return result;
   }
 
   /**
@@ -118,6 +158,11 @@ class ProductKnowledge {
    * Get bot personality greeting
    */
   static getGreeting(language = 'en') {
+    // Use guided flow's first message if available
+    if (botPersonality.guidedFlow && botPersonality.guidedFlow.firstMessage) {
+      return botPersonality.guidedFlow.firstMessage[language] || botPersonality.guidedFlow.firstMessage.en;
+    }
+    // Fallback to random greetings
     const greetings = botPersonality.greetings[language];
     return greetings[Math.floor(Math.random() * greetings.length)];
   }
@@ -214,3 +259,4 @@ Remember: You're here to help customers find natural solutions for their hair an
 }
 
 module.exports = ProductKnowledge;
+module.exports.botPersonality = botPersonality;

@@ -390,60 +390,74 @@
    Category and Subcategory Buttons
    ======================================== */
 
-.innatural-category-buttons,
-.innatural-subcategory-buttons {
+/* Category buttons - horizontal layout at top */
+.innatural-category-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   margin-top: 12px;
   padding: 0;
+  justify-content: flex-end; /* Align to right like in screenshot */
 }
 
-.innatural-category-btn,
-.innatural-subcategory-btn {
-  flex: 1 1 calc(50% - 5px); /* Two buttons per row */
-  min-width: 120px;
-  padding: 12px 16px;
-  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+.innatural-category-btn {
+  padding: 10px 24px;
+  background: var(--innatural-primary);
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(46, 204, 113, 0.3);
+  box-shadow: 0 2px 6px rgba(45, 80, 22, 0.3);
   text-align: center;
+  min-width: 100px;
 }
 
-.innatural-category-btn:hover,
-.innatural-subcategory-btn:hover {
-  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
+.innatural-category-btn:hover {
+  background: var(--innatural-secondary);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(45, 80, 22, 0.4);
 }
 
-.innatural-category-btn:active,
-.innatural-subcategory-btn:active {
+.innatural-category-btn:active {
   transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(46, 204, 113, 0.3);
+  box-shadow: 0 2px 4px rgba(45, 80, 22, 0.3);
 }
 
-.innatural-category-btn {
-  font-size: 16px;
-  padding: 14px 20px;
+/* Subcategory buttons - full width, large blue buttons */
+.innatural-subcategory-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 0;
 }
 
 .innatural-subcategory-btn {
+  width: 100%;
+  padding: 16px 24px;
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
-  flex: 1 1 100%; /* Full width for subcategories */
-  max-width: none;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+  text-align: center;
 }
 
 .innatural-subcategory-btn:hover {
   background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.innatural-subcategory-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(52, 152, 219, 0.3);
 }
 
 /* RTL support for category buttons */
@@ -458,6 +472,283 @@
   .innatural-subcategory-btn {
     flex: 1 1 100%;
     max-width: none;
+  }
+}
+
+/* ========================================
+   Qualification Flow Styles
+   ======================================== */
+
+/* Qualification buttons container */
+.innatural-qualification-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.innatural-qualification-buttons.multi-select {
+  flex-direction: column;
+}
+
+/* Qualification option buttons */
+.innatural-qualification-btn {
+  padding: 14px 20px;
+  background: var(--innatural-white);
+  color: var(--innatural-primary);
+  border: 2px solid var(--innatural-primary);
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px var(--innatural-shadow);
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+  font-family: inherit;
+}
+
+.innatural-qualification-btn:hover {
+  background: var(--innatural-primary);
+  color: var(--innatural-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
+}
+
+.innatural-qualification-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px var(--innatural-shadow);
+}
+
+/* Multi-select buttons */
+.innatural-qualification-btn.multi-select {
+  width: 100%;
+  flex: none;
+}
+
+.innatural-qualification-btn.multi-select.selected {
+  background: var(--innatural-primary);
+  color: var(--innatural-white);
+  border-color: var(--innatural-primary);
+}
+
+/* Multi-select container */
+.innatural-qualification-multi-container {
+  margin-top: 16px;
+}
+
+/* Instructions text */
+.innatural-qualification-instructions {
+  font-size: 13px;
+  color: var(--innatural-secondary);
+  margin-bottom: 12px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Submit button */
+.innatural-qualification-submit-btn {
+  width: 100%;
+  padding: 14px 24px;
+  margin-top: 16px;
+  background: linear-gradient(135deg, var(--innatural-primary), var(--innatural-secondary));
+  color: var(--innatural-white);
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
+  font-family: inherit;
+}
+
+.innatural-qualification-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(45, 80, 22, 0.4);
+}
+
+.innatural-qualification-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(45, 80, 22, 0.3);
+}
+
+.innatural-qualification-submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ========================================
+   Product Recommendation Cards
+   ======================================== */
+
+.innatural-product-card {
+  background: var(--innatural-white);
+  border: 2px solid var(--innatural-accent);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px var(--innatural-shadow);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease;
+}
+
+.innatural-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--innatural-shadow-strong);
+  border-color: var(--innatural-secondary);
+}
+
+/* Product header with rank and match score */
+.innatural-product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.innatural-product-rank {
+  background: linear-gradient(135deg, var(--innatural-primary), var(--innatural-secondary));
+  color: var(--innatural-white);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.innatural-product-match {
+  background: rgba(45, 80, 22, 0.1);
+  color: var(--innatural-primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Product details */
+.innatural-product-name {
+  color: var(--innatural-primary);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 12px 0 8px 0;
+  line-height: 1.3;
+}
+
+.innatural-product-description {
+  color: var(--innatural-text);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+.innatural-product-price {
+  color: var(--innatural-secondary);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+/* Product sections (benefits & usage) */
+.innatural-product-section {
+  margin: 16px 0;
+  padding: 12px;
+  background: rgba(45, 80, 22, 0.03);
+  border-radius: 10px;
+  border-left: 3px solid var(--innatural-accent);
+}
+
+.innatural-section-title {
+  color: var(--innatural-primary);
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.innatural-product-usage {
+  color: var(--innatural-text);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* Benefits tags */
+.innatural-product-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.benefit-tag {
+  background: rgba(143, 188, 143, 0.2);
+  color: var(--innatural-primary);
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid var(--innatural-accent);
+}
+
+/* Product link button */
+.innatural-product-link {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 12px;
+  background: var(--innatural-primary);
+  color: var(--innatural-white);
+  text-decoration: none;
+  text-align: center;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(45, 80, 22, 0.3);
+}
+
+.innatural-product-link:hover {
+  background: var(--innatural-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(45, 80, 22, 0.4);
+}
+
+.innatural-product-link:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(45, 80, 22, 0.3);
+}
+
+/* RTL support for qualification and products */
+.rtl .innatural-qualification-buttons,
+.rtl .innatural-qualification-multi-container,
+.rtl .innatural-product-card {
+  direction: rtl;
+}
+
+.rtl .innatural-product-header {
+  direction: rtl;
+}
+
+/* Mobile responsiveness for qualification */
+@media (max-width: 480px) {
+  .innatural-qualification-btn {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  .innatural-product-card {
+    padding: 16px;
+  }
+
+  .innatural-product-name {
+    font-size: 16px;
   }
 }
 

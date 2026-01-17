@@ -23,118 +23,220 @@
   "guidedFlow": {
     "enabled": true,
     "firstMessage": {
-      "text": "Bonjour Madame, bienvenue chez In Natural.\nDites-moi quel est votre problème de cheveux ou de peau afin que je puisse mieux vous aider et vous recommander le produit adapté ❤️",
+      "ar": "مرحباً يا جميلة! 🌸\nأهلاً بكِ في In Natural، نورتينا ❤️\nكيف أقدر أساعدك النهاردة؟",
+      "en": "Hello! Welcome to In Natural ❤️\nHow can I help you today?",
       "strict": true,
-      "description": "This exact message must be sent on the first user interaction"
+      "description": "Initial greeting asking how to help"
+    },
+    "initialChoice": {
+      "enabled": true,
+      "question": {
+        "ar": "اختاري الطريقة اللي تناسبك:",
+        "en": "Choose what suits you best:"
+      },
+      "options": [
+        {
+          "id": "browse",
+          "label": {
+            "ar": "تصفح المنتجات 🛍️",
+            "en": "Browse Products 🛍️"
+          },
+          "icon": "🛍️",
+          "description": {
+            "ar": "استكشفي منتجاتنا حسب الفئة",
+            "en": "Explore our products by category"
+          }
+        },
+        {
+          "id": "trouble",
+          "label": {
+            "ar": "عندي مشكلة 💡",
+            "en": "I Have a Problem 💡"
+          },
+          "icon": "💡",
+          "description": {
+            "ar": "احصلي على توصيات مخصصة لمشكلتك",
+            "en": "Get personalized recommendations for your concern"
+          }
+        }
+      ]
     },
     "categories": [
       {
         "id": "corps",
-        "label": "Corps",
+        "label": {
+          "ar": "الجسم",
+          "fr": "Corps",
+          "en": "Body"
+        },
         "icon": "💆‍♀️",
         "subcategories": [
           {
-            "id": "hydratation",
-            "label": "Hydratation",
+            "id": "body-butter",
+            "label": {
+              "ar": "زبدة الجسم",
+              "fr": "Beurre corporel",
+              "en": "Body Butter"
+            },
             "keywords": [
-              "hydratant",
-              "sec",
-              "sèche",
-              "moisturize",
-              "dry"
+              "body butter",
+              "beurre corporel",
+              "زبدة الجسم"
             ]
           },
           {
-            "id": "anti_age",
-            "label": "Anti-âge",
+            "id": "body-cream",
+            "label": {
+              "ar": "كريم الجسم",
+              "fr": "Crème corporelle",
+              "en": "Body Cream"
+            },
             "keywords": [
-              "rides",
-              "anti-age",
-              "fermeté",
-              "wrinkles",
-              "aging"
+              "body cream",
+              "crème corporelle",
+              "كريم الجسم"
             ]
           },
           {
-            "id": "eclat",
-            "label": "Éclat",
+            "id": "body-scrub",
+            "label": {
+              "ar": "مقشر الجسم",
+              "fr": "Gommage corporel",
+              "en": "Body Scrub"
+            },
             "keywords": [
-              "éclat",
-              "lumineux",
-              "glow",
-              "radiance"
+              "body scrub",
+              "gommage corporel",
+              "exfoliant corporel",
+              "مقشر الجسم",
+              "سكراب الجسم"
             ]
           },
           {
-            "id": "acne",
-            "label": "Acné / Imperfections",
+            "id": "hand-cream",
+            "label": {
+              "ar": "كريم اليدين",
+              "fr": "Crème pour les mains",
+              "en": "Hand Cream"
+            },
             "keywords": [
-              "acné",
-              "boutons",
-              "imperfections",
-              "acne",
-              "pimples"
+              "hand cream",
+              "hands",
+              "mains",
+              "كريم اليدين",
+              "كريم اليد"
             ]
           }
         ]
       },
       {
         "id": "cheveux",
-        "label": "Cheveux",
+        "label": {
+          "ar": "الشعر",
+          "fr": "Cheveux",
+          "en": "Hair"
+        },
         "icon": "💇‍♀️",
         "subcategories": [
           {
-            "id": "chute",
-            "label": "Chute de cheveux",
+            "id": "shampoo",
+            "label": {
+              "ar": "شامبو",
+              "fr": "Shampooing",
+              "en": "Shampoo"
+            },
             "keywords": [
-              "chute",
-              "perte",
-              "tomber",
-              "hair loss",
-              "falling"
+              "shampoo",
+              "shampooing",
+              "wash",
+              "شامبو",
+              "غسول"
             ]
           },
           {
-            "id": "sec",
-            "label": "Cheveux secs",
+            "id": "conditioner",
+            "label": {
+              "ar": "بلسم",
+              "fr": "Après-shampooing",
+              "en": "Conditioner"
+            },
             "keywords": [
-              "sec",
-              "sèche",
-              "abîmé",
-              "dry",
-              "damaged"
+              "conditioner",
+              "après-shampooing",
+              "balsam",
+              "بلسم",
+              "كونديشنر"
             ]
           },
           {
-            "id": "frisottis",
-            "label": "Frisottis",
+            "id": "leave-in",
+            "label": {
+              "ar": "ليف إن",
+              "fr": "Leave-in",
+              "en": "Leave-in"
+            },
             "keywords": [
-              "frisottis",
-              "frizz",
-              "crépu",
-              "frizzy",
-              "curly"
+              "leave-in",
+              "leave in",
+              "sans rinçage",
+              "ليف إن",
+              "بدون شطف"
             ]
           },
           {
-            "id": "croissance",
-            "label": "Croissance lente",
+            "id": "mask",
+            "label": {
+              "ar": "ماسك",
+              "fr": "Masque",
+              "en": "Hair Mask"
+            },
             "keywords": [
-              "croissance",
-              "pousse",
-              "grow",
-              "growth",
-              "slow"
+              "mask",
+              "masque",
+              "treatment",
+              "ماسك",
+              "قناع"
             ]
           },
           {
-            "id": "pellicules",
-            "label": "Pellicules",
+            "id": "serum",
+            "label": {
+              "ar": "سيروم",
+              "fr": "Sérum",
+              "en": "Serum"
+            },
             "keywords": [
-              "pellicules",
-              "démangeaisons",
-              "dandruff",
-              "itchy"
+              "serum",
+              "sérum",
+              "سيروم"
+            ]
+          },
+          {
+            "id": "oil",
+            "label": {
+              "ar": "زيت",
+              "fr": "Huile",
+              "en": "Hair Oil"
+            },
+            "keywords": [
+              "oil",
+              "huile",
+              "زيت",
+              "أويل"
+            ]
+          },
+          {
+            "id": "mist",
+            "label": {
+              "ar": "بخاخ",
+              "fr": "Spray",
+              "en": "Hair Mist"
+            },
+            "keywords": [
+              "mist",
+              "spray",
+              "بخاخ",
+              "سبراي"
             ]
           }
         ]
@@ -177,9 +279,9 @@
       "Welcome! I'm Nour from INnatural. Looking for natural solutions for your hair? I'm here to help!"
     ],
     "ar": [
-      "مرحبًا! أنا نور، مساعدتك للجمال من INnatural. كيف يمكنني مساعدتك اليوم؟",
-      "أهلاً وسهلاً! مرحبًا بك في INnatural. أنا هنا لمساعدتك في العثور على المنتجات المثالية لاحتياجات العناية بشعرك!",
-      "أهلاً! أنا نور من INnatural. تبحثين عن حلول طبيعية لشعرك؟ أنا هنا للمساعدة!"
+      "أهلاً وسهلاً يا قمر! 🌟 أنا نور، مساعدتك الشخصية من INnatural. يسعدني خدمتك، كيف ممكن أساعدك النهارده؟",
+      "مرحباً حبيبتي! 💚 نورتي INnatural. أنا نور وموجودة عشان أساعدك تلاقي أحسن منتجات طبيعية لشعرك وبشرتك",
+      "السلام عليكم يا جميلة! ✨ أهلاً بيكِ في عالم INnatural الطبيعي. أنا نور، جاهزة أساعدك في كل حاجة تخص جمالك الطبيعي"
     ]
   },
   "capabilities": {
@@ -294,7 +396,11 @@
       "اذكري المكونات الطبيعية والفوائد",
       "قدمي تعليمات استخدام واضحة عند الطلب",
       "أدرجي معلومات الاتصال عند مناقشة الدعم",
-      "استخدمي الرموز التعبيرية بشكل معتدل للحفاظ على نبرة ودية"
+      "استخدمي الرموز التعبيرية بشكل معتدل للحفاظ على نبرة ودية",
+      "استخدمي تعبيرات ودية مثل: 'حبيبتي'، 'يا قمر'، 'يا جميلة' بشكل طبيعي",
+      "ابدأي الردود بتحية دافئة ومرحبة",
+      "استخدمي اللهجة المصرية المفهومة للتواصل الودي",
+      "اظهري الاهتمام الحقيقي بمشاكل العميلة وشعورها"
     ],
     "fr": [
       "Toujours être polie et respectueuse",

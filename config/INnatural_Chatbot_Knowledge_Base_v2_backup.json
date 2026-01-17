@@ -1,0 +1,922 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "last_updated": "2025-01-19",
+    "primary_language": "ar",
+    "supported_languages": ["ar", "en"],
+    "total_scenarios": 11,
+    "total_categories": 3,
+    "description": "INnatural Chatbot Knowledge Base v2.0 - Egyptian Natural Hair Care with AR Priority",
+    "brand": "INnatural Stores"
+  },
+
+  "config": {
+    "default_language": "ar",
+    "fallback_language": "en",
+    "fuzzy_matching_threshold": 0.6,
+    "max_results": 3,
+    "enable_analytics": true,
+    "enable_escalation": true,
+    "min_confidence_score": 0.3
+  },
+
+  "tone_guidelines": {
+    "general": "Friendly, warm, supportive - like a helpful friend",
+    "emojis": "Use relevant emojis (💚🌟💕✨) but not excessively",
+    "language_mix": "Can mix Arabic with some English/French terms naturally",
+    "formality": "Casual but professional, use 'حبيبتي' 'يا قمر' naturally",
+    "length": "Adapt based on query complexity - brief for simple, detailed for complex"
+  },
+
+  "synonyms": {
+    "ar": {
+      "شعر جاف": ["شعر ناشف", "شعر مبهدل", "شعر يحتاج ترطيب", "شعر خشن", "شعر مش لامع", "شعر بلا حياة"],
+      "شعر دهني": ["شعر زيتي", "فروة رأس دهنية", "شعر يلمع بسرعة", "شعر دهن كتير", "فروة تدهن"],
+      "شعر مجعد": ["شعر كيرلي", "شعر مموج", "شعر فيه تموجات", "كيرلز", "تجعيدات"],
+      "تساقط الشعر": ["الشعر بيقع", "وقوع الشعر", "فقدان الشعر", "شعر ضعيف", "شعر بيتساقط", "تساقط"],
+      "قشرة": ["قشرة الشعر", "حكة فروة الرأس", "فروة متقشرة", "قشور"],
+      "تقصف": ["أطراف متكسرة", "شعر متكسر", "هيشان", "نهايات مقصفة", "أطراف جافة"],
+      "هيشان": ["فريز", "شعر منفوش", "شعر مش منضبط", "شعر واقف"],
+      "شامبو": ["غسول شعر", "صابون شعر", "شامبوان"],
+      "بلسم": ["كونديشنر", "conditioner", "بديل الزيت"],
+      "ماسك": ["قناع", "حمام كريم", "علاج عميق", "باث"],
+      "ليف إن": ["leave-in", "بدون شطف", "كريم بدون غسيل"],
+      "سيروم": ["زيت", "أويل", "oil"],
+      "ترطيب": ["تغذية", "تنعيم", "إصلاح", "هيدراشن"],
+      "مجموعة": ["سيت", "روتين", "باكدج", "كولكشن"],
+      "سعر": ["بكام", "تمن", "كم سعر", "السعر"],
+      "طلب": ["شراء", "أشتري", "أطلب", "احجز"],
+      "توصيل": ["شحن", "ديلفري", "توصيل"],
+      "عرض": ["خصم", "تخفيض", "أوفر", "ديسكاونت"]
+    },
+    "en": {
+      "dry hair": ["dehydrated hair", "damaged hair", "brittle hair", "dull hair", "lifeless hair"],
+      "oily hair": ["greasy hair", "oily scalp", "sebum production"],
+      "curly hair": ["wavy hair", "frizzy hair", "coily hair", "kinky hair", "curls"],
+      "hair loss": ["hair fall", "thinning hair", "shedding", "balding"],
+      "dandruff": ["flaky scalp", "itchy scalp", "dry scalp"],
+      "split ends": ["broken ends", "damaged tips", "frayed ends"],
+      "frizz": ["flyaways", "unruly hair", "puffy hair"],
+      "shampoo": ["hair wash", "cleanser"],
+      "conditioner": ["hair conditioner"],
+      "mask": ["deep conditioner", "hair treatment", "hair mask"],
+      "leave-in": ["leave in conditioner"],
+      "serum": ["oil", "hair oil"],
+      "moisturize": ["hydrate", "nourish", "repair"],
+      "bundle": ["set", "collection", "kit", "package"],
+      "price": ["cost", "how much"],
+      "order": ["buy", "purchase", "get"],
+      "delivery": ["shipping", "dispatch"],
+      "discount": ["offer", "sale", "promo"]
+    }
+  },
+
+  "categories": [
+    {
+      "category_id": "PRE_PURCHASE",
+      "category_name": {
+        "ar": "ما قبل الشراء - توصيات المنتجات",
+        "en": "Pre-Purchase - Product Recommendations"
+      },
+      "priority": 1,
+      "description": {
+        "ar": "أسئلة العملاء حول المنتجات المناسبة لنوع شعرهم ومشاكلهم",
+        "en": "Customer questions about suitable products for their hair type and concerns"
+      },
+      "scenarios": [
+        {
+          "scenario_id": "HAIR_LOSS",
+          "priority": 10,
+          "usage_count": 0,
+          "metadata": {
+            "intent": "product_recommendation",
+            "hair_concerns": ["hair_loss", "weak_hair", "thinning"],
+            "recommended_products": ["mixoil-rosemary-bundle", "mixoil-rosemary-mask"],
+            "confidence_threshold": 0.7,
+            "escalation_required": false
+          },
+          "tags": {
+            "ar": ["تساقط", "شعر ضعيف", "روزماري", "علاج", "تقوية", "كثافة"],
+            "en": ["hair loss", "weak hair", "rosemary", "treatment", "strengthen", "density"]
+          },
+          "keywords": {
+            "ar": ["بيقع", "تساقط", "ضعيف", "متكسر", "وقوع", "فقدان"],
+            "en": ["fall", "loss", "weak", "thin", "shedding"]
+          },
+          "user_queries": {
+            "ar": [
+              "شعري بيقع كتير",
+              "عندي تساقط شعر",
+              "شعري ضعيف ومتكسر",
+              "عايزة حاجة للتساقط",
+              "شعري بيتساقط",
+              "الشعر بيقع كتير قوي"
+            ],
+            "en": [
+              "I have hair loss",
+              "hair fall problem",
+              "my hair is falling",
+              "hair is weak"
+            ]
+          },
+          "responses": [
+            {
+              "response_type": "detailed",
+              "language": "ar",
+              "text": "أهلاً حبيبتي 💚 تساقط الشعر مشكلة شائعة والحمد لله عندنا الحل المثالي ليكي!\n\nأنصحك بـ **مجموعة MixOil بالروزماري** - مخصصة لعلاج التساقط:\n✨ بتقوي الجذور من الأساس\n✨ بتقلل التساقط بشكل ملحوظ\n✨ بتزود كثافة الشعر\n\nالمجموعة فيها:\n• شامبو روزماري\n• بلسم روزماري\n• ماسك روزماري + لوز\n• سيروم لتقوية الجذور\n\n💡 النتائج بتبدأ تظهر بعد 3-4 أسابيع من الاستخدام المنتظم.\n\nتحبي تعرفي أكتر عن المجموعة دي أو تطلبيها دلوقتي؟ 🛍️"
+            },
+            {
+              "response_type": "detailed",
+              "language": "en",
+              "text": "Hello dear 💚 Hair loss is a common problem and we have the perfect solution for you!\n\nI recommend **MixOil Rosemary Bundle** - specially designed for hair loss:\n✨ Strengthens roots from the base\n✨ Noticeably reduces hair fall\n✨ Increases hair density\n\nThe bundle includes:\n• Rosemary Shampoo\n• Rosemary Conditioner\n• Rosemary + Almond Mask\n• Root Strengthening Serum\n\n💡 Results start showing after 3-4 weeks of regular use.\n\nWould you like to know more or order now? 🛍️"
+            },
+            {
+              "response_type": "brief",
+              "language": "ar",
+              "text": "حبيبتي، عندنا مجموعة MixOil روزماري مخصصة لعلاج التساقط 💚 بتقوي الجذور وبتزود الكثافة. النتائج بتظهر من أول شهر! عايزة لينك المنتج؟"
+            },
+            {
+              "response_type": "brief",
+              "language": "en",
+              "text": "Dear, we have MixOil Rosemary bundle specially for hair loss 💚 Strengthens roots and increases density. Results show from first month! Want the product link?"
+            },
+            {
+              "response_type": "consultative",
+              "language": "ar",
+              "text": "أهلاً يا قمر 💕\n\nخليني أساعدك نختار المنتج الأنسب ليكي:\n\n❓ التساقط عندك:\n• طبيعي (شوية شعرات في اليوم)؟\n• غزير (كمية كبيرة)؟\n• في أماكن محددة؟\n\n❓ نوع شعرك:\n• جاف / دهني / عادي؟\n\nعلشان أرشحلك المنتج المناسب بالظبط 🎯"
+            }
+          ],
+          "follow_up_questions": {
+            "ar": [
+              "كام سعر المجموعة؟",
+              "فيه منتج واحد بس مش مجموعة؟",
+              "النتائج بتظهر بعد قد إيه؟"
+            ],
+            "en": [
+              "How much is the bundle?",
+              "Is there a single product instead of bundle?",
+              "When will I see results?"
+            ]
+          },
+          "related_products": [
+            "mixoil-rosemary-bundle",
+            "mixoil-rosemary-hair-mask",
+            "mixoil-hair-care-collection"
+          ]
+        },
+        {
+          "scenario_id": "DRY_HAIR",
+          "priority": 9,
+          "usage_count": 0,
+          "metadata": {
+            "intent": "product_recommendation",
+            "hair_concerns": ["dry_hair", "damaged_hair", "dull_hair"],
+            "recommended_products": ["mixoil-castor-bundle", "cocoshea-bundle"],
+            "confidence_threshold": 0.7,
+            "escalation_required": false
+          },
+          "tags": {
+            "ar": ["شعر جاف", "ترطيب", "خروع", "تغذية", "نعومة", "لمعان"],
+            "en": ["dry hair", "hydration", "castor", "nourishment", "smoothness", "shine"]
+          },
+          "keywords": {
+            "ar": ["جاف", "ناشف", "مبهدل", "محتاج ترطيب", "خشن", "مش لامع"],
+            "en": ["dry", "dehydrated", "damaged", "brittle", "dull"]
+          },
+          "user_queries": {
+            "ar": [
+              "شعري ناشف قوي",
+              "شعري جاف ومش لامع",
+              "عايزة ترطيب للشعر",
+              "شعري محتاج ترطيب",
+              "شعري خشن"
+            ],
+            "en": [
+              "dry damaged hair",
+              "my hair is very dry",
+              "need hydration",
+              "rough hair"
+            ]
+          },
+          "responses": [
+            {
+              "response_type": "detailed",
+              "language": "ar",
+              "text": "أهلاً يا جميل 🌸\n\nشعرك الجاف محتاج ترطيب عميق، وده بالظبط تخصصنا!\n\n🥥 **مجموعة MixOil الخروع** - الحل الأمثل للترطيب:\n• زيت الخروع: ترطيب فوري وعميق\n• جوز الهند: تغذية مكثفة\n• الجوجوبا: استعادة اللمعان الطبيعي\n\nالمجموعة الكاملة:\n✅ شامبو الخروع\n✅ بلسم الخروع\n✅ ماسك الخروع (استخدام أسبوعي)\n✅ ليف-إن (يومي بدون شطف)\n✅ سيروم للنعومة واللمعان\n\n💧 شعرك هيرجع ناعم ولامع من أول استخدام!\n\nعايزة تجربي المجموعة الكاملة ولا منتج واحد الأول؟"
+            },
+            {
+              "response_type": "detailed",
+              "language": "en",
+              "text": "Hello beautiful 🌸\n\nYour dry hair needs deep hydration, and that's exactly our specialty!\n\n🥥 **MixOil Castor Bundle** - The perfect solution for hydration:\n• Castor oil: Instant and deep hydration\n• Coconut: Intensive nourishment\n• Jojoba: Restores natural shine\n\nComplete bundle:\n✅ Castor Shampoo\n✅ Castor Conditioner\n✅ Castor Mask (weekly use)\n✅ Leave-In (daily, no rinse)\n✅ Serum for smoothness and shine\n\n💧 Your hair will be soft and shiny from first use!\n\nWould you like the complete bundle or try one product first?"
+            },
+            {
+              "response_type": "brief",
+              "language": "ar",
+              "text": "يا قمر، مجموعة MixOil الخروع هي الأنسب ليكي 💙 ترطيب عميق + نعومة + لمعان. شعرك هيتحول 180 درجة! 🌟"
+            },
+            {
+              "response_type": "brief",
+              "language": "en",
+              "text": "Dear, MixOil Castor bundle is perfect for you 💙 Deep hydration + smoothness + shine. Your hair will transform 180 degrees! 🌟"
+            },
+            {
+              "response_type": "comparison",
+              "language": "ar",
+              "text": "عندنا حلين روعة للشعر الجاف:\n\n🥥 **MixOil الخروع** (الأكثر مبيعاً):\n• ترطيب فوري\n• للشعر الجاف جداً\n• نتائج من أول استخدام\n\n🥥🧈 **Cocoshea** (علاجي مكثف):\n• لو فيه تقصف وهيشان\n• زبدة الشيا + جوز الهند\n• إصلاح الشعر التالف\n\nأيهم أقرب لحالتك؟ 🤔"
+            }
+          ],
+          "follow_up_questions": {
+            "ar": [
+              "كام سعر المجموعة؟",
+              "الفرق بين الخروع والـ Cocoshea؟",
+              "ينفع للشعر المصبوغ؟"
+            ],
+            "en": [
+              "How much is the bundle?",
+              "What's the difference between Castor and Cocoshea?",
+              "Is it safe for colored hair?"
+            ]
+          },
+          "related_products": [
+            "mixoil-castor-bundle",
+            "cocoshea-bundle",
+            "mixoil-castor-mask"
+          ]
+        },
+        {
+          "scenario_id": "SPLIT_ENDS_FRIZZ",
+          "priority": 8,
+          "usage_count": 0,
+          "metadata": {
+            "intent": "product_recommendation",
+            "hair_concerns": ["split_ends", "frizz", "damaged_hair"],
+            "recommended_products": ["cocoshea-bundle", "cocoshea-serum"],
+            "confidence_threshold": 0.7,
+            "escalation_required": false
+          },
+          "tags": {
+            "ar": ["تقصف", "هيشان", "فريز", "كوكوشيا", "إصلاح", "أطراف"],
+            "en": ["split ends", "frizz", "damage", "cocoshea", "repair", "tips"]
+          },
+          "keywords": {
+            "ar": ["تقصف", "هيشان", "منفوش", "أطراف", "متكسر", "فريز"],
+            "en": ["split", "frizz", "damaged", "ends", "broken", "flyaway"]
+          },
+          "user_queries": {
+            "ar": [
+              "شعري فيه تقصف",
+              "هيشان ومجعد",
+              "أطراف شعري متكسرة",
+              "عندي فريز",
+              "شعري منفوش"
+            ],
+            "en": [
+              "frizzy hair",
+              "split ends",
+              "damaged ends",
+              "flyaway hair"
+            ]
+          },
+          "responses": [
+            {
+              "response_type": "detailed",
+              "language": "ar",
+              "text": "حبيبتي، التقصف والهيشان ليهم حل سحري عندنا! 🌟\n\n🥥🧈 **مجموعة Cocoshea** - علاج متخصص:\n✨ زبدة الشيا: إصلاح الشعر التالف\n✨ زيت جوز الهند: تقوية الشعر من الداخل\n✨ نعومة فورية من أول استخدام\n\nالروتين الكامل:\n1️⃣ شامبو Cocoshea\n2️⃣ بلسم Cocoshea\n3️⃣ ماسك (2-3 مرات أسبوعياً)\n4️⃣ سيروم Cocoshea (حماية حرارية + لمعان)\n\n💡 **Bonus**: السيروم بيحمي شعرك من حرارة السيشوار والمكواة!\n\n📦 فيه روتين كامل بسعر مميز أو ممكن تاخدي منتجات منفصلة.\n\nإيه المناسب ليكي؟"
+            },
+            {
+              "response_type": "detailed",
+              "language": "en",
+              "text": "Dear, split ends and frizz have a magical solution with us! 🌟\n\n🥥🧈 **Cocoshea Bundle** - Specialized treatment:\n✨ Shea butter: Repairs damaged hair\n✨ Coconut oil: Strengthens hair from within\n✨ Instant smoothness from first use\n\nComplete routine:\n1️⃣ Cocoshea Shampoo\n2️⃣ Cocoshea Conditioner\n3️⃣ Mask (2-3 times weekly)\n4️⃣ Cocoshea Serum (heat protection + shine)\n\n💡 **Bonus**: The serum protects your hair from blow dryer and straightener heat!\n\n📦 Full routine at special price or individual products available.\n\nWhat works best for you?"
+            },
+            {
+              "response_type": "brief",
+              "language": "ar",
+              "text": "Cocoshea هو الحل! 🧈 مخصوص للتقصف والهيشان. النتيجة فورية وبتدوم. عايزة تفاصيل المجموعة؟ 💕"
+            },
+            {
+              "response_type": "brief",
+              "language": "en",
+              "text": "Cocoshea is the solution! 🧈 Specially for split ends and frizz. Instant and lasting results. Want bundle details? 💕"
+            }
+          ],
+          "follow_up_questions": {
+            "ar": [
+              "السيروم بيحمي من الحرارة؟",
+              "كام مرة أستخدم الماسك؟",
+              "سعر المجموعة كام؟"
+            ],
+            "en": [
+              "Does the serum protect from heat?",
+              "How often should I use the mask?",
+              "How much is the bundle?"
+            ]
+          },
+          "related_products": [
+            "cocoshea-bundle",
+            "cocoshea-serum",
+            "cocoshea-mask"
+          ]
+        },
+        {
+          "scenario_id": "CURLY_HAIR",
+          "priority": 7,
+          "usage_count": 0,
+          "metadata": {
+            "intent": "product_recommendation",
+            "hair_concerns": ["curly_hair", "definition", "frizz_control"],
+            "recommended_products": ["mixoil-castor-bundle", "cocoshea-bundle"],
+            "confidence_threshold": 0.7,
+            "escalation_required": false
+          },
+          "tags": {
+            "ar": ["كيرلي", "تجعيدات", "شعر مجعد", "تحديد", "تموجات"],
+            "en": ["curly", "curls", "wavy", "definition", "coils"]
+          },
+          "keywords": {
+            "ar": ["كيرلي", "مجعد", "تجعيدات", "كيرلز", "مموج"],
+            "en": ["curly", "curl", "wavy", "coily", "kinky"]
+          },
+          "user_queries": {
+            "ar": [
+              "شعري كيرلي",
+              "عندي تجعيدات",
+              "عايزة أحدد الكيرلز بتاعتي",
+              "شعر مموج"
+            ],
+            "en": [
+              "curly hair products",
+              "I have curly hair",
+              "need curl definition",
+              "wavy hair"
+            ]
+          },
+          "responses": [
+            {
+              "response_type": "detailed",
+              "language": "ar",
+              "text": "أهلاً كيرلي جيرل! 🌀💕\n\nالشعر الكيرلي محتاج عناية خاصة وعندنا الأنسب ليكي:\n\n🥥 **لو كيرلز جافة ومحتاجة ترطيب**:\nMixOil الخروع - ترطيب عميق + تحديد التجعيدات\n\n🧈 **لو فيه هيشان وفريز**:\nCocoshea - تحكم في الفريز + نعومة\n\n🌿 **الروتين المثالي للكيرلي**:\n1. شامبو خالي من السلفات (عندنا ✅)\n2. بلسم غني (ليف-إن أو عادي)\n3. ماسك أسبوعي\n4. سيروم للتحديد واللمعان\n\n💡 **نصيحة**: استخدمي الليف-إن على الشعر المبلول بتقنية \"scrunching\" لأفضل تحديد!\n\nعايزة روتين مخصص لنوع كيرلز؟"
+            },
+            {
+              "response_type": "detailed",
+              "language": "en",
+              "text": "Hello curly girl! 🌀💕\n\nCurly hair needs special care and we have what's perfect for you:\n\n🥥 **If curls are dry and need hydration**:\nMixOil Castor - Deep hydration + curl definition\n\n🧈 **If there's frizz**:\nCocoshea - Frizz control + smoothness\n\n🌿 **Perfect curly routine**:\n1. Sulfate-free shampoo (we have it ✅)\n2. Rich conditioner (leave-in or regular)\n3. Weekly mask\n4. Serum for definition and shine\n\n💡 **Tip**: Use leave-in on wet hair with \"scrunching\" technique for best definition!\n\nWant a custom routine for your curl type?"
+            }
+          ],
+          "follow_up_questions": {
+            "ar": [
+              "الفرق بين الخروع والـ Cocoshea للكيرلي؟",
+              "ازاي أستخدم تقنية scrunching؟",
+              "أنهي منتج للتحديد أحسن؟"
+            ],
+            "en": [
+              "Difference between Castor and Cocoshea for curly?",
+              "How to use scrunching technique?",
+              "Which product is best for definition?"
+            ]
+          },
+          "related_products": [
+            "mixoil-castor-bundle",
+            "cocoshea-bundle",
+            "leave-in-conditioner"
+          ]
+        },
+        {
+          "scenario_id": "OILY_HAIR",
+          "priority": 6,
+          "usage_count": 0,
+          "metadata": {
+            "intent": "product_recommendation",
+            "hair_concerns": ["oily_hair", "oily_scalp", "greasy"],
+            "recommended_products": ["mixoil-shampoo", "mixoil-bundle"],
+            "confidence_threshold": 0.7,
+            "escalation_required": false
+          },
+          "tags": {
+            "ar": ["شعر دهني", "فروة دهنية", "زيتي", "توازن", "تنظيف"],
+            "en": ["oily hair", "oily scalp", "greasy", "balance", "cleansing"]
+          },
+          "keywords": {
+            "ar": ["دهني", "زيتي", "فروة تدهن", "بسرعة", "يلمع"],
+            "en": ["oily", "greasy", "sebum", "oily scalp"]
+          },
+          "user_queries": {
+            "ar": [
+              "شعري دهني",
+              "فروة راسي بتدهن بسرعة",
+              "مضطرة اغسل شعري كل يوم",
+              "شعري زيتي"
+            ],
+            "en": [
+              "oily scalp",
+              "greasy hair",
+              "hair gets oily fast",
+              "need to wash daily"
+            ]
+          },
+          "responses": [
+            {
+              "response_type": "detailed",
+              "language": "ar",
+              "text": "أهلاً حبيبتي 💚\n\nالشعر الدهني محتاج توازن، مش تجفيف! وده بالظبط اللي بتعمله منتجاتنا.\n\n✨ **الحل الأمثل**:\nشامبو MixOil - بيوازن إفراز الزيوت الطبيعية\n\n🎯 **المميزات**:\n• تنظيف عميق بدون جفاف\n• فروة رأس متوازنة\n• شعر منتعش لفترة أطول\n• طبيعي 100% (بدون سلفات قاسية)\n\n⚠️ **خطأ شائع**: الشامبوهات القاسية بتزود الدهون!\nليه؟ لأن الفروة بتحاول تعوض الزيوت اللي اتشالت.\n\n💡 **نصيحة إضافية**:\n• استخدمي بلسم على الأطراف بس (مش الجذور)\n• الماسك مرة في الأسبوع كفاية\n• اللييف-إن اختياري (كمية قليلة جداً)\n\nجربتي منتجات طبيعية قبل كده؟"
+            },
+            {
+              "response_type": "detailed",
+              "language": "en",
+              "text": "Hello dear 💚\n\nOily hair needs balance, not drying! That's exactly what our products do.\n\n✨ **The perfect solution**:\nMixOil Shampoo - Balances natural oil production\n\n🎯 **Features**:\n• Deep cleansing without drying\n• Balanced scalp\n• Fresh hair for longer\n• 100% natural (no harsh sulfates)\n\n⚠️ **Common mistake**: Harsh shampoos increase oil!\nWhy? Because the scalp tries to compensate for removed oils.\n\n💡 **Additional tips**:\n• Use conditioner only on ends (not roots)\n• Mask once a week is enough\n• Leave-in is optional (very small amount)\n\nHave you tried natural products before?"
+            },
+            {
+              "response_type": "brief",
+              "language": "ar",
+              "text": "حبيبتي، شامبو MixOil مثالي للشعر الدهني 💚 بيوازن الفروة بدون ما يجففها. شعرك هيفضل نضيف لفترة أطول! 🌿"
+            },
+            {
+              "response_type": "brief",
+              "language": "en",
+              "text": "Dear, MixOil shampoo is perfect for oily hair 💚 Balances scalp without drying. Your hair will stay clean longer! 🌿"
+            }
+          ],
+          "follow_up_questions": {
+            "ar": [
+              "استخدم البلسم على الجذور؟",
+              "كام مرة أغسل شعري؟",
+              "الماسك مناسب للشعر الدهني؟"
+            ],
+            "en": [
+              "Should I use conditioner on roots?",
+              "How often should I wash?",
+              "Is mask suitable for oily hair?"
+            ]
+          },
+          "related_products": [
+            "mixoil-shampoo",
+            "mixoil-bundle"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "INGREDIENTS_COMPOSITION",
+      "category_name": {
+        "ar": "الأسئلة عن المكونات والتركيبة",
+        "en": "Questions about Ingredients and Composition"
+      },
+      "priority": 2,
+      "description": {
+        "ar": "استفسارات حول مكونات المنتجات وسلامتها",
+        "en": "Inquiries about product ingredients and safety"
+      },
+      "scenarios": [
+        {
+          "scenario_id": "SULFATE_FREE",
+          "priority": 9,
+          "usage_count": 0,
+          "metadata": {
+            "intent": "ingredient_inquiry",
+            "safety_concern": true,
+            "confidence_threshold": 0.8,
+            "escalation_required": false
+          },
+          "tags": {
+            "ar": ["سلفات", "خالي من السلفات", "طبيعي", "آمن", "كيماويات"],
+            "en": ["sulfate", "sulfate free", "natural", "safe", "chemicals"]
+          },
+          "keywords": {
+            "ar": ["سلفات", "كيماويات", "طبيعي", "آمن", "بارابين", "سيليكون"],
+            "en": ["sulfate", "chemical", "natural", "safe", "paraben", "silicone"]
+          },
+          "user_queries": {
+            "ar": [
+              "فيه سلفات؟",
+              "خالي من السلفات؟",
+              "الشامبو فيه كيماويات؟",
+              "المنتج طبيعي؟"
+            ],
+            "en": [
+              "sulfate free?",
+              "does it have sulfates?",
+              "is it natural?",
+              "any chemicals?"
+            ]
+          },
+          "responses": [
+            {
+              "response_type": "reassuring",
+              "language": "ar",
+              "text": "لا يا قمر، منتجاتنا 100% خالية من السلفات! 💚\n\n✅ **ما فيش عندنا**:\n• سلفات (Sulfates)\n• بارابين (Parabens)\n• سيليكون (Silicones)\n• مواد كيميائية ضارة\n\n✨ **كل منتجاتنا**:\n• طبيعية 100%\n• آمنة للاستخدام اليومي\n• مناسبة للشعر المعالج/المصبوغ\n• بتنضف بلطف وعمق\n\nده اللي خلى عملائنا بيثقوا فينا! 💕\n\nعندك أسئلة تانية عن المكونات؟"
+            },
+            {
+              "response_type": "reassuring",
+              "language": "en",
+              "text": "No dear, our products are 100% sulfate-free! 💚\n\n✅ **What we DON'T have**:\n• Sulfates\n• Parabens\n• Silicones\n• Harmful chemicals\n\n✨ **All our products are**:\n• 100% natural\n• Safe for daily use\n• Suitable for treated/colored hair\n• Gently yet deeply cleansing\n\nThat's why our customers trust us! 💕\n\nAny other questions about ingredients?"
+            },
+            {
+              "response_type": "brief",
+              "language": "ar",
+              "text": "طبعاً خالي من السلفات! 💯 كل منتجاتنا طبيعية ومافيهاش أي كيماويات ضارة. اطمني خالص 💚"
+            },
+            {
+              "response_type": "brief",
+              "language": "en",
+              "text": "Of course sulfate-free! 💯 All our products are natural with no harmful chemicals. Rest assured 💚"
+            }
+          ],
+          "follow_up_questions": {
+            "ar": [
+              "إيه المكونات الطبيعية اللي فيه؟",
+              "ينفع للشعر المصبوغ؟",
+              "بينضف كويس من غير سلفات؟"
+            ],
+            "en": [
+              "What natural ingredients does it have?",
+              "Is it safe for colored hair?",
+              "Does it clean well without sulfates?"
+            ]
+          }
+        },
+        {
+          "scenario_id": "HALAL_VEGAN",
+          "priority": 8,
+          "usage_count": 0,
+          "metadata": {
+            "intent": "ingredient_inquiry",
+            "ethical_concern": true,
+            "confidence_threshold": 0.8,
+            "escalation_required": false
+          },
+          "tags": {
+            "ar": ["حلال", "نباتي", "vegan", "حيوانات", "أخلاقي"],
+            "en": ["halal", "vegan", "cruelty free", "animal", "ethical"]
+          },
+          "keywords": {
+            "ar": ["حلال", "vegan", "نباتي", "حيوانات", "مجربة"],
+            "en": ["halal", "vegan", "animal", "cruelty", "test"]
+          },
+          "user_queries": {
+            "ar": [
+              "المنتجات حلال؟",
+              "vegan?",
+              "فيها منتجات حيوانية؟",
+              "مجربة على الحيوانات؟",
+              "نباتية؟"
+            ],
+            "en": [
+              "is it halal?",
+              "vegan?",
+              "animal products?",
+              "tested on animals?",
+              "cruelty free?"
+            ]
+          },
+          "responses": [
+            {
+              "response_type": "detailed",
+              "language": "ar",
+              "text": "أكيد حبيبتي! 🌿\n\n✅ **منتجاتنا**:\n• حلال 100%\n• Vegan (نباتية بالكامل)\n• بدون تجارب على الحيوانات (Cruelty-Free)\n• مكونات طبيعية فقط\n\n🌱 **مثال على المكونات**:\n• زيت الخروع\n• زيت جوز الهند\n• زبدة الشيا\n• زيت الروزماري\n• زيت اللوز\n• زيت الجوجوبا\n\nكل حاجة من الطبيعة، مافيش أي مكون حيواني أو مشتق حيواني.\n\nاطمني خالص يا قمر 💚"
+            },
+            {
+              "response_type": "detailed",
+              "language": "en",
+              "text": "Absolutely dear! 🌿\n\n✅ **Our products are**:\n• 100% Halal\n• 100% Vegan\n• Cruelty-Free (not tested on animals)\n• Only natural ingredients\n\n🌱 **Ingredients examples**:\n• Castor oil\n• Coconut oil\n• Shea butter\n• Rosemary oil\n• Almond oil\n• Jojoba oil\n\nEverything from nature, no animal-derived ingredients.\n\nRest assured dear 💚"
+            },
+            {
+              "response_type": "brief",
+              "language": "ar",
+              "text": "أيوة طبعاً! حلال وvegan 100% 🌿 ومش مجربة على حيوانات. كل المكونات طبيعية نباتية 💚"
+            },
+            {
+              "response_type": "brief",
+              "language": "en",
+              "text": "Yes absolutely! 100% Halal and vegan 🌿 Not tested on animals. All natural plant-based ingredients 💚"
+            }
+          ],
+          "follow_up_questions": {
+            "ar": [
+              "فيه شهادات Vegan؟",
+              "كل المنتجات نباتية؟",
+              "المكونات مستوردة؟"
+            ],
+            "en": [
+              "Do you have Vegan certifications?",
+              "Are all products vegan?",
+              "Are ingredients imported?"
+            ]
+          }
+        },
+        {
+          "scenario_id": "ALLERGIES",
+          "priority": 7,
+          "usage_count": 0,
+          "metadata": {
+            "intent": "safety_inquiry",
+            "safety_concern": true,
+            "confidence_threshold": 0.8,
+            "escalation_required": false
+          },
+          "tags": {
+            "ar": ["حساسية", "فروة حساسة", "اختبار", "آمن"],
+            "en": ["allergy", "sensitive", "test", "safe"]
+          },
+          "keywords": {
+            "ar": ["حساسية", "حساس", "تحسس", "احمرار", "حكة"],
+            "en": ["allergy", "allergic", "sensitive", "reaction", "irritation"]
+          },
+          "user_queries": {
+            "ar": [
+              "عندي حساسية من مكسرات",
+              "ينفع لو عندي حساسية؟",
+              "فروة راسي حساسة",
+              "بتحسس من زيوت"
+            ],
+            "en": [
+              "allergic to nuts",
+              "sensitive scalp",
+              "I have allergies",
+              "allergy to oils"
+            ]
+          },
+          "responses": [
+            {
+              "response_type": "careful",
+              "language": "ar",
+              "text": "شكراً إنك قولتيلي يا قمر، ده مهم جداً 💕\n\n✨ منتجاتنا طبيعية وآمنة، لكن:\n\n⚠️ **لو عندك حساسية معروفة**:\n• شاركيني بالظبط من إيه (مثال: مكسرات، زيوت معينة)\n• هبعتلك قائمة المكونات للمنتج اللي عايزاه\n• تتأكدي إن مافيش المادة دي فيه\n\n🧪 **نصيحة مهمة**:\nقبل أول استخدام، جربي المنتج على منطقة صغيرة من جلدك (خلف الأذن مثلاً) واستني 24 ساعة.\n\nلو حصل أي احمرار أو حكة، ماتستخدميهوش.\n\n💡 **فروة حساسة؟**\nمنتجاتنا لطيفة جداً، لكن الأمان الأول!\n\nقوليلي عندك حساسية من إيه بالظبط؟"
+            },
+            {
+              "response_type": "careful",
+              "language": "en",
+              "text": "Thanks for telling me dear, this is very important 💕\n\n✨ Our products are natural and safe, but:\n\n⚠️ **If you have known allergies**:\n• Tell me exactly what (e.g., nuts, certain oils)\n• I'll send you ingredient list for the product you want\n• Make sure it doesn't contain that ingredient\n\n🧪 **Important tip**:\nBefore first use, test the product on a small area of your skin (behind ear for example) and wait 24 hours.\n\nIf any redness or itching occurs, don't use it.\n\n💡 **Sensitive scalp?**\nOur products are very gentle, but safety first!\n\nTell me exactly what you're allergic to?"
+            }
+          ],
+          "follow_up_questions": {
+            "ar": [
+              "ممكن قائمة المكونات؟",
+              "ازاي أعمل اختبار الحساسية؟",
+              "فيه بديل للمكسرات؟"
+            ],
+            "en": [
+              "Can I get ingredients list?",
+              "How to do allergy test?",
+              "Is there nut-free alternative?"
+            ]
+          }
+        },
+        {
+          "scenario_id": "PREGNANCY_SAFE",
+          "priority": 7,
+          "usage_count": 0,
+          "metadata": {
+            "intent": "safety_inquiry",
+            "medical_disclaimer": true,
+            "confidence_threshold": 0.9,
+            "escalation_required": false
+          },
+          "tags": {
+            "ar": ["حامل", "حمل", "رضاعة", "آمن", "طبيب"],
+            "en": ["pregnant", "pregnancy", "breastfeeding", "safe", "doctor"]
+          },
+          "keywords": {
+            "ar": ["حامل", "حمل", "مرضعة", "رضاعة", "حبلى"],
+            "en": ["pregnant", "pregnancy", "breastfeeding", "nursing"]
+          },
+          "user_queries": {
+            "ar": [
+              "انا حامل، ينفع استخدمه؟",
+              "آمن للحمل؟",
+              "مرضعة ممكن استخدمه؟",
+              "حامل في الشهر الثاني"
+            ],
+            "en": [
+              "pregnant safe?",
+              "can I use while pregnant?",
+              "safe for breastfeeding?",
+              "I'm pregnant"
+            ]
+          },
+          "responses": [
+            {
+              "response_type": "medical_disclaimer",
+              "language": "ar",
+              "text": "مبروك يا قمر! 💕👶\n\nمنتجاتنا طبيعية 100% ومافيهاش أي مواد كيميائية ضارة.\n\n✅ **معظم منتجاتنا آمنة للحوامل والمرضعات**\n\nلكن:\n⚠️ **مهم جداً**:\nفي فترة الحمل، الجسم بيكون حساس بشكل مختلف.\n\n📋 **نصيحتنا**:\n1. استشيري دكتورك الأول\n2. ممكن تبعتيله قائمة المكونات\n3. يقررلك إذا كان مناسب ولا لأ\n\n💡 **البديل الآمن 100%**:\nزيت الخروع النقي وزيت جوز الهند (بدون إضافات) - عادة آمنين في الحمل.\n\nصحتك وصحة بيبي أهم حاجة! 💚\n\nحابة أبعتلك قائمة المكونات لدكتورك؟"
+            },
+            {
+              "response_type": "medical_disclaimer",
+              "language": "en",
+              "text": "Congratulations dear! 💕👶\n\nOur products are 100% natural with no harmful chemicals.\n\n✅ **Most of our products are safe for pregnant and nursing mothers**\n\nBut:\n⚠️ **Very important**:\nDuring pregnancy, the body is sensitive differently.\n\n📋 **Our advice**:\n1. Consult your doctor first\n2. You can send them ingredient list\n3. Let them decide if it's suitable or not\n\n💡 **100% safe alternative**:\nPure castor oil and coconut oil (without additives) - usually safe during pregnancy.\n\nYour health and baby's health are most important! 💚\n\nWould you like ingredient list for your doctor?"
+            }
+          ],
+          "follow_up_questions": {
+            "ar": [
+              "قائمة المكونات فين؟",
+              "أنهي منتج الأكثر أماناً؟",
+              "ممكن استخدم بعد الولادة؟"
+            ],
+            "en": [
+              "Where's the ingredient list?",
+              "Which product is safest?",
+              "Can I use after delivery?"
+            ]
+          }
+        },
+        {
+          "scenario_id": "COLORED_HAIR",
+          "priority": 6,
+          "usage_count": 0,
+          "metadata": {
+            "intent": "product_suitability",
+            "hair_treatment": ["colored", "keratin", "protein"],
+            "confidence_threshold": 0.7,
+            "escalation_required": false
+          },
+          "tags": {
+            "ar": ["صبغة", "مصبوغ", "بروتين", "كيراتين", "فرد", "معالج"],
+            "en": ["colored", "dyed", "protein", "keratin", "straightened", "treated"]
+          },
+          "keywords": {
+            "ar": ["مصبوغ", "صبغة", "بروتين", "كيراتين", "فرد", "معالج"],
+            "en": ["colored", "dyed", "keratin", "protein", "treated", "straightened"]
+          },
+          "user_queries": {
+            "ar": [
+              "شعري مصبوغ",
+              "عملت بروتين",
+              "شعري مفرود",
+              "ينفع بعد الفرد؟",
+              "مناسب للكيراتين؟"
+            ],
+            "en": [
+              "colored hair",
+              "dyed hair",
+              "keratin treatment",
+              "after protein",
+              "safe for treated hair"
+            ]
+          },
+          "responses": [
+            {
+              "response_type": "detailed",
+              "language": "ar",
+              "text": "أكيد ينفع يا جميل! 💜\n\n✅ **منتجاتنا مثالية للشعر المعالج**:\n• خالية من السلفات (مابتشيلش اللون)\n• بتحافظ على البروتين/الكيراتين\n• بتطول عمر الصبغة\n• بتغذي الشعر المعالج\n\n🎨 **للشعر المصبوغ**:\n• الزيوت الطبيعية بتثبت اللون\n• بتمنع جفاف الشعر بعد الصبغة\n• بترجع الحيوية واللمعان\n\n💎 **للشعر المفرود (بروتين/كيراتين)**:\n• مابيأثرش على العلاج\n• بيساعد الشعر يحتفظ بالفرد أطول\n• تغذية بدون ثقل\n\n💡 **نصيحة**:\nاستخدمي المنتجات بعد الصبغة/الفرد بـ 48-72 ساعة للأمان.\n\nعملتي إيه لشعرك بالظبط؟ عشان أنصحك بالأنسب 💕"
+            },
+            {
+              "response_type": "detailed",
+              "language": "en",
+              "text": "Absolutely works! 💜\n\n✅ **Our products are perfect for treated hair**:\n• Sulfate-free (won't strip color)\n• Maintains protein/keratin\n• Extends color life\n• Nourishes treated hair\n\n🎨 **For colored hair**:\n• Natural oils lock in color\n• Prevents dryness after dyeing\n• Restores vibrancy and shine\n\n💎 **For straightened hair (protein/keratin)**:\n• Doesn't affect treatment\n• Helps hair keep straightness longer\n• Nourishment without weight\n\n💡 **Tip**:\nUse products 48-72 hours after coloring/straightening for safety.\n\nWhat treatment did you get exactly? So I can recommend best option 💕"
+            }
+          ],
+          "follow_up_questions": {
+            "ar": [
+              "هيأثر على لون الصبغة؟",
+              "استنى كام يوم بعد البروتين؟",
+              "أنهي منتج أحسن للشعر المعالج؟"
+            ],
+            "en": [
+              "Will it affect color?",
+              "How many days to wait after protein?",
+              "Which product is best for treated hair?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "category_id": "USAGE_INSTRUCTIONS",
+      "category_name": {
+        "ar": "طريقة الاستخدام والروتين",
+        "en": "Usage Instructions and Routine"
+      },
+      "priority": 3,
+      "description": {
+        "ar": "تعليمات استخدام المنتجات والروتين اليومي",
+        "en": "Product usage instructions and daily routine"
+      },
+      "scenarios": [
+        {
+          "scenario_id": "FULL_ROUTINE",
+          "priority": 10,
+          "usage_count": 0,
+          "metadata": {
+            "intent": "usage_guide",
+            "complexity": "comprehensive",
+            "confidence_threshold": 0.6,
+            "escalation_required": false
+          },
+          "tags": {
+            "ar": ["روتين", "خطوات", "استخدام", "يومي", "أسبوعي"],
+            "en": ["routine", "steps", "usage", "daily", "weekly"]
+          },
+          "keywords": {
+            "ar": ["روتين", "خطوات", "استخدام", "ترتيب", "إزاي"],
+            "en": ["routine", "steps", "how to", "order", "use"]
+          },
+          "user_queries": {
+            "ar": [
+              "الروتين الكامل إيه؟",
+              "استخدم المنتجات بترتيب إيه؟",
+              "خطوات العناية",
+              "ازاي استخدم المجموعة؟"
+            ],
+            "en": [
+              "full routine?",
+              "complete hair care steps",
+              "how to use the bundle",
+              "step by step routine"
+            ]
+          },
+          "responses": [
+            {
+              "response_type": "comprehensive",
+              "language": "ar",
+              "text": "الروتين الكامل للعناية بالشعر 💚✨\n\n**📅 الروتين اليومي**:\n\n🚿 **وقت الشاور** (2-3 مرات أسبوعياً):\n1️⃣ بللي شعرك كويس\n2️⃣ **الشامبو**: دلكي فروة الرأس لطيف\n3️⃣ اشطفي كويس\n4️⃣ **البلسم**: على الأطراف (2-3 دقايق)\n5️⃣ اشطفي بمياه باردة\n\n💧 **بعد الشاور**:\n6️⃣ نشفي بالفوطة (مش بالدعك!)\n7️⃣ **الليف-إن**: على الشعر المبلول\n8️⃣ **السيروم**: 2-3 نقط للأطراف\n\n---\n\n**📅 الروتين الأسبوعي**:\n\n🎭 **مرة أو مرتين**:\n• **الماسك** بدل البلسم\n• اسيبيه 15-30 دقيقة\n• اشطفي كويس\n\n---\n\n**☀️ الروتين اليومي**:\n\n• لو شعرك جاف: نقطة سيروم الصبح\n• معطر الشعر: للانتعاش طول اليوم\n• قبل التصفيف بالحرارة: سيروم للحماية\n\n---\n\n💡 **نصايح مهمة**:\n✅ مياه فاترة أو باردة (مش سخنة)\n✅ نشفي شعرك بالطبطبة (مش الدعك)\n✅ مشط واسع للشعر المبلول\n✅ نامي بشعر جاف تماماً\n\n🌟 النتيجة: شعر صحي، لامع، وحيوي!\n\nعايزة تفاصيل أكتر عن أي خطوة؟ 💕"
+            },
+            {
+              "response_type": "comprehensive",
+              "language": "en",
+              "text": "Complete Hair Care Routine 💚✨\n\n**📅 Daily Routine**:\n\n🚿 **Shower time** (2-3 times weekly):\n1️⃣ Wet hair thoroughly\n2️⃣ **Shampoo**: Gently massage scalp\n3️⃣ Rinse well\n4️⃣ **Conditioner**: On ends (2-3 minutes)\n5️⃣ Rinse with cold water\n\n💧 **After shower**:\n6️⃣ Towel dry (don't rub!)\n7️⃣ **Leave-in**: On damp hair\n8️⃣ **Serum**: 2-3 drops on ends\n\n---\n\n**📅 Weekly Routine**:\n\n🎭 **Once or twice**:\n• **Mask** instead of conditioner\n• Leave for 15-30 minutes\n• Rinse well\n\n---\n\n**☀️ Daily Care**:\n\n• If hair is dry: serum drop in morning\n• Hair perfume: for freshness all day\n• Before heat styling: serum for protection\n\n---\n\n💡 **Important tips**:\n✅ Lukewarm or cold water (not hot)\n✅ Pat dry (don't rub)\n✅ Wide-tooth comb for wet hair\n✅ Sleep with completely dry hair\n\n🌟 Result: Healthy, shiny, and vibrant hair!\n\nWant more details about any step? 💕"
+            }
+          ],
+          "follow_up_questions": {
+            "ar": [
+              "كام مرة أغسل شعري في الأسبوع؟",
+              "الليف-إن بشطفه؟",
+              "السيروم على شعر مبلول ولا جاف؟"
+            ],
+            "en": [
+              "How often to wash hair per week?",
+              "Do I rinse leave-in?",
+              "Serum on wet or dry hair?"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+
+  "fallback_messages": {
+    "no_match": {
+      "ar": "عذراً يا قمر، مش متأكدة إني فهمت سؤالك بالظبط 🤔\n\nممكن تعيدي صياغته؟ أو اختاري من المواضيع دي:\n\n💚 **مشاكل الشعر**:\n• تساقط الشعر\n• شعر جاف\n• تقصف وهيشان\n\n📦 **الطلب والتوصيل**\n💰 **الأسعار والعروض**\n🧴 **المكونات والأمان**\n\nأو كلميني مباشرة على واتساب: +20 15 55590333 💕",
+      "en": "Sorry dear, I'm not sure I understood your question correctly 🤔\n\nCould you rephrase it? Or choose from these topics:\n\n💚 **Hair concerns**:\n• Hair loss\n• Dry hair\n• Split ends and frizz\n\n📦 **Order and delivery**\n💰 **Pricing and offers**\n🧴 **Ingredients and safety**\n\nOr contact me directly on WhatsApp: +20 15 55590333 💕"
+    },
+    "low_confidence": {
+      "ar": "حبيبتي، فهمت سؤالك لكن عايزة أتأكد إني هديكي الإجابة الصح 💚\n\nممكن توضحيلي أكتر؟ أو اتصلي بينا:\n📱 واتساب: +20 15 55590333",
+      "en": "Dear, I understood your question but want to make sure I give you the right answer 💚\n\nCould you clarify more? Or contact us:\n📱 WhatsApp: +20 15 55590333"
+    },
+    "escalation": {
+      "ar": "فهمتك يا قمر 💕 الموضوع ده محتاج اهتمام خاص.\n\nتواصلي معانا مباشرة:\n📱 واتساب: +20 15 55590333\n📧 إيميل: info@innaturalstores.com\n\nوهنتابع معاكي شخصياً! 💚",
+      "en": "I understand you dear 💕 This matter needs special attention.\n\nContact us directly:\n📱 WhatsApp: +20 15 55590333\n📧 Email: info@innaturalstores.com\n\nWe'll follow up with you personally! 💚"
+    }
+  },
+
+  "response_templates": {
+    "greeting": {
+      "ar": [
+        "أهلاً وسهلاً! 💚 إزاي أقدر أساعدك؟",
+        "مرحباً يا قمر! 🌟 عايزة تعرفي إيه عن منتجاتنا؟",
+        "أهلاً! 💕 شرفتينا! عايزة تسألي عن إيه؟"
+      ],
+      "en": [
+        "Hello and welcome! 💚 How can I help you?",
+        "Hi there! 🌟 What would you like to know about our products?",
+        "Welcome! 💕 What can I help you with?"
+      ]
+    },
+    "thank_you": {
+      "ar": [
+        "العفو يا قمر! 💚 أي خدمة",
+        "على الرحب والسعة! 💕 دايماً موجودين",
+        "أهلاً! 🌟 لو احتاجتي أي حاجة كلميني"
+      ],
+      "en": [
+        "You're welcome! 💚 Anytime",
+        "My pleasure! 💕 Always here",
+        "Welcome! 🌟 Contact me if you need anything"
+      ]
+    },
+    "confirmation": {
+      "ar": ["تمام! ✅", "فهمتك! 💚", "مظبوط! ✨", "واضح! 👍"],
+      "en": ["Perfect! ✅", "Got it! 💚", "Exactly! ✨", "Clear! 👍"]
+    },
+    "need_more_info": {
+      "ar": [
+        "ممكن تقوليلي تفاصيل أكتر؟ 🤔",
+        "عشان أساعدك أحسن، عايزة أعرف... 💡",
+        "خليني أفهم أكتر... 💭"
+      ],
+      "en": [
+        "Could you give me more details? 🤔",
+        "To help you better, I'd like to know... 💡",
+        "Let me understand more... 💭"
+      ]
+    }
+  },
+
+  "escalation_triggers": {
+    "ar": ["غضبان", "زعلانة", "استرجاع فلوس", "شكوى", "المدير", "مش راضية", "خدمة سيئة"],
+    "en": ["angry", "refund", "complaint", "manager", "unsatisfied", "bad service", "lawsuit"]
+  },
+
+  "analytics": {
+    "unmatched_queries": [],
+    "popular_scenarios": [],
+    "average_confidence_scores": {},
+    "last_updated": "2025-01-19"
+  }
+}

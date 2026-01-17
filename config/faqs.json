@@ -6,8 +6,8 @@
         "ar": "ما هي خيارات الشحن المتاحة؟"
       },
       "answer": {
-        "en": "We deliver all over Egypt! Shipping usually takes 2-5 business days. We work with reliable delivery services like Bosta and Aramex. Shipping costs depend on your location.",
-        "ar": "نقوم بالتوصيل في جميع أنحاء مصر! عادة ما يستغرق الشحن من 2 إلى 5 أيام عمل. نعمل مع خدمات توصيل موثوقة مثل بوسطة وأرامكس. تعتمد تكاليف الشحن على موقعك."
+        "en": "We deliver all over Egypt! Shipping usually takes 2-5 business days. We work with reliable delivery services like Bosta and Aramex. FREE SHIPPING on orders over LE 1,000! For orders below LE 1,000, shipping costs depend on your location.",
+        "ar": "نقوم بالتوصيل في جميع أنحاء مصر! عادة ما يستغرق الشحن من 2 إلى 5 أيام عمل. نعمل مع خدمات توصيل موثوقة مثل بوسطة وأرامكس. شحن مجاني للطلبات فوق 1000 جنيه! للطلبات أقل من 1000 جنيه، تعتمد تكاليف الشحن على موقعك."
       },
       "keywords": ["shipping", "delivery", "توصيل", "شحن"]
     },
@@ -109,6 +109,28 @@
         "ar": "حاليًا، نشحن فقط داخل مصر. ومع ذلك، نعمل على التوسع إلى دول أخرى قريبًا! تابعونا على وسائل التواصل الاجتماعي للحصول على التحديثات."
       },
       "keywords": ["international shipping", "outside egypt", "شحن دولي", "خارج مصر"]
+    },
+    {
+      "question": {
+        "en": "Do you have any special offers or discounts?",
+        "ar": "هل لديكم عروض أو خصومات خاصة؟"
+      },
+      "answer": {
+        "en": "Yes! We have amazing offers: Get 25% OFF on all orders over LE 1,000 + FREE SHIPPING! We also have 5 special bundle deals with discounts up to 43% off: Hair Care Bundle (LE 935, save 23%), Hydration Bundle (LE 975, save 43%), Hair Routine Bundle (LE 770, save 30%), Body Care Bundle (LE 605, save 32%), and Africa Bundle (LE 715, save 34%).",
+        "ar": "نعم! عندنا عروض رائعة: خصم 25% على جميع الطلبات فوق 1000 جنيه + شحن مجاني! كمان عندنا 5 باكدجات خاصة بخصومات تصل إلى 43%: باكدج العناية بالشعر (935 جنيه، وفري 23%)، باكدج الترطيب (975 جنيه، وفري 43%)، باكدج الروتين اليومي (770 جنيه، وفري 30%)، باكدج العناية بالجسم (605 جنيه، وفري 32%)، وباكدج أفريكا (715 جنيه، وفري 34%)."
+      },
+      "keywords": ["discount", "offer", "promotion", "sale", "خصم", "عرض", "تخفيض", "باكدج", "bundle"]
+    },
+    {
+      "question": {
+        "en": "Is shipping free?",
+        "ar": "هل الشحن مجاني؟"
+      },
+      "answer": {
+        "en": "Yes! FREE SHIPPING on all orders over LE 1,000. For orders below this amount, standard shipping fees apply based on your location.",
+        "ar": "نعم! شحن مجاني لجميع الطلبات فوق 1000 جنيه. للطلبات أقل من هذا المبلغ، تطبق رسوم الشحن العادية حسب موقعك."
+      },
+      "keywords": ["free shipping", "shipping cost", "شحن مجاني", "تكلفة الشحن"]
     }
   ],
   "shippingInfo": {
@@ -117,7 +139,25 @@
       "ar": "2-5 أيام عمل"
     },
     "serviceProviders": ["Bosta", "Aramex"],
+    "freeShippingThreshold": 1000,
     "contact": "+20 15 55590333"
+  },
+  "promotions": {
+    "bulk_discount": {
+      "threshold": 1000,
+      "percentage": 25,
+      "description": {
+        "en": "Get 25% discount on orders over LE 1,000",
+        "ar": "احصلي على خصم 25% على الطلبات فوق 1000 جنيه"
+      }
+    },
+    "free_shipping": {
+      "threshold": 1000,
+      "description": {
+        "en": "Free shipping on orders over LE 1,000",
+        "ar": "شحن مجاني للطلبات فوق 1000 جنيه"
+      }
+    }
   },
   "businessInfo": {
     "name": "INnatural",

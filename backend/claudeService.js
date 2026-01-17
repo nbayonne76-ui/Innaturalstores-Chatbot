@@ -34,8 +34,11 @@ class ClaudeService {
   /**
    * Search comprehensive knowledge base v2.0 for relevant scenarios
    * Uses synonyms, tags, and keywords for improved matching
+   * @param {string} userMessage - The user's message
+   * @param {string} language - Language code ('ar' or 'en')
+   * @param {string} productType - Optional product type filter ('hair' or 'body')
    */
-  searchKnowledgeBase(userMessage, language = 'ar') {
+  searchKnowledgeBase(userMessage, language = 'ar', productType = null) {
     if (!userMessage) return [];
 
     const messageLower = userMessage.toLowerCase();
@@ -50,7 +53,12 @@ class ClaudeService {
     const relevantScenarios = [];
 
     // Search through all categories and scenarios
-    for (const category of this.knowledgeBase.categories) {
+    // Filter categories by product_type if specified
+    const categoriesToSearch = productType
+      ? this.knowledgeBase.categories.filter(cat => !cat.product_type || cat.product_type === productType)
+      : this.knowledgeBase.categories;
+
+    for (const category of categoriesToSearch) {
       for (const scenario of category.scenarios) {
         let score = 0;
         let matchReasons = [];
@@ -189,8 +197,8 @@ class ClaudeService {
       systemPrompt += `\n\n**TONE & STYLE (Very Important!)**:\n`;
       systemPrompt += `- ${toneGuidelines.general}\n`;
       systemPrompt += `- Emojis: ${toneGuidelines.emojis}\n`;
-      systemPrompt += `- Use "حبيبتي" "يا قمر" "يا جميل" naturally when speaking Arabic\n`;
-      systemPrompt += `- Mix Arabic with French/English terms when appropriate\n`;
+      systemPrompt += `- CRITICAL: Respond ONLY in ${language === 'ar' ? 'Arabic' : 'English'}. NEVER mix languages in your responses!\n`;
+      systemPrompt += `- When speaking Arabic, use "حبيبتي" "يا قمر" "يا جميل" naturally\n`;
       systemPrompt += `- Be ${toneGuidelines.formality}\n`;
       systemPrompt += `- Adapt length: ${toneGuidelines.length}\n\n`;
 
@@ -203,10 +211,13 @@ class ClaudeService {
       // Build context with relevant product and FAQ information
       let context = ProductKnowledge.buildContext(userMessage, userProfile, language);
 
-      // Search comprehensive knowledge base v2.0 for relevant scenarios
-      const kbScenarios = this.searchKnowledgeBase(userMessage, language);
+      // Get product type from user profile (can be 'hair', 'body', or null for all)
+      const productType = userProfile.productType || userProfile.category || null;
+
+      // Search comprehensive knowledge base v3.0 for relevant scenarios
+      const kbScenarios = this.searchKnowledgeBase(userMessage, language, productType);
       if (kbScenarios.length > 0) {
-        context += `\n\n**Relevant scenarios from Knowledge Base v2.0:**\n`;
+        context += `\n\n**Relevant scenarios from Knowledge Base v3.0:**\n`;
         kbScenarios.slice(0, 2).forEach((scenario, idx) => {
           context += `\n${idx + 1}. ${scenario.category} - ${scenario.scenario}:\n`;
           context += `   Confidence: ${(scenario.confidence * 100).toFixed(0)}% | Score: ${scenario.score}\n`;
@@ -242,7 +253,7 @@ class ClaudeService {
 
       // Call OpenAI API
       const response = await this.client.chat.completions.create({
-        model: 'gpt-4-turbo-preview',
+        model: 'gpt-4o-mini',
         max_tokens: 1024,
         messages: messages,
       });
@@ -287,8 +298,8 @@ class ClaudeService {
       systemPrompt += `\n\n**TONE & STYLE (Very Important!)**:\n`;
       systemPrompt += `- ${toneGuidelines.general}\n`;
       systemPrompt += `- Emojis: ${toneGuidelines.emojis}\n`;
-      systemPrompt += `- Use "حبيبتي" "يا قمر" "يا جميل" naturally when speaking Arabic\n`;
-      systemPrompt += `- Mix Arabic with French/English terms when appropriate\n`;
+      systemPrompt += `- CRITICAL: Respond ONLY in ${language === 'ar' ? 'Arabic' : 'English'}. NEVER mix languages in your responses!\n`;
+      systemPrompt += `- When speaking Arabic, use "حبيبتي" "يا قمر" "يا جميل" naturally\n`;
       systemPrompt += `- Be ${toneGuidelines.formality}\n`;
       systemPrompt += `- Adapt length: ${toneGuidelines.length}\n\n`;
 
@@ -301,10 +312,13 @@ class ClaudeService {
       // Build context with relevant product and FAQ information
       let context = ProductKnowledge.buildContext(userMessage, userProfile, language);
 
-      // Search comprehensive knowledge base v2.0 for relevant scenarios
-      const kbScenarios = this.searchKnowledgeBase(userMessage, language);
+      // Get product type from user profile (can be 'hair', 'body', or null for all)
+      const productType = userProfile.productType || userProfile.category || null;
+
+      // Search comprehensive knowledge base v3.0 for relevant scenarios
+      const kbScenarios = this.searchKnowledgeBase(userMessage, language, productType);
       if (kbScenarios.length > 0) {
-        context += `\n\n**Relevant scenarios from Knowledge Base v2.0:**\n`;
+        context += `\n\n**Relevant scenarios from Knowledge Base v3.0:**\n`;
         kbScenarios.slice(0, 2).forEach((scenario, idx) => {
           context += `\n${idx + 1}. ${scenario.category} - ${scenario.scenario}:\n`;
           context += `   Confidence: ${(scenario.confidence * 100).toFixed(0)}% | Score: ${scenario.score}\n`;
@@ -337,7 +351,7 @@ class ClaudeService {
 
       // Call OpenAI API with streaming
       const stream = await this.client.chat.completions.create({
-        model: 'gpt-4-turbo-preview',
+        model: 'gpt-4o-mini',
         max_tokens: 1024,
         messages: messages,
         stream: true,

@@ -6,15 +6,26 @@
 class InnaturalChatbot {
   constructor(config = {}) {
     this.config = {
-      apiUrl: config.apiUrl || 'http://localhost:5000',
-      defaultLanguage: config.defaultLanguage || 'en',
+      apiUrl: config.apiUrl || 'http://localhost:5001',
+      defaultLanguage: config.defaultLanguage || 'ar',  // Arabic as default
       ...config
     };
 
     this.sessionId = this.generateSessionId();
     this.currentLanguage = this.config.defaultLanguage;
     this.isOpen = false;
-    this.userProfile = {};
+    this.userProfile = {
+      language: this.config.defaultLanguage  // Initialize with default language
+    };
+
+    // Qualification state
+    this.qualificationState = {
+      active: false,
+      currentStep: 0,
+      totalSteps: 3,
+      answers: {},
+      selectedCategory: null
+    };
 
     this.init();
   }
@@ -72,11 +83,11 @@ class InnaturalChatbot {
         <div class="innatural-chat-input-container">
           <!-- Language Toggle -->
           <div class="innatural-language-toggle">
-            <button class="innatural-lang-btn ${this.currentLanguage === 'en' ? 'active' : ''}" data-lang="en">
-              English
-            </button>
             <button class="innatural-lang-btn ${this.currentLanguage === 'ar' ? 'active' : ''}" data-lang="ar">
               العربية
+            </button>
+            <button class="innatural-lang-btn ${this.currentLanguage === 'en' ? 'active' : ''}" data-lang="en">
+              English
             </button>
           </div>
 
@@ -196,6 +207,14 @@ class InnaturalChatbot {
     title.textContent = language === 'ar' ? 'نور' : 'Nour';
     subtitle.textContent = language === 'ar' ? 'مساعدة INnatural' : 'INnatural Assistant';
 
+    // Remove all existing quick reply buttons and re-render them in the new language
+    document.querySelectorAll('.innatural-quick-replies').forEach(quickRepliesDiv => {
+      const messageElement = quickRepliesDiv.parentElement;
+      quickRepliesDiv.remove();
+      // Re-add quick replies in the new language
+      this.addQuickRepliesToMessage(messageElement);
+    });
+
     // Notify language change
     this.addBotMessage(
       language === 'ar'
@@ -216,7 +235,12 @@ class InnaturalChatbot {
 
       if (data.success) {
         setTimeout(() => {
-          this.addBotMessage(data.message);
+          const messageDiv = this.addBotMessage(data.message);
+
+          // Add category buttons if provided
+          if (data.showCategories && data.categories) {
+            this.addCategoryButtons(messageDiv, data.categories);
+          }
         }, 500);
       }
     } catch (error) {
@@ -375,6 +399,8 @@ class InnaturalChatbot {
     `;
     messagesContainer.appendChild(messageElement);
     this.scrollToBottom();
+
+    return messageElement; // Return the element so categories/subcategories can be added
   }
 
   /**
@@ -440,6 +466,11 @@ class InnaturalChatbot {
     // Basic quick replies that work for most contexts
     return [
       {
+        text: lang === 'ar' ? '✨ اكتشفي منتجك المثالي' : '✨ Find Your Perfect Product',
+        action: 'start_qualification',
+        message: null  // This will trigger qualification flow directly
+      },
+      {
         text: lang === 'ar' ? '💚 منتجات مميزة' : '💚 Featured Products',
         action: 'show_products',
         message: lang === 'ar' ? 'أرني أفضل المنتجات' : 'Show me your best products'
@@ -453,11 +484,6 @@ class InnaturalChatbot {
         text: lang === 'ar' ? '📞 تواصل معنا' : '📞 Contact Us',
         action: 'contact',
         message: lang === 'ar' ? 'كيف يمكنني التواصل معكم؟' : 'How can I contact you?'
-      },
-      {
-        text: lang === 'ar' ? '❓ أسئلة شائعة' : '❓ FAQ',
-        action: 'faq',
-        message: lang === 'ar' ? 'ما هي الأسئلة الشائعة؟' : 'What are the frequently asked questions?'
       }
     ];
   }
@@ -469,10 +495,18 @@ class InnaturalChatbot {
     // Remove all quick reply buttons
     document.querySelectorAll('.innatural-quick-replies').forEach(el => el.remove());
 
+    // Handle special actions
+    if (reply.action === 'start_qualification') {
+      this.startQualificationFlow();
+      return;
+    }
+
     // Send the associated message
-    const input = document.getElementById('innatural-chat-input');
-    input.value = reply.message;
-    this.sendMessage();
+    if (reply.message) {
+      const input = document.getElementById('innatural-chat-input');
+      input.value = reply.message;
+      this.sendMessage();
+    }
   }
 
   /**
@@ -604,6 +638,319 @@ class InnaturalChatbot {
     const input = document.getElementById('innatural-chat-input');
     input.value = subcategory.label;
     this.sendMessage();
+  }
+
+  /**
+   * Start qualification flow
+   */
+  async startQualificationFlow() {
+    this.qualificationState.active = true;
+    this.qualificationState.currentStep = 1;
+    this.qualificationState.answers = {};
+
+    try {
+      const response = await fetch(`${this.config.apiUrl}/api/qualification/start`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sessionId: this.sessionId,
+          language: this.currentLanguage
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Display first question
+        this.displayQualificationStep(
+          data.question.currentStep,
+          data.question.question,
+          data.question.options
+        );
+      }
+    } catch (error) {
+      console.error('Error starting qualification:', error);
+      this.addBotMessage(
+        this.currentLanguage === 'ar'
+          ? 'عذراً، حدث خطأ في بدء الاستبيان.'
+          : 'Sorry, an error occurred starting the qualification.'
+      );
+    }
+  }
+
+  /**
+   * Display qualification step with question and options
+   */
+  displayQualificationStep(stepNumber, question, options) {
+    // Add question message
+    const messageDiv = this.addBotMessage(question);
+
+    // Create options buttons based on step type
+    const config = this.getStepConfig(stepNumber);
+
+    if (config.type === 'single_select') {
+      this.addSingleSelectOptions(messageDiv, options, stepNumber);
+    } else if (config.type === 'multi_select') {
+      this.addMultiSelectOptions(messageDiv, options, stepNumber, config);
+    }
+  }
+
+  /**
+   * Get step configuration
+   */
+  getStepConfig(stepNumber) {
+    const configs = {
+      1: { type: 'single_select', required: true },
+      2: { type: 'multi_select', min: 1, max: 3, required: true },
+      3: { type: 'single_select', required: true }
+    };
+    return configs[stepNumber] || { type: 'single_select', required: true };
+  }
+
+  /**
+   * Add single select option buttons
+   */
+  addSingleSelectOptions(messageElement, options, stepNumber) {
+    const buttonsDiv = document.createElement('div');
+    buttonsDiv.className = 'innatural-qualification-buttons';
+
+    options.forEach(option => {
+      const button = document.createElement('button');
+      button.className = 'innatural-qualification-btn';
+      button.innerHTML = `${option.icon || ''} ${option.label}`;
+      button.dataset.optionId = option.id;
+      button.onclick = () => this.handleQualificationAnswer(stepNumber, [option.id], option.label);
+      buttonsDiv.appendChild(button);
+    });
+
+    messageElement.appendChild(buttonsDiv);
+    this.scrollToBottom();
+  }
+
+  /**
+   * Add multi select option buttons with selection tracking
+   */
+  addMultiSelectOptions(messageElement, options, stepNumber, config) {
+    const container = document.createElement('div');
+    container.className = 'innatural-qualification-multi-container';
+
+    // Instructions
+    const instructions = document.createElement('div');
+    instructions.className = 'innatural-qualification-instructions';
+    instructions.textContent = this.currentLanguage === 'ar'
+      ? `(اختاري من ${config.min} إلى ${config.max} خيارات)`
+      : `(Select ${config.min} to ${config.max} options)`;
+    container.appendChild(instructions);
+
+    // Options
+    const buttonsDiv = document.createElement('div');
+    buttonsDiv.className = 'innatural-qualification-buttons multi-select';
+
+    const selectedOptions = [];
+
+    options.forEach(option => {
+      const button = document.createElement('button');
+      button.className = 'innatural-qualification-btn multi-select';
+      button.textContent = option.label;
+      button.dataset.optionId = option.id;
+
+      button.onclick = () => {
+        const optionId = option.id;
+        const index = selectedOptions.indexOf(optionId);
+
+        if (index > -1) {
+          // Deselect
+          selectedOptions.splice(index, 1);
+          button.classList.remove('selected');
+        } else {
+          // Select (if under max)
+          if (selectedOptions.length < config.max) {
+            selectedOptions.push(optionId);
+            button.classList.add('selected');
+          }
+        }
+
+        // Update submit button state
+        submitBtn.disabled = selectedOptions.length < config.min;
+      };
+
+      buttonsDiv.appendChild(button);
+    });
+
+    container.appendChild(buttonsDiv);
+
+    // Submit button
+    const submitBtn = document.createElement('button');
+    submitBtn.className = 'innatural-qualification-submit-btn';
+    submitBtn.textContent = this.currentLanguage === 'ar' ? 'التالي' : 'Next';
+    submitBtn.disabled = true;
+    submitBtn.onclick = () => {
+      const selectedLabels = options
+        .filter(opt => selectedOptions.includes(opt.id))
+        .map(opt => opt.label)
+        .join(', ');
+      this.handleQualificationAnswer(stepNumber, selectedOptions, selectedLabels);
+    };
+
+    container.appendChild(submitBtn);
+    messageElement.appendChild(container);
+    this.scrollToBottom();
+  }
+
+  /**
+   * Handle qualification answer submission
+   */
+  async handleQualificationAnswer(stepNumber, optionIds, displayText) {
+    // Remove all qualification buttons
+    document.querySelectorAll('.innatural-qualification-buttons, .innatural-qualification-multi-container').forEach(el => el.remove());
+
+    // Show user's selection
+    this.addUserMessage(displayText);
+
+    // Save answer
+    this.qualificationState.answers[`step${stepNumber}`] = optionIds;
+
+    // Save category if step 1
+    if (stepNumber === 1) {
+      this.qualificationState.selectedCategory = optionIds[0];
+    }
+
+    // Show typing indicator
+    this.showTyping();
+
+    try {
+      // Submit answer to backend
+      const response = await fetch(`${this.config.apiUrl}/api/qualification/answer`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sessionId: this.sessionId,
+          language: this.currentLanguage,
+          step: stepNumber,
+          answer: {
+            // Step 1 and 3 are single select, Step 2 is multi-select
+            selected: stepNumber === 2 ? optionIds : optionIds[0]
+          }
+        }),
+      });
+
+      const data = await response.json();
+      this.hideTyping();
+
+      if (data.success) {
+        if (data.completed) {
+          // Qualification complete - get recommendations
+          this.qualificationState.active = false;
+          await this.getQualificationRecommendations();
+        } else {
+          // Next step
+          this.qualificationState.currentStep++;
+          this.displayQualificationStep(
+            data.currentStep,
+            data.question,
+            data.options
+          );
+        }
+      } else {
+        throw new Error(data.message || 'Failed to submit answer');
+      }
+    } catch (error) {
+      console.error('Error submitting qualification answer:', error);
+      this.hideTyping();
+      this.addBotMessage(
+        this.currentLanguage === 'ar'
+          ? 'عذراً، حدث خطأ. يرجى المحاولة مرة أخرى.'
+          : 'Sorry, an error occurred. Please try again.'
+      );
+    }
+  }
+
+  /**
+   * Get and display qualification recommendations
+   */
+  async getQualificationRecommendations() {
+    this.showTyping();
+
+    try {
+      const response = await fetch(
+        `${this.config.apiUrl}/api/qualification/recommendations/${this.sessionId}?language=${this.currentLanguage}`
+      );
+
+      const data = await response.json();
+      this.hideTyping();
+
+      if (data.success) {
+        // Display thank you message
+        this.addBotMessage(data.message || (
+          this.currentLanguage === 'ar'
+            ? '✨ شكراً لك! إليك أفضل المنتجات المناسبة لك:'
+            : '✨ Thank you! Here are the best products for you:'
+        ));
+
+        // Display recommended products
+        if (data.recommendations && data.recommendations.length > 0) {
+          this.displayProductRecommendations(data.recommendations);
+        }
+      }
+    } catch (error) {
+      console.error('Error getting recommendations:', error);
+      this.hideTyping();
+      this.addBotMessage(
+        this.currentLanguage === 'ar'
+          ? 'عذراً، حدث خطأ في جلب التوصيات.'
+          : 'Sorry, an error occurred getting recommendations.'
+      );
+    }
+  }
+
+  /**
+   * Display product recommendations
+   */
+  displayProductRecommendations(recommendations) {
+    const messagesContainer = document.getElementById('innatural-messages');
+
+    recommendations.forEach((product, index) => {
+      const productCard = document.createElement('div');
+      productCard.className = 'innatural-product-card';
+
+      const matchPercentage = Math.round(product.matchScore * 100);
+
+      productCard.innerHTML = `
+        <div class="innatural-product-header">
+          <span class="innatural-product-rank">#${index + 1}</span>
+          <span class="innatural-product-match">${matchPercentage}% ${this.currentLanguage === 'ar' ? 'مطابقة' : 'Match'}</span>
+        </div>
+        <h4 class="innatural-product-name">${product.name}</h4>
+        <p class="innatural-product-description">${product.description || ''}</p>
+        ${product.price ? `<p class="innatural-product-price">${product.price} LE</p>` : ''}
+
+        ${product.matchedBenefits && product.matchedBenefits.length > 0 ? `
+          <div class="innatural-product-section">
+            <h5 class="innatural-section-title">${this.currentLanguage === 'ar' ? '✨ مثالي لك لأنه:' : '✨ Perfect for you because:'}</h5>
+            <div class="innatural-product-benefits">
+              ${product.matchedBenefits.map(b => `<span class="benefit-tag">✓ ${b}</span>`).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        ${product.usage ? `
+          <div class="innatural-product-section">
+            <h5 class="innatural-section-title">${this.currentLanguage === 'ar' ? '📖 كيفية الاستخدام:' : '📖 How to use:'}</h5>
+            <p class="innatural-product-usage">${product.usage}</p>
+          </div>
+        ` : ''}
+
+        ${product.url ? `<a href="${product.url}" target="_blank" class="innatural-product-link">${this.currentLanguage === 'ar' ? 'عرض المنتج' : 'View Product'}</a>` : ''}
+      `;
+
+      messagesContainer.appendChild(productCard);
+    });
+
+    this.scrollToBottom();
   }
 
   /**

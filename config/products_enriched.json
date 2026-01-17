@@ -1,0 +1,1391 @@
+{
+  "metadata": {
+    "lastUpdated": "2025-12-24",
+    "source": "https://innaturalstores.com/",
+    "currency": "LE",
+    "version": "4.0.0",
+    "totalProducts": 43,
+    "scrapeDate": "2025-12-21",
+    "enriched": true,
+    "enrichmentDate": "2025-12-24 22:14:29"
+  },
+  "promotions": {
+    "bulk_discount": {
+      "threshold": 1000,
+      "discount_percentage": 25,
+      "description": {
+        "ar": "خصم 25% على الطلبات فوق 1000 جنيه",
+        "en": "25% discount on orders over LE 1,000"
+      }
+    },
+    "free_shipping": {
+      "threshold": 1000,
+      "description": {
+        "ar": "شحن مجاني للطلبات فوق 1000 جنيه",
+        "en": "Free shipping on orders over LE 1,000"
+      }
+    }
+  },
+  "collections": [
+    {
+      "id": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "مجموعة ميكس أويل - روزماري + لوز (مضادة لتساقط الشعر)",
+        "en": "MixOil Rosemary + Almond Collection (Anti-Hair Loss)"
+      },
+      "description": {
+        "ar": "مجموعة متكاملة بالروزماري واللوز لعلاج تساقط الشعر وتقويته",
+        "en": "Complete line with Rosemary + Almond for hair loss treatment and strengthening"
+      },
+      "concerns": [
+        "hair-loss",
+        "weak-hair",
+        "thinning"
+      ],
+      "ingredients": [
+        "rosemary",
+        "almond"
+      ]
+    },
+    {
+      "id": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "مجموعة ميكس أويل - خروع + جوز الهند + جوجوبا (للترطيب)",
+        "en": "MixOil Castor + Coconut + Jojoba Collection (Hydration)"
+      },
+      "description": {
+        "ar": "مجموعة للترطيب العميق والعناية المكثفة",
+        "en": "Deep hydration and intensive care line"
+      },
+      "concerns": [
+        "dryness",
+        "frizz",
+        "dehydration"
+      ],
+      "ingredients": [
+        "castor",
+        "coconut",
+        "jojoba"
+      ]
+    },
+    {
+      "id": "cocoshea",
+      "name": {
+        "ar": "مجموعة كوكوشيا (لإصلاح التقصف)",
+        "en": "CocoShea Collection (Split End Repair)"
+      },
+      "description": {
+        "ar": "لإصلاح الأطراف المتقصفة والشعر التالف",
+        "en": "For split end repair and damaged hair"
+      },
+      "concerns": [
+        "split-ends",
+        "damaged-hair",
+        "breakage"
+      ],
+      "ingredients": [
+        "coconut",
+        "shea"
+      ]
+    },
+    {
+      "id": "curly-hair",
+      "name": {
+        "ar": "مجموعة الشعر الكيرلي",
+        "en": "Curly Hair Collection"
+      },
+      "description": {
+        "ar": "خاصة للشعر الكيرلي والمجعد",
+        "en": "Specially for curly and coily hair"
+      },
+      "hairTypes": [
+        "curly",
+        "coily",
+        "wavy"
+      ]
+    },
+    {
+      "id": "africa",
+      "name": {
+        "ar": "مجموعة أفريكا (الأكثر مبيعاً)",
+        "en": "Africa Collection (Best Seller)"
+      },
+      "description": {
+        "ar": "للشعر الأفريقي والخشن",
+        "en": "For African and coarse hair"
+      },
+      "hairTypes": [
+        "african",
+        "coarse",
+        "thick"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "mixoil-rosemary-shampoo",
+      "collection": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "شامبو ميكس أويل روزماري + اللوز",
+        "en": "MixOil Rosemary + Almond Shampoo"
+      },
+      "type": "shampoo",
+      "price": 180,
+      "size": "250ml",
+      "concerns": [
+        "hair-loss",
+        "weak-hair"
+      ],
+      "description": {
+        "en": "If you're struggling with hair loss or slow growth, MixOil Rosemary is your solution 🌿✨\n\nThis powerful blend is enriched with pure rosemary extract that works like magic on your scalp. It stimulates blood circulation, awakens dormant hair follicles, and strengthens your roots from within. With regular use, you'll notice less hair fall, faster growth, and thicker, healthier hair.\n\nPerfect for thin hair, receding hairlines, or anyone wanting to boost their hair growth naturally. The natural formula nourishes your scalp deeply while the rosemary's antioxidants protect and revitalize each strand.\n\nWe're with you every step of the way 💛 If you need guidance on how to use it or want to track your progress, reach out anytime!\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "لو بتعاني من تساقط الشعر أو النمو البطيء، MixOil Rosemary هو الحل المثالي ليكي 🌿✨\n\nالمزيج القوي ده غني بخلاصة الروزماري النقية اللي بتعمل سحر على فروة راسك. بينشّط الدورة الدموية، يصحّي بصيلات الشعر النايمة، ويقوّي الجذور من جوه. مع الاستخدام المنتظم، هتلاحظي تساقط أقل، نمو أسرع، وشعر أكثر كثافة وصحة.\n\nمناسب جدًا للشعر الخفيف، الصلع الوراثي، أو أي حد عايز يعزز نمو شعره بشكل طبيعي. التركيبة الطبيعية بتغذي فروة الرأس بعمق، ومضادات الأكسدة في الروزماري بتحمي وتنشّط كل خصلة.\n\nإحنا معاكي خطوة بخطوة 💛 لو محتاجة إرشادات في طريقة الاستخدام أو عايزة تتابعي نتائجك، تواصلي معانا في أي وقت!\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "benefits": {
+        "en": [
+          "Stimulates hair growth",
+          "Reduces hair loss",
+          "Strengthens hair roots",
+          "Improves blood circulation to scalp"
+        ],
+        "ar": [
+          "يحفز نمو الشعر",
+          "يقلل تساقط الشعر",
+          "يقوي جذور الشعر",
+          "يحسن الدورة الدموية لفروة الرأس"
+        ]
+      },
+      "hairTypes": [
+        "all",
+        "thin",
+        "hair-loss"
+      ]
+    },
+    {
+      "id": "mixoil-rosemary-conditioner",
+      "collection": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "بلسم ميكس أويل روزماري + لوز",
+        "en": "MixOil Rosemary + Almond Conditioner"
+      },
+      "type": "conditioner",
+      "price": 180,
+      "size": "250ml",
+      "concerns": [
+        "hair-loss",
+        "weak-hair"
+      ],
+      "description": {
+        "en": "Experience the nourishing power of MixOil Rosemary + Almond Conditioner. This rich conditioner detangles, softens, and restores your hair's natural beauty.",
+        "ar": "اختبري قوة التغذية مع بلسم ميكس أويل روزماري + لوز. هذا البلسم الغني يفك التشابكات، ينعم، ويعيد الجمال الطبيعي لشعرك."
+      },
+      "benefits": {
+        "en": [
+          "Reduces hair loss",
+          "Strengthens hair"
+        ],
+        "ar": [
+          "يقلل تساقط الشعر",
+          "يقوي الشعر"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-rosemary-leave-in",
+      "collection": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "ميكس أويل روزماري + لوز ليف إن",
+        "en": "MixOil Rosemary + Almond Leave-In"
+      },
+      "type": "leave-in",
+      "price": 180,
+      "size": "250ml",
+      "concerns": [
+        "hair-loss",
+        "weak-hair"
+      ],
+      "description": {
+        "en": "MixOil Rosemary + Almond Leave-In provides daily protection and continuous moisture throughout the day. Perfect for maintaining healthy, beautiful hair.",
+        "ar": "ميكس أويل روزماري + لوز ليف إن يوفر حماية يومية ورطوبة مستمرة طوال اليوم. مثالي للحفاظ على شعر صحي وجميل."
+      },
+      "benefits": {
+        "en": [
+          "Reduces hair loss",
+          "Strengthens hair"
+        ],
+        "ar": [
+          "يقلل تساقط الشعر",
+          "يقوي الشعر"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-rosemary-mask",
+      "collection": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "ماسك الشعر ميكس أويل بالروزماري + اللوز",
+        "en": "MixOil Rosemary + Almond Hair Mask"
+      },
+      "type": "mask",
+      "price": 290,
+      "size": "500ml",
+      "concerns": [
+        "hair-loss",
+        "weak-hair"
+      ],
+      "description": {
+        "en": "An intensive treatment with MixOil Rosemary + Almond Hair Mask that deeply nourishes and repairs your hair. Experience visible results with regular use.",
+        "ar": "علاج مكثف مع ماسك الشعر ميكس أويل بالروزماري + اللوز يغذي ويصلح شعرك بعمق. اختبري نتائج مرئية مع الاستخدام المنتظم."
+      },
+      "benefits": {
+        "en": [
+          "Reduces hair loss",
+          "Strengthens hair"
+        ],
+        "ar": [
+          "يقلل تساقط الشعر",
+          "يقوي الشعر"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-rosemary-serum",
+      "collection": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "سيروم ميكس أويل روزماري + اللوز",
+        "en": "MixOil Rosemary Hair Serum"
+      },
+      "type": "serum",
+      "price": 220,
+      "size": "50ml",
+      "concerns": [
+        "hair-loss",
+        "weak-hair"
+      ],
+      "description": {
+        "en": "MixOil Rosemary Hair Serum is a concentrated treatment that targets specific hair concerns with powerful active ingredients.",
+        "ar": "سيروم ميكس أويل روزماري + اللوز علاج مركز يستهدف مشاكل الشعر المحددة بمكونات نشطة قوية."
+      },
+      "benefits": {
+        "en": [
+          "Reduces hair loss",
+          "Strengthens hair"
+        ],
+        "ar": [
+          "يقلل تساقط الشعر",
+          "يقوي الشعر"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-rosemary-oil",
+      "collection": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "زيت ميكس أويل روزماري لعلاج تساقط الشعر",
+        "en": "MixOil Rosemary Hair Oil"
+      },
+      "type": "oil",
+      "price": 325,
+      "size": "100ml",
+      "concerns": [
+        "hair-loss",
+        "weak-hair"
+      ],
+      "description": {
+        "en": "If your hair is oily, you have dandruff, or you're suffering from hair loss, MixOil Rosemary & Almond is the perfect product for you 🌿\n\nThis is a special blend of Rosemary oil + Almond oil, where each oil plays a complementary role:\n\nRosemary oil helps stimulate blood circulation in the scalp, strengthens hair follicles, reduces hair loss, and regulates oil production - making it an excellent choice for oily hair. It also helps reduce dandruff and purify the scalp with continued use 🌿\n\nAlmond oil deeply nourishes and moisturizes hair without weighing it down. It helps reduce dryness and breakage, leaving hair softer, shinier, and healthier 🥜\n\nWith consistent use, you'll notice a clear difference in your hair's strength and health. Your shine will return, and you'll gradually eliminate hair loss, excess oil, and dandruff 😍\n\nMost importantly? We're with you every step of the way 💛\nWe'll keep checking on your results and your hair's progress. If you need help with application or your daily routine, message us anytime or contact customer service.\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "لو شعرك دهني أو عندك قشرة وبتعاني من التساقط، أكتر منتج هيكون مناسب ليكي هو MixOil Rosemary & Almond 🌿\n\nوهو ميكس مميز من زيت الروزماري + زيت اللوز، وكل زيت فيهم ليه دور بيكمّل التاني:\n\nزيت الروزماري بيساعد على تنشيط الدورة الدموية في فروة الرأس، وبيقوي بصيلات الشعر وبيقلل التساقط، وكمان بينظّم إفراز الدهون، فبيكون اختيار ممتاز للشعر الدهني، وبيساعد على تقليل القشرة وتنقية الفروة مع الاستمرار 🌿\n\nأما زيت اللوز فبيغذي الشعر بعمق ويرطبه من غير ما يسيبه تقيل، وبيساعد على تقليل الجفاف والتقصيف، ويخلي الشعر أنعم ولامع وصحي 🥜\n\nومع الالتزام بالروتين، هتحسي فرق واضح في قوة شعرك وصحته، ولمعته هترجع تاني، وهتتخلصي تدريجيًا من التساقط، الدهون الزيادة والقشرة 😍\n\nوأهم حاجة؟ إحنا معاكي خطوة بخطوة 💛\nهنفضل نتابع معاكي النتائج ونطمن على شعرك كل فترة، ولو احتاجتي أي مساعدة في طريقة الاستخدام أو روتينك اليومي، تقدري تبعتي هنا في أي وقت أو تكلمينا على خدمة العملاء.\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "benefits": {
+        "en": [
+          "Stimulates blood circulation",
+          "Strengthens hair follicles",
+          "Reduces hair loss",
+          "Regulates oil production",
+          "Reduces dandruff",
+          "Deep nourishment without heaviness",
+          "Adds softness and shine"
+        ],
+        "ar": [
+          "ينشط الدورة الدموية",
+          "يقوي بصيلات الشعر",
+          "يقلل التساقط",
+          "ينظم إفراز الدهون",
+          "يقلل القشرة",
+          "تغذية عميقة بدون ثقل",
+          "يضيف نعومة ولمعان"
+        ]
+      },
+      "hairTypes": [
+        "oily",
+        "normal",
+        "thin"
+      ]
+    },
+    {
+      "id": "mixoil-rosemary-mist",
+      "collection": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "معطر الشعر ميكس أويل روزماري",
+        "en": "MixOil Rosemary Hair Mist"
+      },
+      "type": "mist",
+      "price": 165,
+      "size": "125ml",
+      "concerns": [
+        "hair-loss"
+      ],
+      "description": {
+        "en": "MixOil Rosemary Hair Mist is a refreshing spray that adds fragrance, moisture, and protection throughout the day.",
+        "ar": "معطر الشعر ميكس أويل روزماري بخاخ منعش يضيف عطراً، رطوبة، وحماية طوال اليوم."
+      },
+      "benefits": {
+        "en": [
+          "Reduces hair loss"
+        ],
+        "ar": [
+          "يقلل تساقط الشعر"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-almond-body-butter",
+      "collection": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "زبدة الجسم باللوز من ميكس أويل",
+        "en": "MixOil Almond Body Butter"
+      },
+      "type": "body-butter",
+      "price": 200,
+      "size": "300ml",
+      "description": {
+        "en": "Luxurious MixOil Almond Body Butter that deeply hydrates and nourishes your skin, leaving it soft and supple.",
+        "ar": "زبدة الجسم باللوز من ميكس أويل فاخر يرطب ويغذي بشرتك بعمق، يتركها ناعمة ومرنة."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-almond-body-cream",
+      "collection": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "كريم الجسم باللوز من ميكس أويل",
+        "en": "MixOil Almond Body Cream"
+      },
+      "type": "body-cream",
+      "price": 180,
+      "size": "250ml",
+      "description": {
+        "en": "MixOil Almond Body Cream provides lasting moisture and softness for your skin with a lightweight, fast-absorbing formula.",
+        "ar": "كريم الجسم باللوز من ميكس أويل يوفر رطوبة ونعومة دائمة لبشرتك بتركيبة خفيفة سريعة الامتصاص."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-almond-body-scrub",
+      "collection": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "مقشر الجسم باللوز من ميكس أويل",
+        "en": "MixOil Almond Body Scrub"
+      },
+      "type": "body-scrub",
+      "price": 200,
+      "size": "300ml",
+      "description": {
+        "en": "Exfoliating MixOil Almond Body Scrub that removes dead skin cells and reveals smoother, brighter skin.",
+        "ar": "مقشر الجسم باللوز من ميكس أويل مقشر يزيل خلايا الجلد الميتة ويكشف عن بشرة أكثر نعومة وإشراقاً."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-castor-shampoo",
+      "collection": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "شامبو ميكس أويل الخروع + جوز الهند + الجوجوبا",
+        "en": "MixOil Castor + Coconut + Jojoba Shampoo"
+      },
+      "type": "shampoo",
+      "price": 180,
+      "size": "250ml",
+      "concerns": [
+        "dryness",
+        "frizz"
+      ],
+      "description": {
+        "en": "If your hair is dry, damaged, or breaking easily, MixOil Castor is exactly what you need 🌰✨\n\nThis luxurious blend features rich castor oil that penetrates deep into each hair shaft, delivering intense moisture and nourishment from root to tip. It's like a drink of water for thirsty, damaged hair! The natural proteins in castor oil strengthen weak strands, prevent breakage, and add incredible thickness and shine.\n\nPerfect for dry, thin, or chemically treated hair that needs extra love and care. With consistent use, you'll see less breakage, more volume, and hair that's noticeably softer and shinier.\n\nWe're here to support your hair journey 💛 Need tips on application or want to customize your routine? Message us anytime!\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "لو شعرك جاف، تالف، أو بيتقصف بسهولة، MixOil Castor هو بالظبط اللي محتاجاه 🌰✨\n\nالمزيج الفاخر ده بيحتوي على زيت الخروع الغني اللي بيخترق عمق كل شعرة، ويوصّل ترطيب وتغذية مكثفة من الجذور للأطراف. هو زي كوباية مياه للشعر العطشان والتالف! البروتينات الطبيعية في زيت الخروع بتقوي الخصلات الضعيفة، تمنع التقصف، وتضيف كثافة ولمعان رهيب.\n\nمناسب جدًا للشعر الجاف، الخفيف، أو المعالج كيميائيًا اللي محتاج عناية ومحبة إضافية. مع الاستخدام المستمر، هتشوفي تقصف أقل، حجم أكبر، وشعر أنعم وألمع بشكل ملحوظ.\n\nإحنا هنا عشان ندعم رحلتك مع شعرك 💛 محتاجة نصايح في طريقة الاستخدام أو عايزة تخصصي روتينك? ابعتي لنا في أي وقت!\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "benefits": {
+        "en": [
+          "Deep conditioning",
+          "Promotes thickness",
+          "Prevents breakage",
+          "Adds shine"
+        ],
+        "ar": [
+          "ترطيب عميق",
+          "يعزز كثافة الشعر",
+          "يمنع التقصف",
+          "يضيف لمعان"
+        ]
+      },
+      "hairTypes": [
+        "dry",
+        "damaged",
+        "thin"
+      ]
+    },
+    {
+      "id": "mixoil-castor-conditioner",
+      "collection": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "بلسم الخروع + جوز الهند + الجوجوبا من ميكس أويل",
+        "en": "MixOil Castor + Coconut + Jojoba Conditioner"
+      },
+      "type": "conditioner",
+      "price": 180,
+      "size": "250ml",
+      "concerns": [
+        "dryness",
+        "frizz"
+      ],
+      "description": {
+        "en": "Experience the nourishing power of MixOil Castor + Coconut + Jojoba Conditioner. This rich conditioner detangles, softens, and restores your hair's natural beauty.",
+        "ar": "اختبري قوة التغذية مع بلسم الخروع + جوز الهند + الجوجوبا من ميكس أويل. هذا البلسم الغني يفك التشابكات، ينعم، ويعيد الجمال الطبيعي لشعرك."
+      },
+      "benefits": {
+        "en": [
+          "Deep hydration",
+          "Controls frizz"
+        ],
+        "ar": [
+          "ترطيب عميق",
+          "يتحكم في التجعد"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-castor-leave-in",
+      "collection": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "ميكس أويل ليف ان - الخروع + جوز الهند + الجوجوبا",
+        "en": "MixOil Castor + Coconut + Jojoba Leave-In"
+      },
+      "type": "leave-in",
+      "price": 180,
+      "size": "250ml",
+      "concerns": [
+        "dryness",
+        "frizz"
+      ],
+      "description": {
+        "en": "MixOil Castor + Coconut + Jojoba Leave-In provides daily protection and continuous moisture throughout the day. Perfect for maintaining healthy, beautiful hair.",
+        "ar": "ميكس أويل ليف ان - الخروع + جوز الهند + الجوجوبا يوفر حماية يومية ورطوبة مستمرة طوال اليوم. مثالي للحفاظ على شعر صحي وجميل."
+      },
+      "benefits": {
+        "en": [
+          "Deep hydration",
+          "Controls frizz"
+        ],
+        "ar": [
+          "ترطيب عميق",
+          "يتحكم في التجعد"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-castor-mask",
+      "collection": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "ماسك الشعر بزيت الخروع + جوز الهند + الجوجوبا",
+        "en": "MixOil Castor + Coconut + Jojoba Hair Mask"
+      },
+      "type": "mask",
+      "price": 290,
+      "size": "500ml",
+      "concerns": [
+        "dryness",
+        "frizz"
+      ],
+      "description": {
+        "en": "An intensive treatment with MixOil Castor + Coconut + Jojoba Hair Mask that deeply nourishes and repairs your hair. Experience visible results with regular use.",
+        "ar": "علاج مكثف مع ماسك الشعر بزيت الخروع + جوز الهند + الجوجوبا يغذي ويصلح شعرك بعمق. اختبري نتائج مرئية مع الاستخدام المنتظم."
+      },
+      "benefits": {
+        "en": [
+          "Deep hydration",
+          "Controls frizz"
+        ],
+        "ar": [
+          "ترطيب عميق",
+          "يتحكم في التجعد"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-castor-serum",
+      "collection": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "سيروم الشعر ميكس أويل الخروع + جوز الهند + الجوجوبا",
+        "en": "MixOil Castor Hair Serum"
+      },
+      "type": "serum",
+      "price": 220,
+      "size": "35ml",
+      "concerns": [
+        "dryness",
+        "frizz"
+      ],
+      "description": {
+        "en": "MixOil Castor Hair Serum is a concentrated treatment that targets specific hair concerns with powerful active ingredients.",
+        "ar": "سيروم الشعر ميكس أويل الخروع + جوز الهند + الجوجوبا علاج مركز يستهدف مشاكل الشعر المحددة بمكونات نشطة قوية."
+      },
+      "benefits": {
+        "en": [
+          "Deep hydration",
+          "Controls frizz"
+        ],
+        "ar": [
+          "ترطيب عميق",
+          "يتحكم في التجعد"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-castor-oil",
+      "collection": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "زيت ميكس أويل بالخروع",
+        "en": "MixOil Castor Hair Oil"
+      },
+      "type": "oil",
+      "price": 325,
+      "size": "100ml",
+      "concerns": [
+        "dryness"
+      ],
+      "description": {
+        "en": "If your hair is suffering from dryness, Mix Oil is the perfect product for you 🌿✨\n\nThis is a powerful blend of Castor + Coconut + Jojoba oils, where each oil plays a complementary role:\n\nMix Oil will help strengthen your hair follicles and increase thickness thanks to castor oil. It will deeply moisturize your hair and help you completely eliminate breakage and frizz thanks to coconut oil 🥥. It will make your hair shine and maintain its shape, and with a consistent routine, you'll completely eliminate dryness 😍!\n\nMost importantly? We're with you every step of the way 💛\nWe'll keep checking on your results and your hair's progress. If you need help with application or your daily routine, message us anytime or contact customer service.\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "لو شعرك بيعاني من الجفاف، أكتر منتج هيكون مناسب مع حضرتك Mix Oil – هي ميكس الخروع + جوز الهند + الجوجوبا 🌿✨\n\nكل زيت ليه دور مكمل للتاني:\n\nميكس اويل هتساعدك في تقوية بصيلات شعرك وهتزود كمان من كثافته ودة بسبب وجود زيت الخروع، غير انها هترطب شعرك جدا وهتساعدك تتخلصي تماما من التقصيف والهيشان ودة بسبب وجود زيت جوز الهند 🥥 وهتخلي شعرك بيلمع ومحافظ علي شكله وبالروتين عليها هتتخلصي تماما من الجفاف 😍!\n\nوأهم حاجة؟ إحنا هنبقى معاكي خطوة بخطوة 💛\nنتابع النتائج ونطمن على شعرك كل فترة، ولو حضرتك احتاجتي اي حاجة في طريقة الاستخدام او الروتين بتاع يومك تقدري تبعتي هنا أو تكلمينا علي خدمة العملاء.\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "benefits": {
+        "en": [
+          "Strengthens hair follicles",
+          "Increases thickness",
+          "Deep moisture",
+          "Eliminates breakage and frizz",
+          "Adds shine",
+          "Maintains hair shape"
+        ],
+        "ar": [
+          "يقوي بصيلات الشعر",
+          "يزيد الكثافة",
+          "ترطيب عميق",
+          "يتخلص من التقصيف والهيشان",
+          "يضيف لمعان",
+          "يحافظ على شكل الشعر"
+        ]
+      },
+      "hairTypes": [
+        "dry",
+        "thin",
+        "damaged",
+        "normal"
+      ]
+    },
+    {
+      "id": "mixoil-coconut-mist",
+      "collection": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "معطر الشعر بجوز الهند من ميكس أويل",
+        "en": "MixOil Coconut Hair Mist"
+      },
+      "type": "mist",
+      "price": 165,
+      "size": "125ml",
+      "description": {
+        "en": "Say goodbye to frizz, dryness, and unmanageable hair! MixOil Coconut is your ticket to silky, smooth perfection 🥥✨\n\nThis pure coconut oil blend is a miracle worker for dry, frizzy, or curly hair. It locks in moisture, tames flyaways, and creates a protective barrier against damage and humidity. The lightweight formula absorbs quickly without leaving any greasy residue, leaving your hair soft, shiny, and incredibly touchable.\n\nPerfect for curly, frizzy, or dry hair that needs serious moisture and smoothness. Your hair will thank you with every soft, glossy strand!\n\nWe're committed to your hair transformation 💛 Questions about usage or combining with other products? We're just a message away!\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "قولي وداعًا للهيشان، الجفاف، والشعر الصعب السيطرة عليه! MixOil Coconut هو تذكرتك للنعومة الحريرية المثالية 🥥✨\n\nمزيج زيت جوز الهند النقي ده معجزة حقيقية للشعر الجاف، المجعد، أو الكيرلي. بيقفل الرطوبة جوه الشعر، بيروّض الخصلات المتطايرة، وبيعمل حاجز واقي ضد التلف والرطوبة. التركيبة الخفيفة بتتشرب بسرعة من غير ما تسيب أي دهون، وبتخلي شعرك ناعم، لامع، ورائع للمس.\n\nمناسب جدًا للشعر الكيرلي، المجعد، أو الجاف اللي محتاج ترطيب ونعومة جدية. شعرك هيشكرك مع كل خصلة ناعمة ولامعة!\n\nإحنا ملتزمين بتحول شعرك للأفضل 💛 عندك أسئلة عن الاستخدام أو الدمج مع منتجات تانية? إحنا على بُعد رسالة!\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "benefits": {
+        "en": [
+          "Controls frizz",
+          "Deep moisturizing",
+          "Adds softness",
+          "Protects from damage"
+        ],
+        "ar": [
+          "يتحكم في التجعد",
+          "ترطيب عميق",
+          "يضيف نعومة",
+          "يحمي من التلف"
+        ]
+      },
+      "hairTypes": [
+        "dry",
+        "frizzy",
+        "curly"
+      ]
+    },
+    {
+      "id": "mixoil-coconut-body-cream",
+      "collection": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "كريم الجسم بجوز الهند من ميكس أويل",
+        "en": "MixOil Coconut Body Cream"
+      },
+      "type": "body-cream",
+      "price": 180,
+      "size": "250ml",
+      "description": {
+        "en": "MixOil Coconut Body Cream provides lasting moisture and softness for your skin with a lightweight, fast-absorbing formula.",
+        "ar": "كريم الجسم بجوز الهند من ميكس أويل يوفر رطوبة ونعومة دائمة لبشرتك بتركيبة خفيفة سريعة الامتصاص."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-coconut-body-scrub",
+      "collection": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "مقشر الجسم بجوز الهند من ميكس أويل",
+        "en": "MixOil Coconut Body Scrub"
+      },
+      "type": "body-scrub",
+      "price": 200,
+      "size": "300ml",
+      "description": {
+        "en": "Exfoliating MixOil Coconut Body Scrub that removes dead skin cells and reveals smoother, brighter skin.",
+        "ar": "مقشر الجسم بجوز الهند من ميكس أويل مقشر يزيل خلايا الجلد الميتة ويكشف عن بشرة أكثر نعومة وإشراقاً."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "mixoil-coconut-body-butter",
+      "collection": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "زبدة الجسم بجوز الهند من ميكس أويل",
+        "en": "MixOil Coconut Body Butter"
+      },
+      "type": "body-butter",
+      "price": 200,
+      "size": "250ml",
+      "description": {
+        "en": "Luxurious MixOil Coconut Body Butter that deeply hydrates and nourishes your skin, leaving it soft and supple.",
+        "ar": "زبدة الجسم بجوز الهند من ميكس أويل فاخر يرطب ويغذي بشرتك بعمق، يتركها ناعمة ومرنة."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "cocoshea-shampoo",
+      "collection": "cocoshea",
+      "name": {
+        "ar": "شامبو كوكوشيا",
+        "en": "CocoShea Shampoo"
+      },
+      "type": "shampoo",
+      "price": 180,
+      "size": "250ml",
+      "concerns": [
+        "split-ends",
+        "damaged-hair"
+      ],
+      "description": {
+        "en": "A gentle and effective CocoShea Shampoo specially formulated for your hair care needs. This premium shampoo cleanses thoroughly while nourishing your hair.",
+        "ar": "شامبو شامبو كوكوشيا لطيف وفعال مصمم خصيصاً لتلبية احتياجات العناية بشعرك. ينظف بعمق مع تغذية شعرك."
+      },
+      "benefits": {
+        "en": [
+          "Repairs split ends",
+          "Repairs damaged hair"
+        ],
+        "ar": [
+          "يصلح الأطراف المتقصفة",
+          "يصلح الشعر التالف"
+        ]
+      }
+    },
+    {
+      "id": "cocoshea-conditioner",
+      "collection": "cocoshea",
+      "name": {
+        "ar": "بلسم كوكوشيا",
+        "en": "CocoShea Conditioner"
+      },
+      "type": "conditioner",
+      "price": 180,
+      "size": "250ml",
+      "concerns": [
+        "split-ends",
+        "damaged-hair"
+      ],
+      "description": {
+        "en": "Experience the nourishing power of CocoShea Conditioner. This rich conditioner detangles, softens, and restores your hair's natural beauty.",
+        "ar": "اختبري قوة التغذية مع بلسم كوكوشيا. هذا البلسم الغني يفك التشابكات، ينعم، ويعيد الجمال الطبيعي لشعرك."
+      },
+      "benefits": {
+        "en": [
+          "Repairs split ends",
+          "Repairs damaged hair"
+        ],
+        "ar": [
+          "يصلح الأطراف المتقصفة",
+          "يصلح الشعر التالف"
+        ]
+      }
+    },
+    {
+      "id": "cocoshea-leave-in",
+      "collection": "cocoshea",
+      "name": {
+        "ar": "كوكوشيا ليف-إن",
+        "en": "CocoShea Leave-In"
+      },
+      "type": "leave-in",
+      "price": 180,
+      "size": "250ml",
+      "concerns": [
+        "split-ends",
+        "damaged-hair"
+      ],
+      "description": {
+        "en": "CocoShea Leave-In provides daily protection and continuous moisture throughout the day. Perfect for maintaining healthy, beautiful hair.",
+        "ar": "كوكوشيا ليف-إن يوفر حماية يومية ورطوبة مستمرة طوال اليوم. مثالي للحفاظ على شعر صحي وجميل."
+      },
+      "benefits": {
+        "en": [
+          "Repairs split ends",
+          "Repairs damaged hair"
+        ],
+        "ar": [
+          "يصلح الأطراف المتقصفة",
+          "يصلح الشعر التالف"
+        ]
+      }
+    },
+    {
+      "id": "cocoshea-mask",
+      "collection": "cocoshea",
+      "name": {
+        "ar": "ماسك كوكوشيا للشعر",
+        "en": "CocoShea Hair Mask"
+      },
+      "type": "mask",
+      "price": 220,
+      "size": "300ml",
+      "concerns": [
+        "split-ends",
+        "damaged-hair"
+      ],
+      "description": {
+        "en": "An intensive treatment with CocoShea Hair Mask that deeply nourishes and repairs your hair. Experience visible results with regular use.",
+        "ar": "علاج مكثف مع ماسك كوكوشيا للشعر يغذي ويصلح شعرك بعمق. اختبري نتائج مرئية مع الاستخدام المنتظم."
+      },
+      "benefits": {
+        "en": [
+          "Repairs split ends",
+          "Repairs damaged hair"
+        ],
+        "ar": [
+          "يصلح الأطراف المتقصفة",
+          "يصلح الشعر التالف"
+        ]
+      }
+    },
+    {
+      "id": "cocoshea-serum",
+      "collection": "cocoshea",
+      "name": {
+        "ar": "سيروم كوكوشيا",
+        "en": "CocoShea Serum"
+      },
+      "type": "serum",
+      "price": 220,
+      "size": "35ml",
+      "concerns": [
+        "split-ends",
+        "damaged-hair"
+      ],
+      "description": {
+        "en": "CocoShea Serum is a concentrated treatment that targets specific hair concerns with powerful active ingredients.",
+        "ar": "سيروم كوكوشيا علاج مركز يستهدف مشاكل الشعر المحددة بمكونات نشطة قوية."
+      },
+      "benefits": {
+        "en": [
+          "Repairs split ends",
+          "Repairs damaged hair"
+        ],
+        "ar": [
+          "يصلح الأطراف المتقصفة",
+          "يصلح الشعر التالف"
+        ]
+      }
+    },
+    {
+      "id": "cocoshea-mist",
+      "collection": "cocoshea",
+      "name": {
+        "ar": "بخاخ الشعر كوكوشيا",
+        "en": "CocoShea Hair Mist"
+      },
+      "type": "mist",
+      "price": 165,
+      "size": "125ml",
+      "concerns": [
+        "split-ends"
+      ],
+      "description": {
+        "en": "CocoShea Hair Mist is a refreshing spray that adds fragrance, moisture, and protection throughout the day.",
+        "ar": "بخاخ الشعر كوكوشيا بخاخ منعش يضيف عطراً، رطوبة، وحماية طوال اليوم."
+      },
+      "benefits": {
+        "en": [
+          "Repairs split ends"
+        ],
+        "ar": [
+          "يصلح الأطراف المتقصفة"
+        ]
+      }
+    },
+    {
+      "id": "cocoshea-body-cream",
+      "collection": "cocoshea",
+      "name": {
+        "ar": "كريم الجسم كوكوشيا",
+        "en": "CocoShea Body Cream"
+      },
+      "type": "body-cream",
+      "price": 180,
+      "size": "250ml",
+      "description": {
+        "en": "CocoShea Body Cream provides lasting moisture and softness for your skin with a lightweight, fast-absorbing formula.",
+        "ar": "كريم الجسم كوكوشيا يوفر رطوبة ونعومة دائمة لبشرتك بتركيبة خفيفة سريعة الامتصاص."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "cocoshea-body-scrub",
+      "collection": "cocoshea",
+      "name": {
+        "ar": "اسكراب كوكوشيا",
+        "en": "CocoShea Body Scrub"
+      },
+      "type": "body-scrub",
+      "price": 200,
+      "size": "300g",
+      "description": {
+        "en": "Exfoliating CocoShea Body Scrub that removes dead skin cells and reveals smoother, brighter skin.",
+        "ar": "اسكراب كوكوشيا مقشر يزيل خلايا الجلد الميتة ويكشف عن بشرة أكثر نعومة وإشراقاً."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "cocoshea-hand-cream",
+      "collection": "cocoshea",
+      "name": {
+        "ar": "كريم اليد كوكوشيا",
+        "en": "CocoShea Hand Cream"
+      },
+      "type": "hand-cream",
+      "price": 180,
+      "size": "250ml",
+      "description": {
+        "en": "CocoShea Hand Cream protects and nourishes your hands with intensive care that lasts all day.",
+        "ar": "كريم اليد كوكوشيا يحمي ويغذي يديك بعناية مكثفة تدوم طوال اليوم."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "curly-shampoo",
+      "collection": "curly-hair",
+      "name": {
+        "ar": "شامبو للشعر الكيرلي",
+        "en": "Curly Shampoo"
+      },
+      "type": "shampoo",
+      "price": 220,
+      "size": "500ml",
+      "hairTypes": [
+        "curly",
+        "wavy",
+        "coily",
+        "normal"
+      ],
+      "description": {
+        "en": "A gentle, safe shampoo specially formulated for curly hair! 🌿✨\n\nThis shampoo is enriched with lightweight oils like argan oil and macadamia oil that won't build up on your hair. It cleanses your curls thoroughly without stripping away the natural oils that protect against dryness or damaging your scalp.\n\nThe gentle formula respects your curls' natural moisture balance while removing dirt and buildup. Perfect for daily or regular use, it leaves your hair clean, fresh, and ready for conditioning and styling.\n\nIdeal for curly, wavy, and coily hair types that need gentle cleansing without harsh sulfates. Your curls will feel light, bouncy, and full of life!\n\nWe're with you every step of the way 💛 If you need guidance on how to use it or want to build the perfect curly hair routine, reach out anytime!\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "شامبو لطيف وآمن مخصوص للكيرلز! 🌿✨\n\nالشامبو ده غني بزيوت خفيفة زي زيت الأرجان وزيت المكادميا اللي مستحيل تتراكم على الشعر أو تعمل Build Up. آمن تماماً، هينضف شعرك من غير ما يشيل الزيوت الطبيعية اللي بتحافظ عليه من الجفاف أو يأذي فروة راسك.\n\nالتركيبة اللطيفة بتحترم توازن الرطوبة الطبيعي للكيرلز بتاعتك وهي بتشيل الأوساخ والتراكمات. مناسب للاستخدام اليومي أو المنتظم، بيسيب شعرك نضيف، منتعش، وجاهز للبلسم والتصفيف.\n\nمثالي للشعر الكيرلي، المموج، والمجعد اللي محتاج تنضيف لطيف من غير كبريتات قاسية. كيرلزك هتحس بالخفة، الحيوية، والنشاط!\n\nإحنا معاكي خطوة بخطوة 💛 لو محتاجة إرشادات في طريقة الاستخدام أو عايزة تبني روتين مثالي للكيرلز، تواصلي معانا في أي وقت!\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "benefits": {
+        "en": [
+          "Gentle cleansing without stripping oils",
+          "No build-up",
+          "Enriched with argan and macadamia oils",
+          "Safe for daily use",
+          "Respects curl pattern"
+        ],
+        "ar": [
+          "تنظيف لطيف بدون إزالة الزيوت الطبيعية",
+          "لا يسبب تراكم",
+          "غني بزيت الأرجان والمكادميا",
+          "آمن للاستخدام اليومي",
+          "يحترم نمط الكيرلز"
+        ]
+      }
+    },
+    {
+      "id": "curly-conditioner",
+      "collection": "curly-hair",
+      "name": {
+        "ar": "بلسم للشعر الكيرلي",
+        "en": "Curly Conditioner"
+      },
+      "type": "conditioner",
+      "price": 220,
+      "size": "500ml",
+      "hairTypes": [
+        "curly",
+        "damaged",
+        "dry",
+        "wavy"
+      ],
+      "description": {
+        "en": "The perfect conditioner to detangle and restore your beautiful curls! 💆‍♀️✨\n\nThis rich conditioner works magic on tangled curls, making detangling easy and painless. It deeply penetrates each curl to restore and repair damaged hair, bringing back your hair's natural strength and elasticity.\n\nFormulated with nourishing ingredients that coat each strand, it smooths the hair cuticle, reduces frizz, and defines your curl pattern beautifully. Your curls will be soft, manageable, and full of bounce.\n\nPerfect for curly, damaged, or dry hair that tangles easily. Use after shampooing for best results - your curls will thank you!\n\nWe're committed to your curl journey 💛 Need tips on the best detangling techniques or how to maximize your results? Message us anytime!\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "البلسم المثالي لفك التشابك وإعادة ترميم كيرلزك الجميلة! 💆‍♀️✨\n\nالبلسم الغني ده بيعمل سحر في الكيرلز المتشابكة، بيخلي فك التشابك سهل ومن غير ألم. بيخترق عمق كل كيرلة عشان يعيد ترميم الشعر التالف، ويرجع القوة والمرونة الطبيعية لشعرك.\n\nمركب بمكونات مغذية بتغلف كل خصلة، بينعم طبقة الشعر الخارجية، بيقلل الهيشان، وبيحدد نمط الكيرلز بشكل جميل. كيرلزك هتكون ناعمة، سهلة التسريح، ومليانة حيوية.\n\nمثالي للشعر الكيرلي، التالف، أو الجاف اللي بيتشابك بسهولة. استخدميه بعد الشامبو لأفضل نتائج - كيرلزك هتشكرك!\n\nإحنا ملتزمين برحلة الكيرلز بتاعتك 💛 محتاجة نصايح عن أفضل تقنيات فك التشابك أو إزاي تعظمي نتائجك؟ ابعتي لنا في أي وقت!\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "benefits": {
+        "en": [
+          "Detangles curls easily",
+          "Restores and repairs damaged hair",
+          "Reduces frizz",
+          "Defines curl pattern",
+          "Adds softness and bounce"
+        ],
+        "ar": [
+          "يفك تشابكات الكيرلز بسهولة",
+          "يعيد ترميم الشعر التالف",
+          "يقلل الهيشان",
+          "يحدد نمط الكيرلز",
+          "يضيف نعومة وحيوية"
+        ]
+      }
+    },
+    {
+      "id": "curly-leave-in",
+      "collection": "curly-hair",
+      "name": {
+        "ar": "تجعيد الشعر بدون شطف",
+        "en": "Curly Leave-In"
+      },
+      "type": "leave-in",
+      "price": 220,
+      "size": "500ml",
+      "hairTypes": [
+        "curly",
+        "wavy",
+        "all"
+      ],
+      "description": {
+        "en": "Daily protection and moisture for your beautiful curls! ☀️💛\n\nThis lightweight leave-in treatment is your curls' daily guardian. It protects your hair from harmful sun rays, heat damage, and environmental stress while providing continuous moisture and nourishment throughout the day.\n\nThe safe, gentle formula is perfect for daily use without build-up. It seals in moisture from your washing routine, keeps curls defined and frizz-free, and adds a healthy shine. Your hair stays soft, protected, and gorgeous all day long!\n\nPerfect for all curl types and safe for daily application. Apply to damp hair after washing or refresh dry curls anytime. It's the essential finishing touch your curl routine needs!\n\nWe're here to support your daily curl care 💛 Questions about application techniques or layering with other products? Reach out anytime!\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "حماية ورطوبة يومية للكيرلز الجميلة بتاعتك! ☀️💛\n\nعلاج الليف إن الخفيف ده هو الحارس اليومي للكيرلز بتاعتك. بيحمي شعرك من أشعة الشمس الضارة، تلف الحرارة، والضغوط البيئية، وفي نفس الوقت بيوفر رطوبة وتغذية مستمرة طول اليوم.\n\nالتركيبة الآمنة واللطيفة مثالية للاستخدام اليومي من غير ما تسبب تراكم. بيقفل الرطوبة من روتين الغسيل، بيخلي الكيرلز محددة وبدون هيشان، وبيضيف لمعة صحية. شعرك هيفضل ناعم، محمي، وجميل طول اليوم!\n\nمثالي لكل أنواع الكيرلز وآمن للاستخدام اليومي. حطيه على الشعر المبلل بعد الغسيل أو جددي الكيرلز الجافة في أي وقت. هو اللمسة النهائية الأساسية اللي روتين الكيرلز بتاعك محتاجها!\n\nإحنا هنا عشان ندعم العناية اليومية بالكيرلز 💛 عندك أسئلة عن تقنيات الاستخدام أو التطبيق مع منتجات تانية؟ تواصلي معانا في أي وقت!\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "benefits": {
+        "en": [
+          "Sun protection",
+          "Safe for daily use",
+          "No build-up",
+          "Continuous moisture",
+          "Defines curls",
+          "Reduces frizz"
+        ],
+        "ar": [
+          "حماية من أشعة الشمس",
+          "آمن للاستخدام اليومي",
+          "لا يسبب تراكم",
+          "رطوبة مستمرة",
+          "يحدد الكيرلز",
+          "يقلل الهيشان"
+        ]
+      }
+    },
+    {
+      "id": "curly-mask",
+      "collection": "curly-hair",
+      "name": {
+        "ar": "قناع الشعر الكيرلي",
+        "en": "Curly Hair Mask"
+      },
+      "type": "mask",
+      "price": 290,
+      "size": "500g",
+      "hairTypes": [
+        "curly",
+        "dry",
+        "damaged",
+        "color-treated"
+      ],
+      "description": {
+        "en": "Take your curl care to the next level with our intensive deep conditioning mask! 💆‍♀️💛\n\nThis luxurious hair mask provides deeper moisture and repair than regular conditioner, penetrating deep into the hair shaft to restore damaged curls from within. It's like a spa treatment for your hair!\n\nThe rich, creamy formula works to restore your curls' health, strength, and vitality. It repairs damage from heat styling, coloring, and environmental stress while infusing intense moisture. With regular use, you'll see healthier, stronger, more defined curls.\n\nPerfect for weekly or bi-weekly intensive treatment. Ideal for dry, damaged, color-treated, or chemically processed curly hair that needs extra love and care.\n\nYour curls deserve the best 💛 We're here to help you create the perfect deep conditioning routine. Questions about application time or frequency? We're just a message away!\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "خدي العناية بالكيرلز لمستوى تاني مع ماسك الترطيب العميق المكثف! 💆‍♀️💛\n\nحمام الكريم الفاخر ده بيوفر ترطيب وترميم أعمق من البلسم العادي، بيخترق عمق الشعرة عشان يرجع الكيرلز التالفة لصحتها من جوه. هو زي علاج سبا لشعرك!\n\nالتركيبة الغنية والكريمية بتشتغل على استعادة صحة الكيرلز، قوتها، وحيويتها. بتصلح التلف من التصفيف بالحرارة، الصبغة، والضغوط البيئية وفي نفس الوقت بتحقن رطوبة مكثفة. مع الاستخدام المنتظم، هتشوفي كيرلز أصح، أقوى، وأكثر تحديداً.\n\nمثالي للعلاج المكثف الأسبوعي أو كل أسبوعين. مناسب للشعر الكيرلي الجاف، التالف، المصبوغ، أو المعالج كيميائياً اللي محتاج حب وعناية إضافية.\n\nكيرلزك تستاهل الأفضل 💛 إحنا هنا عشان نساعدك تعملي روتين ترطيب عميق مثالي. عندك أسئلة عن وقت أو تكرار الاستخدام؟ إحنا على بُعد رسالة!\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "benefits": {
+        "en": [
+          "Deeper moisture than conditioner",
+          "Repairs damaged hair",
+          "Restores curl health and vitality",
+          "Intensive treatment",
+          "Perfect for color-treated hair"
+        ],
+        "ar": [
+          "ترطيب أعمق من البلسم",
+          "يرمم الشعر التالف",
+          "يستعيد صحة وحيوية الكيرلز",
+          "علاج مكثف",
+          "مثالي للشعر المصبوغ"
+        ]
+      }
+    },
+    {
+      "id": "africa-shampoo",
+      "collection": "africa",
+      "name": {
+        "ar": "شامبو أفريقيا",
+        "en": "Africa Shampoo"
+      },
+      "type": "shampoo",
+      "price": 220,
+      "size": "500ml",
+      "hairTypes": [
+        "african",
+        "coarse",
+        "thick"
+      ],
+      "description": {
+        "en": "A gentle and effective Africa Shampoo specially formulated for your hair care needs. This premium shampoo cleanses thoroughly while nourishing your hair.",
+        "ar": "شامبو شامبو أفريقيا لطيف وفعال مصمم خصيصاً لتلبية احتياجات العناية بشعرك. ينظف بعمق مع تغذية شعرك."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "africa-conditioner",
+      "collection": "africa",
+      "name": {
+        "ar": "بلسم أفريقيا",
+        "en": "Africa Conditioner"
+      },
+      "type": "conditioner",
+      "price": 220,
+      "size": "500ml",
+      "hairTypes": [
+        "african",
+        "coarse",
+        "thick"
+      ],
+      "description": {
+        "en": "Experience the nourishing power of Africa Conditioner. This rich conditioner detangles, softens, and restores your hair's natural beauty.",
+        "ar": "اختبري قوة التغذية مع بلسم أفريقيا. هذا البلسم الغني يفك التشابكات، ينعم، ويعيد الجمال الطبيعي لشعرك."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "africa-treatment",
+      "collection": "africa",
+      "name": {
+        "ar": "تريتمنت أفريقيا",
+        "en": "Africa Treatment"
+      },
+      "type": "treatment",
+      "price": 220,
+      "size": "500ml",
+      "hairTypes": [
+        "african",
+        "coarse",
+        "thick"
+      ],
+      "description": {
+        "en": "Premium Africa Treatment for your hair and beauty care needs.",
+        "ar": "تريتمنت أفريقيا المميز لاحتياجات العناية بشعرك وجمالك."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    },
+    {
+      "id": "africa-mask",
+      "collection": "africa",
+      "name": {
+        "ar": "ماسك أفريقا للشعر",
+        "en": "Africa Hair Mask"
+      },
+      "type": "mask",
+      "price": 290,
+      "size": "300g",
+      "hairTypes": [
+        "curly",
+        "coarse",
+        "african",
+        "extremely-dry",
+        "damaged"
+      ],
+      "description": {
+        "en": "If your hair is curly, coarse, damaged, African-textured, or extremely dry, Africa Shea Butter is the perfect product for you 🧈\n\nThis is concentrated, intensive shea butter specifically designed to meet the needs of hair that requires very deep moisture and powerful nourishment.\n\nThe intensive shea butter deeply moisturizes hair from the first use, seals the hair shaft and locks in moisture for extended periods, making it ideal for thick African hair. It also helps reduce frizz and detangle stubborn knots.\n\nThis product is excellent for hair damaged by heat, coloring, or straightening treatments. It helps restore hair's elasticity and strength, reducing breakage and split ends with continued use. It's perfect for extremely dry hair that doesn't respond well to lightweight oils alone.\n\nWith consistent use, you'll notice a clear difference in your hair's softness, moisture, fragrance, and shine.\n\nMost importantly? We're with you every step of the way 💛\nWe'll keep checking on your results and your hair's progress. If you need help with application or your daily routine, message us anytime or contact customer service.\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "لو شعرك مجعد، خشن، تالف، أفريقي، أو جاف جدًا، أكتر منتج هيكون مناسب ليكي هو Africa Shea Butter 🧈\n\nوهي شيا مركّزة ومكثفة مخصوص علشان تلبي احتياجات الشعر اللي محتاج ترطيب عميق جدًا وتغذية قوية.\n\nالشيا المكثفة بترطب الشعر بعمق شديد من أول استخدام، وبتقفل الشعرة وتحافظ على الرطوبة لفترة طويلة، وده بيخلّيها مثالية للشعر الأفريقي التقيل.\nكمان بتساعد على تقليل الهيشان، وفك التشابك.\n\nالمنتج ده ممتاز للشعر التالف من الحرارة، الصبغة أو الفرد، وبيساعد على استعادة مرونة الشعر وقوته، وبيقلل التكسر والتقصف مع الاستمرار.\nومناسب جدًا للشعر الجاف جدًا اللي ما بتنفعش معاه الزيوت الخفيفة لوحدها.\n\nومع الالتزام بالروتين، هتحسي فرق واضح في نعومة شعرك، ترطيبه، ريحته ولمعانه.\n\nوأهم حاجة؟ إحنا معاكي خطوة بخطوة 💛\nهنفضل نتابع معاكي النتائج ونطمن على شعرك كل فترة، ولو احتاجتي أي مساعدة في طريقة الاستخدام أو روتينك اليومي، تقدري تبعتي هنا في أي وقت أو تكلمينا على خدمة العملاء.\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "benefits": {
+        "en": [
+          "Intensive deep moisture",
+          "Reduces frizz and detangles",
+          "Restores elasticity",
+          "Reduces breakage and split ends",
+          "Perfect for thick African hair"
+        ],
+        "ar": [
+          "ترطيب عميق مكثف",
+          "يقلل الهيشان ويفك التشابك",
+          "يستعيد المرونة",
+          "يقلل التكسر والتقصف",
+          "مثالي للشعر الأفريقي التقيل"
+        ]
+      }
+    },
+    {
+      "id": "africa-serum",
+      "collection": "africa",
+      "name": {
+        "ar": "سيروم أفريقيا للشعر",
+        "en": "Africa Hair Serum"
+      },
+      "type": "serum",
+      "price": 220,
+      "size": "35ml",
+      "hairTypes": [
+        "african",
+        "coarse",
+        "thick"
+      ],
+      "description": {
+        "en": "Africa Hair Serum is a concentrated treatment that targets specific hair concerns with powerful active ingredients.",
+        "ar": "سيروم أفريقيا للشعر علاج مركز يستهدف مشاكل الشعر المحددة بمكونات نشطة قوية."
+      },
+      "benefits": {
+        "en": [
+          "Nourishes hair",
+          "Adds shine",
+          "Improves texture"
+        ],
+        "ar": [
+          "يغذي الشعر",
+          "يضيف لمعان",
+          "يحسن الملمس"
+        ]
+      }
+    }
+  ],
+  "bundles": [
+    {
+      "id": "mixoil-hair-care-bundle",
+      "name": {
+        "ar": "مجموعة العناية بالشعر من ميكس أويل",
+        "en": "MixOil Hair Care Collection"
+      },
+      "collection": "mixoil-rosemary-almond",
+      "originalPrice": 1215,
+      "salePrice": 935,
+      "discount": 23,
+      "savings": 280,
+      "description": {
+        "ar": "وفري 280 جنيه! 6 منتجات",
+        "en": "Save LE 280! 6 products"
+      }
+    },
+    {
+      "id": "mixoil-hydration-bundle",
+      "name": {
+        "ar": "مجموعة ميكس أويل للترطيب",
+        "en": "MixOil Hydration Collection"
+      },
+      "collection": "mixoil-castor-coconut-jojoba",
+      "originalPrice": 1740,
+      "salePrice": 975,
+      "discount": 43,
+      "savings": 765,
+      "description": {
+        "ar": "وفري 765 جنيه! 6-7 منتجات",
+        "en": "Save LE 765! 6-7 products"
+      }
+    },
+    {
+      "id": "cocoshea-hair-routine-bundle",
+      "name": {
+        "ar": "روتين كوكوشيا للعناية بالشعر",
+        "en": "CocoShea Hair Routine"
+      },
+      "collection": "cocoshea",
+      "originalPrice": 1105,
+      "salePrice": 770,
+      "discount": 30,
+      "savings": 335,
+      "description": {
+        "ar": "وفري 335 جنيه!",
+        "en": "Save LE 335!"
+      }
+    },
+    {
+      "id": "cocoshea-body-set",
+      "name": {
+        "ar": "مجموعة كوكوشيا للعناية بالجسم",
+        "en": "CocoShea Body Set"
+      },
+      "collection": "cocoshea",
+      "originalPrice": 900,
+      "salePrice": 605,
+      "discount": 32,
+      "savings": 295,
+      "description": {
+        "ar": "وفري 295 جنيه!",
+        "en": "Save LE 295!"
+      }
+    },
+    {
+      "id": "africa-bundle",
+      "name": {
+        "ar": "مجموعة أفريقيا",
+        "en": "Africa Bundle"
+      },
+      "collection": "africa",
+      "originalPrice": 1095,
+      "salePrice": 715,
+      "discount": 34,
+      "savings": 380,
+      "description": {
+        "ar": "وفري 380 جنيه!",
+        "en": "Save LE 380!"
+      }
+    }
+  ]
+}

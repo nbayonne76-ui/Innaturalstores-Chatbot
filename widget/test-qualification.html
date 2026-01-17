@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test: Qualification Flow - Separated by Category</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .phase-indicator {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #667eea;
+            font-size: 13px;
+        }
+
+        .question-container {
+            margin-bottom: 30px;
+        }
+
+        .question-text {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .step-indicator {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .options-container {
+            display: grid;
+            gap: 10px;
+        }
+
+        .option-btn {
+            background: white;
+            border: 2px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .option-btn:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+            transform: translateX(-5px);
+        }
+
+        .option-btn.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .option-btn .icon {
+            font-size: 28px;
+            margin-left: 15px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .product-rank {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .product-match {
+            background: #4caf50;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .product-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .product-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .benefits-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-tag {
+            background: #4caf50;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+        }
+
+        .usage-text {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+            font-size: 18px;
+        }
+
+        .error {
+            background: #ff5252;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .success {
+            background: #4caf50;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .multi-select-info {
+            background: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌿 اختبار نظام التوصيات الشخصية</h1>
+        <p class="subtitle">Test: Qualification Flow - Separated by Category</p>
+
+        <div class="phase-indicator" id="phaseIndicator">
+            ✅ Phase 1: Benefits Analysis | ✅ Phase 2: Questions Generated | ✅ Phase 3: Scoring System | 🔄 Phase 4: Testing
+        </div>
+
+        <div id="app">
+            <!-- Content will be injected here -->
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:5001';
+        const LANGUAGE = 'ar';
+        let CATEGORY = null; // User must select first
+        let sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        let currentStep = 1;
+        let answers = {};
+        let currentQuestionData = null;
+
+        // STEP 1: Show category selection
+        function showCategorySelection() {
+            const appDiv = document.getElementById('app');
+            appDiv.innerHTML = `
+                <div class="question-container">
+                    <div class="question-text">اختر الفئة / Choose Category</div>
+                    <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                        Hair and Body categories are completely separate
+                    </p>
+                    <div class="options-container">
+                        <button class="option-btn" onclick="selectCategory('hair')">
+                            <span style="text-align: right;">
+                                <strong>منتجات الشعر</strong><br>
+                                <small>Hair Products (3 questions)</small>
+                            </span>
+                            <span class="icon">💇</span>
+                        </button>
+                        <button class="option-btn" onclick="selectCategory('body')">
+                            <span style="text-align: right;">
+                                <strong>منتجات الجسم</strong><br>
+                                <small>Body Products (2 questions)</small>
+                            </span>
+                            <span class="icon">🧴</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // STEP 2: Category selected - start qualification
+        async function selectCategory(category) {
+            CATEGORY = category;
+            const categoryName = category === 'hair' ? 'Hair 💇' : 'Body 🧴';
+            document.getElementById('phaseIndicator').innerHTML =
+                `<strong>Category: ${categoryName}</strong> | Phase 1: ✅ | Phase 2: ✅ | Phase 3: ✅ | Phase 4: Testing...`;
+            await startQualification();
+        }
+
+        async function startQualification() {
+            try {
+                const appDiv = document.getElementById('app');
+                appDiv.innerHTML = '<div class="loading">🔄 جاري تحميل الأسئلة...</div>';
+
+                const response = await fetch(`${API_URL}/api/qualification/start`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        sessionId: sessionId,
+                        language: LANGUAGE,
+                        category: CATEGORY
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success && data.question) {
+                    currentQuestionData = data.question;
+                    displayQuestion(data.question);
+                } else {
+                    throw new Error(data.error || 'Failed to start qualification');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('app').innerHTML =
+                    `<div class="error">❌ خطأ: ${error.message}<br><small>Make sure server is running on port 5001</small></div>`;
+            }
+        }
+
+        function displayQuestion(questionData) {
+            const appDiv = document.getElementById('app');
+            const isMultiSelect = questionData.type === 'multi_select';
+            const minSelect = questionData.config?.min || 1;
+            const maxSelect = questionData.config?.max || 1;
+
+            const categoryBadge = CATEGORY === 'hair' ? '💇 Hair' : '🧴 Body';
+
+            let html = `
+                <div class="question-container">
+                    <div class="category-badge">${categoryBadge}</div>
+                    <div class="step-indicator">
+                        السؤال ${questionData.currentStep} من ${questionData.totalSteps}
+                    </div>
+                    <div class="question-text">${questionData.question}</div>
+
+                    ${isMultiSelect ? `
+                        <div class="multi-select-info">
+                            📌 يمكنك اختيار ${minSelect}-${maxSelect} خيارات
+                        </div>
+                    ` : ''}
+
+                    <div class="options-container">
+                        ${questionData.options.map(option => `
+                            <button class="option-btn" data-option-id="${option.id}">
+                                <span>${option.label}</span>
+                                <span class="icon">${option.icon || ''}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+
+                    <button class="btn-primary" id="nextBtn" disabled>
+                        ${questionData.currentStep === questionData.totalSteps ? 'عرض التوصيات ✨' : 'التالي →'}
+                    </button>
+                </div>
+            `;
+
+            appDiv.innerHTML = html;
+
+            // Attach event listeners
+            const optionBtns = document.querySelectorAll('.option-btn');
+            const nextBtn = document.getElementById('nextBtn');
+            let selectedOptions = [];
+
+            optionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const optionId = btn.dataset.optionId;
+
+                    if (isMultiSelect) {
+                        if (btn.classList.contains('selected')) {
+                            btn.classList.remove('selected');
+                            selectedOptions = selectedOptions.filter(id => id !== optionId);
+                        } else {
+                            if (selectedOptions.length < maxSelect) {
+                                btn.classList.add('selected');
+                                selectedOptions.push(optionId);
+                            }
+                        }
+                        nextBtn.disabled = selectedOptions.length < minSelect || selectedOptions.length > maxSelect;
+                    } else {
+                        optionBtns.forEach(b => b.classList.remove('selected'));
+                        btn.classList.add('selected');
+                        selectedOptions = [optionId];
+                        nextBtn.disabled = false;
+                    }
+                });
+            });
+
+            nextBtn.addEventListener('click', async () => {
+                const answer = isMultiSelect ? selectedOptions : selectedOptions[0];
+                answers[`step${questionData.currentStep}`] = answer;
+                await processAnswer(questionData.currentStep, answer);
+            });
+        }
+
+        async function processAnswer(step, answer) {
+            try {
+                const appDiv = document.getElementById('app');
+                appDiv.innerHTML = '<div class="loading">🔄 جاري معالجة إجابتك...</div>';
+
+                const response = await fetch(`${API_URL}/api/qualification/answer`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        sessionId: sessionId,
+                        step: step,
+                        answer: { selected: answer },
+                        language: LANGUAGE
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    if (data.completed) {
+                        await getRecommendations();
+                    } else {
+                        currentQuestionData = data;
+                        currentStep++;
+                        displayQuestion(data);
+                    }
+                } else {
+                    throw new Error(data.error || 'Failed to process answer');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('app').innerHTML =
+                    `<div class="error">❌ خطأ: ${error.message}</div>`;
+            }
+        }
+
+        async function getRecommendations() {
+            try {
+                const appDiv = document.getElementById('app');
+                appDiv.innerHTML = '<div class="loading">✨ جاري تحليل إجاباتك وإيجاد أفضل المنتجات...</div>';
+
+                const response = await fetch(
+                    `${API_URL}/api/qualification/recommendations/${sessionId}?language=${LANGUAGE}&limit=3`
+                );
+
+                const data = await response.json();
+
+                if (data.success && data.recommendations && data.recommendations.recommendations) {
+                    const recs = data.recommendations.recommendations;
+                    displayRecommendations(recs);
+
+                    const categoryName = CATEGORY === 'hair' ? 'Hair 💇' : 'Body 🧴';
+                    document.getElementById('phaseIndicator').innerHTML =
+                        `<strong>Category: ${categoryName}</strong> | ✅ Phase 1 | ✅ Phase 2 | ✅ Phase 3 | ✅ Phase 4 Complete!`;
+                } else {
+                    throw new Error(data.error || 'No recommendations found');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('app').innerHTML =
+                    `<div class="error">❌ خطأ: ${error.message}</div>`;
+            }
+        }
+
+        function displayRecommendations(recommendations) {
+            const appDiv = document.getElementById('app');
+
+            if (recommendations.length === 0) {
+                appDiv.innerHTML = `
+                    <div class="error">
+                        ❌ لم نتمكن من إيجاد منتجات مناسبة في فئة ${CATEGORY === 'hair' ? 'الشعر' : 'الجسم'}
+                    </div>
+                `;
+                return;
+            }
+
+            const categoryName = CATEGORY === 'hair' ? 'منتجات الشعر 💇' : 'منتجات الجسم 🧴';
+
+            let html = `
+                <div class="success">
+                    ✅ تم! وجدنا ${recommendations.length} ${categoryName} مثالية لك!
+                </div>
+                <div class="recommendations">
+            `;
+
+            recommendations.forEach((product, index) => {
+                const matchPercentage = Math.round((product.matchScore || 0) * 100);
+
+                html += `
+                    <div class="product-card">
+                        <div class="product-header">
+                            <div class="product-rank">#${index + 1}</div>
+                            <div class="product-match">${matchPercentage}% مطابقة</div>
+                        </div>
+
+                        <div class="product-name">${product.name}</div>
+                        ${product.description ? `<div class="product-description">${product.description}</div>` : ''}
+                        ${product.price ? `<div class="product-price">${product.price} LE</div>` : ''}
+
+                        ${product.matchedBenefits && product.matchedBenefits.length > 0 ? `
+                            <div class="product-section">
+                                <div class="section-title">✨ مثالي لك لأنه:</div>
+                                <div class="benefits-container">
+                                    ${product.matchedBenefits.map(b =>
+                                        `<span class="benefit-tag">✓ ${b}</span>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        ${product.usage ? `
+                            <div class="product-section">
+                                <div class="section-title">📖 كيفية الاستخدام:</div>
+                                <div class="usage-text">${product.usage}</div>
+                            </div>
+                        ` : ''}
+
+                        <div class="product-section">
+                            <small style="color: #999;">
+                                Scoring: Total=${product.scoring?.totalScore || 0}
+                                (Concerns: ${product.scoring?.concernScore || 0},
+                                Benefits: ${product.scoring?.benefitScore || 0},
+                                Bonus: ${product.scoring?.bonusScore || 0})
+                            </small>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `
+                </div>
+                <button class="btn-primary" onclick="location.reload()">
+                    🔄 اختبار مرة أخرى / Test Again
+                </button>
+            `;
+
+            appDiv.innerHTML = html;
+        }
+
+        // Start with category selection
+        showCategorySelection();
+    </script>
+</body>
+</html>

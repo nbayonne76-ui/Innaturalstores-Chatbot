@@ -1,0 +1,855 @@
+{
+  "hair": {
+    "growth": [
+      {
+        "key": "healthy_hair_growth",
+        "text": "Promotes healthy hair growth and reduces dandruff.",
+        "normalized": "promotes healthy hair growth and reduces dandruff",
+        "count": 3,
+        "products": [
+          {
+            "id": "mixoil-rosemary-shampoo",
+            "name": "MixOil Rosemary + Almond Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "mixoil-rosemary-mask",
+            "name": "MixOil Rosemary + Almond Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "mixoil-rosemary-oil",
+            "name": "MixOil Rosemary + Almond Hair Oil",
+            "type": "oil"
+          }
+        ],
+        "type": "benefit"
+      },
+      {
+        "key": "improves_scalp_health",
+        "text": "Improves Scalp Health: Nourishes the scalp, reduces dandruff, and creates a healthy foundation for hair growth.",
+        "normalized": "improves scalp health nourishes the scalp, reduces dandruff, and creates a healthy foundation for hair growth",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-castor-conditioner",
+            "name": "MixOil Castor + Coconut + Jojoba Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "cocoshea-shampoo",
+            "name": "CocoShea Shampoo",
+            "type": "shampoo"
+          }
+        ],
+        "type": "benefit"
+      }
+    ],
+    "hair_loss": [
+      {
+        "key": "concern_hair-loss",
+        "text": "hair loss",
+        "count": 8,
+        "products": [
+          {
+            "id": "mixoil-rosemary-shampoo",
+            "name": "MixOil Rosemary + Almond Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "mixoil-rosemary-leave-in",
+            "name": "MixOil Rosemary + Almond Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "mixoil-rosemary-mask",
+            "name": "MixOil Rosemary + Almond Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "mixoil-rosemary-serum",
+            "name": "MixOil Rosemary + Almond Hair Serum",
+            "type": "serum"
+          },
+          {
+            "id": "mixoil-rosemary-oil",
+            "name": "MixOil Rosemary + Almond Hair Oil",
+            "type": "oil"
+          },
+          {
+            "id": "mixoil-rosemary-mist",
+            "name": "MixOil Rosemary Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "mixoil-castor-oil",
+            "name": "MixOil Castor + Coconut + Jojoba Hair Oil",
+            "type": "oil"
+          },
+          {
+            "id": "africa-shampoo",
+            "name": "Africa Shampoo",
+            "type": "shampoo"
+          }
+        ],
+        "type": "concern"
+      }
+    ],
+    "other": [
+      {
+        "key": "concern_dryness",
+        "text": "dryness",
+        "count": 21,
+        "products": [
+          {
+            "id": "mixoil-rosemary-leave-in",
+            "name": "MixOil Rosemary + Almond Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "mixoil-rosemary-mask",
+            "name": "MixOil Rosemary + Almond Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "mixoil-rosemary-serum",
+            "name": "MixOil Rosemary + Almond Hair Serum",
+            "type": "serum"
+          },
+          {
+            "id": "mixoil-rosemary-oil",
+            "name": "MixOil Rosemary + Almond Hair Oil",
+            "type": "oil"
+          },
+          {
+            "id": "mixoil-rosemary-mist",
+            "name": "MixOil Rosemary Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "mixoil-castor-shampoo",
+            "name": "MixOil Castor + Coconut + Jojoba Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "mixoil-castor-conditioner",
+            "name": "MixOil Castor + Coconut + Jojoba Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "mixoil-castor-leave-in",
+            "name": "MixOil Castor + Coconut + Jojoba Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "mixoil-castor-serum",
+            "name": "MixOil Castor + Coconut + Jojoba Hair Serum",
+            "type": "serum"
+          },
+          {
+            "id": "mixoil-castor-oil",
+            "name": "MixOil Castor + Coconut + Jojoba Hair Oil",
+            "type": "oil"
+          },
+          {
+            "id": "mixoil-coconut-mist",
+            "name": "MixOil Coconut Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "cocoshea-shampoo",
+            "name": "CocoShea Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "cocoshea-conditioner",
+            "name": "CocoShea Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "cocoshea-leave-in",
+            "name": "CocoShea Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "cocoshea-mask",
+            "name": "CocoShea Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "cocoshea-serum",
+            "name": "CocoShea Serum",
+            "type": "serum"
+          },
+          {
+            "id": "cocoshea-mist",
+            "name": "CocoShea Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "africa-shampoo",
+            "name": "Africa Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "africa-conditioner",
+            "name": "Africa Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "africa-treatment",
+            "name": "Africa Treatment",
+            "type": "mask"
+          },
+          {
+            "id": "africa-mask",
+            "name": "Africa Hair Mask",
+            "type": "mask"
+          }
+        ],
+        "type": "concern"
+      },
+      {
+        "key": "concern_weak-hair",
+        "text": "weak hair",
+        "count": 10,
+        "products": [
+          {
+            "id": "mixoil-rosemary-shampoo",
+            "name": "MixOil Rosemary + Almond Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "mixoil-rosemary-leave-in",
+            "name": "MixOil Rosemary + Almond Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "mixoil-rosemary-mask",
+            "name": "MixOil Rosemary + Almond Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "mixoil-rosemary-serum",
+            "name": "MixOil Rosemary + Almond Hair Serum",
+            "type": "serum"
+          },
+          {
+            "id": "mixoil-rosemary-oil",
+            "name": "MixOil Rosemary + Almond Hair Oil",
+            "type": "oil"
+          },
+          {
+            "id": "mixoil-castor-conditioner",
+            "name": "MixOil Castor + Coconut + Jojoba Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "mixoil-castor-oil",
+            "name": "MixOil Castor + Coconut + Jojoba Hair Oil",
+            "type": "oil"
+          },
+          {
+            "id": "mixoil-coconut-mist",
+            "name": "MixOil Coconut Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "africa-treatment",
+            "name": "Africa Treatment",
+            "type": "mask"
+          },
+          {
+            "id": "africa-mask",
+            "name": "Africa Hair Mask",
+            "type": "mask"
+          }
+        ],
+        "type": "concern"
+      },
+      {
+        "key": "concern_dull-hair",
+        "text": "dull hair",
+        "count": 4,
+        "products": [
+          {
+            "id": "mixoil-rosemary-mist",
+            "name": "MixOil Rosemary Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "mixoil-castor-leave-in",
+            "name": "MixOil Castor + Coconut + Jojoba Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "mixoil-coconut-mist",
+            "name": "MixOil Coconut Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "cocoshea-mist",
+            "name": "CocoShea Hair Mist",
+            "type": "mist"
+          }
+        ],
+        "type": "concern"
+      },
+      {
+        "key": "lightweight_non-greasy_formula",
+        "text": "Lightweight and Non-Greasy Formula: Absorbs quickly without residue or heaviness.",
+        "normalized": "lightweight and non-greasy formula absorbs quickly without residue or heaviness",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-rosemary-leave-in",
+            "name": "MixOil Rosemary + Almond Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "mixoil-castor-serum",
+            "name": "MixOil Castor + Coconut + Jojoba Hair Serum",
+            "type": "serum"
+          }
+        ],
+        "type": "benefit"
+      },
+      {
+        "key": "safe_hair_types",
+        "text": "Safe for All Hair Types: Free from sulfates and harmful chemicals.",
+        "normalized": "safe for all hair types free from sulfates and harmful chemicals",
+        "count": 2,
+        "products": [
+          {
+            "id": "africa-shampoo",
+            "name": "Africa Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "africa-conditioner",
+            "name": "Africa Conditioner",
+            "type": "conditioner"
+          }
+        ],
+        "type": "benefit"
+      },
+      {
+        "key": "rich_natural_ingredients",
+        "text": "Rich in Natural Ingredients: Suitable for all hair types.",
+        "normalized": "rich in natural ingredients suitable for all hair types",
+        "count": 2,
+        "products": [
+          {
+            "id": "africa-treatment",
+            "name": "Africa Treatment",
+            "type": "mask"
+          },
+          {
+            "id": "africa-mask",
+            "name": "Africa Hair Mask",
+            "type": "mask"
+          }
+        ],
+        "type": "benefit"
+      }
+    ],
+    "scalp_health": [
+      {
+        "key": "concern_dandruff",
+        "text": "dandruff",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-rosemary-shampoo",
+            "name": "MixOil Rosemary + Almond Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "mixoil-castor-shampoo",
+            "name": "MixOil Castor + Coconut + Jojoba Shampoo",
+            "type": "shampoo"
+          }
+        ],
+        "type": "concern"
+      }
+    ],
+    "hydration": [
+      {
+        "key": "all-day_hydration_without",
+        "text": "Provides All-Day Hydration Without Weighing Hair Down: Keeps hair moisturized and light throughout the day.",
+        "normalized": "provides all-day hydration without weighing hair down keeps hair moisturized and light throughout the day",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-rosemary-leave-in",
+            "name": "MixOil Rosemary + Almond Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "mixoil-castor-leave-in",
+            "name": "MixOil Castor + Coconut + Jojoba Leave-In",
+            "type": "leave-in"
+          }
+        ],
+        "type": "benefit"
+      },
+      {
+        "key": "deeply_damaged_hair",
+        "text": "Deeply Hydrates and Restores Dry or Damaged Hair: Provides intense moisture to repair compromised strands.",
+        "normalized": "deeply hydrates and restores dry or damaged hair provides intense moisture to repair compromised strands",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-rosemary-mask",
+            "name": "MixOil Rosemary + Almond Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "mixoil-castor-shampoo",
+            "name": "MixOil Castor + Coconut + Jojoba Shampoo",
+            "type": "shampoo"
+          }
+        ],
+        "type": "benefit"
+      },
+      {
+        "key": "lightweight_hydration_nourishment",
+        "text": "Provides Lightweight Hydration and Nourishment: Moisturizes hair without weighing it down or leaving residue.",
+        "normalized": "provides lightweight hydration and nourishment moisturizes hair without weighing it down or leaving residue",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-rosemary-mist",
+            "name": "MixOil Rosemary Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "mixoil-coconut-mist",
+            "name": "MixOil Coconut Hair Mist",
+            "type": "mist"
+          }
+        ],
+        "type": "benefit"
+      },
+      {
+        "key": "deep_hydration_intense",
+        "text": "Deep Hydration: Provides intense moisture to dry, damaged hair, leaving it soft and silky.",
+        "normalized": "deep hydration provides intense moisture to dry, damaged hair, leaving it soft and silky",
+        "count": 2,
+        "products": [
+          {
+            "id": "cocoshea-conditioner",
+            "name": "CocoShea Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "africa-mask",
+            "name": "Africa Hair Mask",
+            "type": "mask"
+          }
+        ],
+        "type": "benefit"
+      }
+    ],
+    "frizz_control": [
+      {
+        "key": "concern_frizz",
+        "text": "frizz",
+        "count": 18,
+        "products": [
+          {
+            "id": "mixoil-rosemary-leave-in",
+            "name": "MixOil Rosemary + Almond Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "mixoil-rosemary-mask",
+            "name": "MixOil Rosemary + Almond Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "mixoil-rosemary-serum",
+            "name": "MixOil Rosemary + Almond Hair Serum",
+            "type": "serum"
+          },
+          {
+            "id": "mixoil-rosemary-oil",
+            "name": "MixOil Rosemary + Almond Hair Oil",
+            "type": "oil"
+          },
+          {
+            "id": "mixoil-rosemary-mist",
+            "name": "MixOil Rosemary Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "mixoil-castor-shampoo",
+            "name": "MixOil Castor + Coconut + Jojoba Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "mixoil-castor-conditioner",
+            "name": "MixOil Castor + Coconut + Jojoba Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "mixoil-castor-leave-in",
+            "name": "MixOil Castor + Coconut + Jojoba Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "mixoil-castor-serum",
+            "name": "MixOil Castor + Coconut + Jojoba Hair Serum",
+            "type": "serum"
+          },
+          {
+            "id": "mixoil-coconut-mist",
+            "name": "MixOil Coconut Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "cocoshea-conditioner",
+            "name": "CocoShea Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "cocoshea-leave-in",
+            "name": "CocoShea Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "cocoshea-mask",
+            "name": "CocoShea Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "cocoshea-serum",
+            "name": "CocoShea Serum",
+            "type": "serum"
+          },
+          {
+            "id": "cocoshea-mist",
+            "name": "CocoShea Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "africa-conditioner",
+            "name": "Africa Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "africa-treatment",
+            "name": "Africa Treatment",
+            "type": "mask"
+          },
+          {
+            "id": "africa-mask",
+            "name": "Africa Hair Mask",
+            "type": "mask"
+          }
+        ],
+        "type": "concern"
+      }
+    ],
+    "strength": [
+      {
+        "key": "hair_strands_breakage",
+        "text": "Strengthens Hair Strands and Reduces Breakage: Fortifies each strand from root to tip, minimizing split ends.",
+        "normalized": "strengthens hair strands and reduces breakage fortifies each strand from root to tip, minimizing split ends",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-rosemary-mask",
+            "name": "MixOil Rosemary + Almond Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "mixoil-rosemary-serum",
+            "name": "MixOil Rosemary + Almond Hair Serum",
+            "type": "serum"
+          }
+        ],
+        "type": "benefit"
+      },
+      {
+        "key": "hair_strands_fortifies",
+        "text": "Strengthens Hair Strands: Fortifies each strand from root to tip, reducing breakage and improving overall hair health.",
+        "normalized": "strengthens hair strands fortifies each strand from root to tip, reducing breakage and improving overall hair health",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-rosemary-oil",
+            "name": "MixOil Rosemary + Almond Hair Oil",
+            "type": "oil"
+          },
+          {
+            "id": "mixoil-castor-serum",
+            "name": "MixOil Castor + Coconut + Jojoba Hair Serum",
+            "type": "serum"
+          }
+        ],
+        "type": "benefit"
+      }
+    ],
+    "repair": [
+      {
+        "key": "concern_damaged-hair",
+        "text": "damaged hair",
+        "count": 15,
+        "products": [
+          {
+            "id": "mixoil-rosemary-mask",
+            "name": "MixOil Rosemary + Almond Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "mixoil-castor-shampoo",
+            "name": "MixOil Castor + Coconut + Jojoba Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "mixoil-castor-conditioner",
+            "name": "MixOil Castor + Coconut + Jojoba Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "mixoil-castor-leave-in",
+            "name": "MixOil Castor + Coconut + Jojoba Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "mixoil-castor-serum",
+            "name": "MixOil Castor + Coconut + Jojoba Hair Serum",
+            "type": "serum"
+          },
+          {
+            "id": "mixoil-castor-oil",
+            "name": "MixOil Castor + Coconut + Jojoba Hair Oil",
+            "type": "oil"
+          },
+          {
+            "id": "cocoshea-shampoo",
+            "name": "CocoShea Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "cocoshea-conditioner",
+            "name": "CocoShea Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "cocoshea-leave-in",
+            "name": "CocoShea Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "cocoshea-mask",
+            "name": "CocoShea Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "cocoshea-serum",
+            "name": "CocoShea Serum",
+            "type": "serum"
+          },
+          {
+            "id": "africa-shampoo",
+            "name": "Africa Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "africa-conditioner",
+            "name": "Africa Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "africa-treatment",
+            "name": "Africa Treatment",
+            "type": "mask"
+          },
+          {
+            "id": "africa-mask",
+            "name": "Africa Hair Mask",
+            "type": "mask"
+          }
+        ],
+        "type": "concern"
+      },
+      {
+        "key": "concern_split-ends",
+        "text": "split ends",
+        "count": 7,
+        "products": [
+          {
+            "id": "mixoil-castor-serum",
+            "name": "MixOil Castor + Coconut + Jojoba Hair Serum",
+            "type": "serum"
+          },
+          {
+            "id": "cocoshea-shampoo",
+            "name": "CocoShea Shampoo",
+            "type": "shampoo"
+          },
+          {
+            "id": "cocoshea-conditioner",
+            "name": "CocoShea Conditioner",
+            "type": "conditioner"
+          },
+          {
+            "id": "cocoshea-leave-in",
+            "name": "CocoShea Leave-In",
+            "type": "leave-in"
+          },
+          {
+            "id": "cocoshea-mask",
+            "name": "CocoShea Hair Mask",
+            "type": "mask"
+          },
+          {
+            "id": "cocoshea-serum",
+            "name": "CocoShea Serum",
+            "type": "serum"
+          },
+          {
+            "id": "cocoshea-mist",
+            "name": "CocoShea Hair Mist",
+            "type": "mist"
+          }
+        ],
+        "type": "concern"
+      }
+    ],
+    "softness": [
+      {
+        "key": "frizz_smooths_hair",
+        "text": "Reduces Frizz and Smooths Hair Texture: Tames flyaways and creates a sleek, polished appearance.",
+        "normalized": "reduces frizz and smooths hair texture tames flyaways and creates a sleek, polished appearance",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-rosemary-mist",
+            "name": "MixOil Rosemary Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "cocoshea-conditioner",
+            "name": "CocoShea Conditioner",
+            "type": "conditioner"
+          }
+        ],
+        "type": "benefit"
+      }
+    ],
+    "shine": [
+      {
+        "key": "adds_natural_shine",
+        "text": "Adds Natural Shine and Softness: Enhances hair's natural luster and leaves it feeling silky.",
+        "normalized": "adds natural shine and softness enhances hair's natural luster and leaves it feeling silky",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-rosemary-mist",
+            "name": "MixOil Rosemary Hair Mist",
+            "type": "mist"
+          },
+          {
+            "id": "mixoil-castor-serum",
+            "name": "MixOil Castor + Coconut + Jojoba Hair Serum",
+            "type": "serum"
+          }
+        ],
+        "type": "benefit"
+      }
+    ]
+  },
+  "body": {
+    "skin_health": [
+      {
+        "key": "gently_exfoliates_skin",
+        "text": "It gently exfoliates the skin and removes dead skin cells",
+        "normalized": "it gently exfoliates the skin and removes dead skin cells",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-almond-body-scrub",
+            "name": "MixOil Almond Body Scrub",
+            "type": "body-scrub"
+          },
+          {
+            "id": "mixoil-coconut-body-scrub",
+            "name": "MixOil Coconut Body Scrub",
+            "type": "body-scrub"
+          }
+        ],
+        "type": "benefit"
+      },
+      {
+        "key": "natural_ingredients_enriched",
+        "text": "Natural Ingredients: Enriched with shea butter and coconut oil to promote healthy skin",
+        "normalized": "natural ingredients enriched with shea butter and coconut oil to promote healthy skin",
+        "count": 2,
+        "products": [
+          {
+            "id": "cocoshea-body-cream",
+            "name": "CocoShea Body Cream",
+            "type": "body-cream"
+          },
+          {
+            "id": "cocoshea-hand-cream",
+            "name": "CocoShea Hand Cream",
+            "type": "hand-cream"
+          }
+        ],
+        "type": "benefit"
+      }
+    ],
+    "hydration": [
+      {
+        "key": "skin_during_exfoliation",
+        "text": "Moisturizes and nourishes the skin during the exfoliation process",
+        "normalized": "moisturizes and nourishes the skin during the exfoliation process",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-almond-body-scrub",
+            "name": "MixOil Almond Body Scrub",
+            "type": "body-scrub"
+          },
+          {
+            "id": "mixoil-coconut-body-scrub",
+            "name": "MixOil Coconut Body Scrub",
+            "type": "body-scrub"
+          }
+        ],
+        "type": "benefit"
+      }
+    ],
+    "softness": [
+      {
+        "key": "skin_soft,_smooth,",
+        "text": "Leaves skin soft, smooth, and radiant",
+        "normalized": "leaves skin soft, smooth, and radiant",
+        "count": 2,
+        "products": [
+          {
+            "id": "mixoil-coconut-body-cream",
+            "name": "MixOil Coconut Body Cream",
+            "type": "body-cream"
+          },
+          {
+            "id": "mixoil-coconut-body-scrub",
+            "name": "MixOil Coconut Body Scrub",
+            "type": "body-scrub"
+          }
+        ],
+        "type": "benefit"
+      }
+    ]
+  },
+  "stats": {
+    "totalProducts": 32,
+    "hairProducts": 23,
+    "bodyProducts": 9,
+    "totalUniqueBenefits": 25
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "updated_shampoos": [
+    {
+      "id": "cocoshea-shampoo",
+      "collection": "cocoshea",
+      "name": {
+        "ar": "شامبو كوكوشيا",
+        "en": "CocoShea Shampoo"
+      },
+      "type": "shampoo",
+      "price": 180,
+      "size": "250ml",
+      "image": "images/CocosheaShampoo.webp",
+      "concerns": [
+        "split-ends",
+        "damaged-hair",
+        "dryness"
+      ],
+      "description": {
+        "en": "Cocoshea Shampoo with Coconut Oil and Shea Butter is a rich, nourishing addition to your hair care routine. Its gentle formula supports scalp health, strengthens hair from the roots, and brings back natural shine and vitality. Free from harsh chemicals and sulfates, it's safe and suitable for all hair types.\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "شامبو كوكوشيا بزيت جوز الهند وزبدة الشيا هو إضافة غنية ومغذية لروتين العناية بشعرك. تركيبته اللطيفة تدعم صحة فروة الرأس، وتقوي الشعر من الجذور، وتعيد اللمعان والحيوية الطبيعية. خالٍ من المواد الكيميائية القاسية والكبريتات، آمن ومناسب لجميع أنواع الشعر.\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "ingredients": {
+        "en": ["Shea Butter", "Coconut Oil", "Vitamins A and E", "Essential Fatty Acids"],
+        "ar": ["زبدة الشيا", "زيت جوز الهند", "فيتامينات A و E", "الأحماض الدهنية الأساسية"]
+      },
+      "benefits": {
+        "en": [
+          "Improves Scalp Health: Contains antioxidants that protect the scalp from free radical damage and dryness. Antibacterial and antifungal properties keep the scalp clean and infection-free.",
+          "Strengthens Hair Follicles: Rich in vitamins and nutrients that enhance the strength of hair follicles, reducing breakage.",
+          "Promotes Hair Growth: Stimulates blood circulation in the scalp, encouraging hair growth and improving length and health.",
+          "Hydration and Softness: Deeply hydrates hair, making detangling easier and leaving hair soft and shiny.",
+          "Sulfate-Free: Protects hair from damage caused by harsh chemicals."
+        ],
+        "ar": [
+          "يحسن صحة فروة الرأس: يحتوي على مضادات الأكسدة التي تحمي فروة الرأس من أضرار الجذور الحرة والجفاف. الخصائص المضادة للبكتيريا والفطريات تحافظ على فروة الرأس نظيفة وخالية من العدوى.",
+          "يقوي بصيلات الشعر: غني بالفيتامينات والمغذيات التي تعزز قوة بصيلات الشعر وتقلل التكسر.",
+          "يعزز نمو الشعر: يحفز الدورة الدموية في فروة الرأس، مما يشجع نمو الشعر ويحسن طوله وصحته.",
+          "الترطيب والنعومة: يرطب الشعر بعمق، مما يسهل فك التشابك ويترك الشعر ناعماً ولامعاً.",
+          "خالٍ من الكبريتات: يحمي الشعر من الأضرار الناجمة عن المواد الكيميائية القاسية."
+        ]
+      },
+      "usage": {
+        "en": "1. Apply shampoo to wet hair. 2. Gently massage the scalp in circular motions for 2-3 minutes to stimulate blood circulation and ensure even distribution. 3. Rinse thoroughly with lukewarm water. 4. Use regularly for the best results.",
+        "ar": "1. ضعي الشامبو على الشعر المبلل. 2. دلكي فروة الرأس بلطف بحركات دائرية لمدة 2-3 دقائق لتحفيز الدورة الدموية وضمان التوزيع المتساوي. 3. اشطفي جيداً بالماء الفاتر. 4. استخدميه بانتظام للحصول على أفضل النتائج."
+      },
+      "hairTypes": [
+        "all",
+        "dry",
+        "damaged"
+      ],
+      "category": "hair"
+    },
+    {
+      "id": "mixoil-castor-shampoo",
+      "collection": "mixoil-castor-coconut-jojoba",
+      "name": {
+        "ar": "شامبو ميكس أويل الخروع + جوز الهند + الجوجوبا",
+        "en": "MixOil Castor + Coconut + Jojoba Shampoo"
+      },
+      "type": "shampoo",
+      "price": 180,
+      "size": "250ml",
+      "image": "images/MixoilBlackShampoo.webp",
+      "concerns": [
+        "dryness",
+        "frizz",
+        "damaged-hair",
+        "dandruff"
+      ],
+      "description": {
+        "en": "A deeply nourishing shampoo enriched with Castor, Coconut, and Jojoba oils to cleanse, strengthen, and restore shine. Helps reduce breakage, hydrates from root to tip, and leaves hair soft, smooth, and naturally radiant.\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "شامبو مغذٍ بعمق غني بزيوت الخروع وجوز الهند والجوجوبا لتنظيف الشعر وتقويته واستعادة لمعانه. يساعد على تقليل التكسر، ويرطب من الجذور إلى الأطراف، ويترك الشعر ناعماً ومشرقاً بشكل طبيعي.\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "ingredients": {
+        "en": ["Coconut Oil", "Jojoba Oil", "Castor Oil", "Mild cleansing base"],
+        "ar": ["زيت جوز الهند", "زيت الجوجوبا", "زيت الخروع", "قاعدة تنظيف لطيفة"]
+      },
+      "benefits": {
+        "en": [
+          "Deeply moisturizes and nourishes dry or damaged hair.",
+          "Strengthens hair strands and improves elasticity.",
+          "Promotes scalp health and reduces dandruff.",
+          "Enhances hair thickness and shine.",
+          "Leaves hair more resilient with consistent use.",
+          "Suitable for dry, damaged, or dandruff-prone hair."
+        ],
+        "ar": [
+          "يرطب ويغذي الشعر الجاف أو التالف بعمق.",
+          "يقوي خصلات الشعر ويحسن المرونة.",
+          "يعزز صحة فروة الرأس ويقلل من القشرة.",
+          "يعزز كثافة الشعر ولمعانه.",
+          "يترك الشعر أكثر مرونة مع الاستخدام المستمر.",
+          "مناسب للشعر الجاف أو التالف أو المعرض للقشرة."
+        ]
+      },
+      "usage": {
+        "en": "Apply to wet hair and scalp. Gently massage until a rich lather forms. Leave for 1–2 minutes for deeper action. Rinse thoroughly. Use regularly for optimal results.",
+        "ar": "ضعيه على الشعر وفروة الرأس المبللة. دلكي بلطف حتى تتشكل رغوة غنية. اتركيه لمدة 1-2 دقيقة لتأثير أعمق. اشطفي جيداً. استخدميه بانتظام للحصول على أفضل النتائج."
+      },
+      "hairTypes": [
+        "dry",
+        "damaged",
+        "dandruff-prone"
+      ],
+      "category": "hair"
+    },
+    {
+      "id": "mixoil-rosemary-shampoo",
+      "collection": "mixoil-rosemary-almond",
+      "name": {
+        "ar": "شامبو ميكس أويل روزماري + اللوز",
+        "en": "MixOil Rosemary + Almond Shampoo"
+      },
+      "type": "shampoo",
+      "price": 180,
+      "size": "250ml",
+      "image": "images/MixoilWhiteshampoo.webp",
+      "concerns": [
+        "hair-loss",
+        "weak-hair",
+        "dandruff"
+      ],
+      "description": {
+        "en": "A revitalizing shampoo formulated to cleanse gently while stimulating hair growth. Rosemary energizes the scalp and Almond oil adds moisture and softness, leaving hair fuller and stronger.\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "شامبو منشط مصمم للتنظيف بلطف مع تحفيز نمو الشعر. الروزماري ينشط فروة الرأس وزيت اللوز يضيف الرطوبة والنعومة، مما يترك الشعر أكثر كثافة وقوة.\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "ingredients": {
+        "en": ["Rosemary Oil", "Almond Oil", "Gentle cleansing base"],
+        "ar": ["زيت الروزماري", "زيت اللوز", "قاعدة تنظيف لطيفة"]
+      },
+      "benefits": {
+        "en": [
+          "Revitalizes and gently cleanses the scalp and hair.",
+          "Nourishes, hydrates, and strengthens hair strands.",
+          "Promotes healthy hair growth and reduces dandruff.",
+          "Leaves hair soft, refreshed, and naturally shiny.",
+          "Suitable for all hair types.",
+          "Perfect for those seeking a natural, daily hair care solution."
+        ],
+        "ar": [
+          "ينشط وينظف فروة الرأس والشعر بلطف.",
+          "يغذي ويرطب ويقوي خصلات الشعر.",
+          "يعزز نمو الشعر الصحي ويقلل من القشرة.",
+          "يترك الشعر ناعماً ومنتعشاً ولامعاً بشكل طبيعي.",
+          "مناسب لجميع أنواع الشعر.",
+          "مثالي لأولئك الذين يبحثون عن حل طبيعي للعناية بالشعر اليومية."
+        ]
+      },
+      "usage": {
+        "en": "Apply to wet hair and scalp. Gently massage until a rich lather forms. Rinse thoroughly with water. Repeat if needed. Use regularly for best results.",
+        "ar": "ضعيه على الشعر وفروة الرأس المبللة. دلكي بلطف حتى تتشكل رغوة غنية. اشطفي جيداً بالماء. كرري إذا لزم الأمر. استخدميه بانتظام للحصول على أفضل النتائج."
+      },
+      "hairTypes": [
+        "all",
+        "thin",
+        "hair-loss"
+      ],
+      "category": "hair"
+    },
+    {
+      "id": "africa-shampoo",
+      "collection": "africa",
+      "name": {
+        "ar": "شامبو أفريقيا",
+        "en": "Africa Shampoo"
+      },
+      "type": "shampoo",
+      "price": 220,
+      "size": "500ml",
+      "image": "",
+      "concerns": [
+        "damaged-hair",
+        "hair-loss",
+        "dryness",
+        "sun-damage"
+      ],
+      "description": {
+        "en": "Africa Shampoo has the ability to repair damaged hair, strengthen the roots, and soothe scalp itching caused by severe dryness. It also prevents hair loss and protects it from sun damage.\n\nWhatsApp/Call: +20155 5590333",
+        "ar": "شامبو أفريقيا لديه القدرة على إصلاح الشعر التالف، وتقوية الجذور، وتهدئة حكة فروة الرأس الناتجة عن الجفاف الشديد. كما أنه يمنع تساقط الشعر ويحميه من أضرار أشعة الشمس.\n\nWhatsApp / Call:\n+20155 5590333"
+      },
+      "ingredients": {
+        "en": ["Shea Butter", "Argan Oil", "Aloe Vera Extract", "Coconut Oil", "Vitamin E"],
+        "ar": ["زبدة الشيا", "زيت الأرجان", "مستخلص الصبار", "زيت جوز الهند", "فيتامين E"]
+      },
+      "benefits": {
+        "en": [
+          "Repairs Damaged Hair: Restores strength and vitality to your hair.",
+          "Deep Hydration: Prevents scalp dryness.",
+          "Prevents Hair Loss: Promotes healthy hair growth and strengthens roots.",
+          "Sun Protection: Shields hair from harmful UV rays.",
+          "Safe for All Hair Types: Free from sulfates and harmful chemicals."
+        ],
+        "ar": [
+          "يصلح الشعر التالف: يستعيد القوة والحيوية لشعرك.",
+          "ترطيب عميق: يمنع جفاف فروة الرأس.",
+          "يمنع تساقط الشعر: يعزز نمو الشعر الصحي ويقوي الجذور.",
+          "حماية من الشمس: يحمي الشعر من الأشعة فوق البنفسجية الضارة.",
+          "آمن لجميع أنواع الشعر: خالٍ من الكبريتات والمواد الكيميائية الضارة."
+        ]
+      },
+      "usage": {
+        "en": "1. Wet your hair thoroughly with water. 2. Apply a generous amount of Africa Shampoo and distribute evenly. 3. Gently massage your scalp until it lathers. 4. Rinse thoroughly with lukewarm water. 5. Use regularly for best results.",
+        "ar": "1. بللي شعرك جيداً بالماء. 2. ضعي كمية سخية من شامبو أفريقيا ووزعيها بالتساوي. 3. دلكي فروة رأسك بلطف حتى تتشكل رغوة. 4. اشطفي جيداً بالماء الفاتر. 5. استخدميه بانتظام للحصول على أفضل النتائج."
+      },
+      "hairTypes": [
+        "all",
+        "damaged",
+        "dry"
+      ],
+      "category": "hair"
+    }
+  ]
+}

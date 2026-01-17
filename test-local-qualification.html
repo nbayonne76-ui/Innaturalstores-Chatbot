@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Qualification - INnatural</title>
+
+  <!-- Load CSS locally -->
+  <link rel="stylesheet" href="widget/chatbot.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2d5016;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #6b8e23;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+    .info-box {
+      background: #f0f8f0;
+      border-left: 4px solid #2d5016;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+    }
+    .info-box h3 {
+      margin-top: 0;
+      color: #2d5016;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✨ اختبار نظام التأهيل</h1>
+    <p class="subtitle">Qualification Flow Test - Local Version</p>
+
+    <div class="info-box">
+      <h3>🎯 Instructions</h3>
+      <p><strong>1.</strong> Cliquez sur le bouton chat vert 🌿 en bas à droite</p>
+      <p><strong>2.</strong> Cliquez sur "✨ اكتشفي منتجك المثالي"</p>
+      <p><strong>3.</strong> Répondez aux 3 questions</p>
+      <p><strong>4.</strong> Obtenez vos recommandations!</p>
+    </div>
+  </div>
+
+  <!-- Configuration -->
+  <script>
+    window.InnaturalChatbotConfig = {
+      apiUrl: 'http://localhost:5001',
+      defaultLanguage: 'ar'
+    };
+  </script>
+
+  <!-- Load widget JS locally -->
+  <script src="widget/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2025-12-27",
+    "description": "Client qualification system - 3-step flow for personalized product recommendations"
+  },
+  "qualification_flow": {
+    "enabled": true,
+    "total_steps": 3,
+    "step1": {
+      "id": "category",
+      "question": {
+        "ar": "ما نوع المنتجات التي تبحثين عنها؟ 🌸",
+        "en": "What type of products are you looking for? 🌸"
+      },
+      "options": [
+        {
+          "id": "hair",
+          "label": {
+            "ar": "الشعر",
+            "en": "Hair"
+          },
+          "icon": "💇‍♀️"
+        },
+        {
+          "id": "body",
+          "label": {
+            "ar": "الجسم",
+            "en": "Body"
+          },
+          "icon": "💆‍♀️"
+        }
+      ],
+      "type": "single_select",
+      "required": true
+    },
+    "step2": {
+      "id": "concerns",
+      "question": {
+        "ar": "ما هي المشاكل التي تعانين منها؟ (يمكنك اختيار حتى 3 خيارات)",
+        "en": "What concerns do you have? (You can select up to 3 options)"
+      },
+      "options_by_category": {
+        "hair": [
+          {
+            "id": "hair-loss",
+            "label": {
+              "ar": "تساقط الشعر",
+              "en": "Hair Loss"
+            },
+            "weight": 10
+          },
+          {
+            "id": "dryness",
+            "label": {
+              "ar": "الجفاف",
+              "en": "Dryness"
+            },
+            "weight": 9
+          },
+          {
+            "id": "damaged-hair",
+            "label": {
+              "ar": "شعر تالف",
+              "en": "Damaged Hair"
+            },
+            "weight": 9
+          },
+          {
+            "id": "frizz",
+            "label": {
+              "ar": "التجعد والشعر المتطاير",
+              "en": "Frizz & Flyaways"
+            },
+            "weight": 8
+          },
+          {
+            "id": "split-ends",
+            "label": {
+              "ar": "أطراف متقصفة",
+              "en": "Split Ends"
+            },
+            "weight": 7
+          },
+          {
+            "id": "weak-hair",
+            "label": {
+              "ar": "شعر ضعيف",
+              "en": "Weak Hair"
+            },
+            "weight": 7
+          },
+          {
+            "id": "dandruff",
+            "label": {
+              "ar": "قشرة الرأس",
+              "en": "Dandruff"
+            },
+            "weight": 6
+          },
+          {
+            "id": "scalp-issues",
+            "label": {
+              "ar": "مشاكل فروة الرأس",
+              "en": "Scalp Issues"
+            },
+            "weight": 5
+          },
+          {
+            "id": "dull-hair",
+            "label": {
+              "ar": "شعر باهت",
+              "en": "Dull Hair"
+            },
+            "weight": 4
+          }
+        ],
+        "body": [
+          {
+            "id": "dryness",
+            "label": {
+              "ar": "جفاف البشرة",
+              "en": "Dry Skin"
+            },
+            "weight": 10
+          },
+          {
+            "id": "sensitivity",
+            "label": {
+              "ar": "بشرة حساسة",
+              "en": "Sensitive Skin"
+            },
+            "weight": 8
+          },
+          {
+            "id": "roughness",
+            "label": {
+              "ar": "خشونة",
+              "en": "Roughness"
+            },
+            "weight": 7
+          },
+          {
+            "id": "texture",
+            "label": {
+              "ar": "تحسين الملمس",
+              "en": "Texture Improvement"
+            },
+            "weight": 6
+          }
+        ]
+      },
+      "type": "multi_select",
+      "min_selections": 1,
+      "max_selections": 3,
+      "required": true
+    },
+    "step3": {
+      "id": "objectives",
+      "question": {
+        "ar": "ما هو هدفك الرئيسي من المنتج؟",
+        "en": "What is your main objective?"
+      },
+      "options_by_category": {
+        "hair": [
+          {
+            "id": "hydration",
+            "label": {
+              "ar": "ترطيب عميق",
+              "en": "Deep Hydration"
+            },
+            "weight": 8
+          },
+          {
+            "id": "repair",
+            "label": {
+              "ar": "إصلاح وتجديد",
+              "en": "Repair & Restore"
+            },
+            "weight": 8
+          },
+          {
+            "id": "growth",
+            "label": {
+              "ar": "تحفيز النمو",
+              "en": "Stimulate Growth"
+            },
+            "weight": 7
+          },
+          {
+            "id": "shine",
+            "label": {
+              "ar": "لمعان ونعومة",
+              "en": "Shine & Smoothness"
+            },
+            "weight": 6
+          },
+          {
+            "id": "protection",
+            "label": {
+              "ar": "حماية من الأضرار",
+              "en": "Protection"
+            },
+            "weight": 5
+          }
+        ],
+        "body": [
+          {
+            "id": "intense_moisture",
+            "label": {
+              "ar": "ترطيب مكثف",
+              "en": "Intense Moisture"
+            },
+            "weight": 9
+          },
+          {
+            "id": "nourishment",
+            "label": {
+              "ar": "تغذية عميقة",
+              "en": "Deep Nourishment"
+            },
+            "weight": 8
+          },
+          {
+            "id": "softening",
+            "label": {
+              "ar": "تنعيم البشرة",
+              "en": "Skin Softening"
+            },
+            "weight": 7
+          },
+          {
+            "id": "radiance",
+            "label": {
+              "ar": "إشراق ونضارة",
+              "en": "Radiance & Glow"
+            },
+            "weight": 6
+          }
+        ]
+      },
+      "type": "single_select",
+      "required": true
+    }
+  },
+  "objective_to_benefit_keywords": {
+    "hydration": ["hydrat", "moistur", "ترطيب", "رطوبة"],
+    "repair": ["repair", "restor", "fix", "damage", "إصلاح", "استعادة", "تالف"],
+    "growth": ["growth", "stimulat", "strengthen", "follicle", "نمو", "تحفيز", "تقوية", "بصيلات"],
+    "shine": ["shine", "smooth", "luster", "gloss", "silky", "لمعان", "نعومة", "بريق", "حريري"],
+    "protection": ["protect", "shield", "guard", "uv", "heat", "حماية", "حامي", "وقاية"],
+    "intense_moisture": ["intense", "deep", "rich", "hydrat", "moistur", "مكثف", "عميق", "غني", "ترطيب"],
+    "nourishment": ["nourish", "nutrient", "vitamin", "feed", "تغذية", "مغذي", "فيتامين"],
+    "softening": ["soft", "smooth", "silky", "tender", "ناعم", "حريري", "نعومة"],
+    "radiance": ["radiant", "glow", "bright", "luminous", "إشراق", "نضارة", "مشرق"]
+  },
+  "scoring_config": {
+    "weights": {
+      "concern_match": 0.6,
+      "objective_match": 0.3,
+      "category_match": 0.1
+    },
+    "category_score": 10,
+    "min_confidence_threshold": 0.2
+  }
+}

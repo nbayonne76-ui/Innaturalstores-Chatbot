@@ -1,0 +1,73 @@
+# Dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Testing
+__tests__
+*.test.js
+*.spec.js
+coverage
+.nyc_output
+
+# Development files
+.env.local
+.env.*.local
+*.log
+logs/*.log
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Documentation
+README.md
+CHANGELOG.md
+docs/
+*.md
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml
+azure-pipelines.yml
+
+# Husky
+.husky
+
+# Build artifacts
+dist
+build
+tmp
+temp
+
+# Prisma
+prisma/migrations/*.sql
+!prisma/migrations/migration_lock.toml
+
+# Other
+.prettierrc
+.prettierignore
+.eslintrc.json
+.eslintignore
+jest.config.js
+jest.setup.js
+babel.config.js
+.lintstagedrc.json
+
+# Scripts
+loadtests/
+scripts/
+benchmarks/
+manual-test.js
+extract-all-queries.js

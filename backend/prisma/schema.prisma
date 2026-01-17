@@ -1,0 +1,210 @@
+// This is your Prisma schema file for INnatural Chatbot
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// User model - represents visitors/customers
+model User {
+  id            String         @id @default(cuid())
+  sessionId     String?        @unique // Link to session ID
+  email         String?        @unique
+  phone         String?
+  name          String?
+  language      String         @default("ar") // ar or en
+  hairType      String?        // Type de cheveux
+  concerns      String[]       // Array of concerns
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  lastSeenAt    DateTime       @default(now())
+
+  // Relations
+  conversations Conversation[]
+  leads         Lead[]
+  analytics     AnalyticsEvent[]
+
+  @@index([sessionId])
+  @@index([email])
+  @@index([createdAt])
+  @@map("users")
+}
+
+// Conversation model - represents chat sessions
+model Conversation {
+  id           String    @id @default(cuid())
+  userId       String
+  sessionId    String    // Original session ID from frontend
+  language     String    @default("ar")
+  startedAt    DateTime  @default(now())
+  endedAt      DateTime?
+  messageCount Int       @default(0)
+  status       String    @default("active") // active, completed, abandoned
+
+  // User profile at time of conversation
+  hairType     String?
+  concerns     String[]
+
+  // Metadata
+  userAgent    String?
+  ipAddress    String?
+  source       String?   // widget, api, etc.
+
+  // Relations
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages     Message[]
+
+  @@index([userId])
+  @@index([sessionId])
+  @@index([startedAt])
+  @@index([status])
+  @@map("conversations")
+}
+
+// Message model - individual messages in conversations
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  role           String       // user, assistant, system
+  content        String       @db.Text
+  language       String?
+  timestamp      DateTime     @default(now())
+
+  // AI metadata
+  model          String?      // gpt-4-turbo-preview, etc.
+  tokensUsed     Int?
+  responseTime   Int?         // milliseconds
+  confidence     Float?       // 0-1 confidence score
+
+  // Product recommendations in this message
+  recommendations ProductRecommendation[]
+
+  // Relations
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+  @@index([timestamp])
+  @@index([role])
+  @@map("messages")
+}
+
+// Product recommendations given during chat
+model ProductRecommendation {
+  id          String   @id @default(cuid())
+  messageId   String
+  productId   String   // ID from products.json
+  productName String
+  reason      String?  @db.Text // Why this was recommended
+  clicked     Boolean  @default(false)
+  purchased   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  // Relations
+  message     Message  @relation(fields: [messageId], references: [id], onDelete: Cascade)
+
+  @@index([messageId])
+  @@index([productId])
+  @@index([clicked])
+  @@index([purchased])
+  @@map("product_recommendations")
+}
+
+// Lead model - potential customers who showed interest
+model Lead {
+  id          String   @id @default(cuid())
+  userId      String
+  email       String?
+  phone       String?
+  name        String?
+  source      String   // chat, form, etc.
+  status      String   @default("new") // new, contacted, converted, lost
+
+  // Lead qualification
+  interest    String[] // Products interested in
+  budget      String?
+  timeline    String?
+
+  // Metadata
+  notes       String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@map("leads")
+}
+
+// Analytics events - track user behavior
+model AnalyticsEvent {
+  id         String   @id @default(cuid())
+  userId     String?
+  sessionId  String?
+  eventType  String   // conversation_start, message_sent, product_clicked, etc.
+  eventName  String?
+
+  // Event data (JSON)
+  data       Json?
+
+  // Context
+  language   String?
+  userAgent  String?
+  ipAddress  String?
+
+  timestamp  DateTime @default(now())
+
+  // Relations
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([sessionId])
+  @@index([eventType])
+  @@index([timestamp])
+  @@map("analytics_events")
+}
+
+// System metrics - track application health
+model SystemMetric {
+  id            String   @id @default(cuid())
+  metricType    String   // api_request, error, response_time, etc.
+  metricName    String
+  value         Float
+  unit          String?  // ms, count, percentage, etc.
+
+  // Dimensions
+  endpoint      String?
+  statusCode    Int?
+  errorType     String?
+
+  timestamp     DateTime @default(now())
+
+  @@index([metricType])
+  @@index([metricName])
+  @@index([timestamp])
+  @@map("system_metrics")
+}
+
+// Feedback/Ratings from users
+model Feedback {
+  id             String   @id @default(cuid())
+  sessionId      String
+  conversationId String?
+  rating         Int      // 1-5 stars
+  comment        String?  @db.Text
+  category       String?  // helpful, accurate, fast, etc.
+  createdAt      DateTime @default(now())
+
+  @@index([sessionId])
+  @@index([rating])
+  @@index([createdAt])
+  @@map("feedback")
+}
