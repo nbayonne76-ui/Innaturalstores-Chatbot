@@ -6,7 +6,7 @@
 class InnaturalChatbot {
   constructor(config = {}) {
     this.config = {
-      apiUrl: config.apiUrl || 'http://localhost:5001',
+      apiUrl: config.apiUrl || (window.location.hostname === 'localhost' ? 'http://localhost:5001' : window.location.origin),
       defaultLanguage: config.defaultLanguage || 'ar',  // Arabic as default
       ...config
     };
