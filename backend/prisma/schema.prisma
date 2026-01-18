@@ -10,7 +10,6 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-}
 
 // User model - represents visitors/customers
 model User {
