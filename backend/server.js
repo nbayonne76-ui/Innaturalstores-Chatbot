@@ -1111,7 +1111,7 @@ function generateSessionId() {
 // Start server with initialization
 const HOST = process.env.HOST || '0.0.0.0';
 
-app.listen(PORT, HOST, async () => {
+app.listen(PORT, () => {
   logger.info(`
 ╔═══════════════════════════════════════════════════════╗
 ║                                                       ║
