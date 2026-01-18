@@ -1109,16 +1109,18 @@ function generateSessionId() {
 }
 
 // Start server with initialization
-app.listen(PORT, async () => {
+const HOST = process.env.HOST || '0.0.0.0';
+
+app.listen(PORT, HOST, async () => {
   logger.info(`
 ╔═══════════════════════════════════════════════════════╗
 ║                                                       ║
 ║   🌿 INnatural Chatbot API Server Running! 🌿       ║
 ║                                                       ║
-║   Server:  http://localhost:${PORT}                     ║
-║   Demo:    http://localhost:${PORT}                     ║
-║   Status:  http://localhost:${PORT}/api/health          ║
-║   Monitor: http://localhost:${PORT}/api/monitoring      ║
+║   Server:  http://${HOST}:${PORT}                     ║
+║   Demo:    http://${HOST}:${PORT}                     ║
+║   Status:  http://${HOST}:${PORT}/api/health          ║
+║   Monitor: http://${HOST}:${PORT}/api/monitoring    ║
 ║                                                       ║
 ╚═══════════════════════════════════════════════════════╝
   `);
