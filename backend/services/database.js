@@ -1,51 +1,67 @@
-const { PrismaClient } = require('@prisma/client');
-const { PrismaPg } = require('@prisma/adapter-pg');
-const { Pool } = require('pg');
 const logger = require('../utils/logger');
 
-// Create PostgreSQL connection pool
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
+// Only initialize Prisma if DATABASE_URL is set
+let prisma = null;
+let pool = null;
 
-// Create Prisma adapter for PostgreSQL
-const adapter = new PrismaPg(pool);
+if (process.env.DATABASE_URL) {
+  try {
+    const { PrismaClient } = require('@prisma/client');
+    const { PrismaPg } = require('@prisma/adapter-pg');
+    const { Pool } = require('pg');
 
-// Initialize Prisma Client with adapter and logging (Prisma 7)
-const prisma = new PrismaClient({
-  adapter,
-  log: [
-    { level: 'query', emit: 'event' },
-    { level: 'error', emit: 'event' },
-    { level: 'warn', emit: 'event' },
-  ],
-});
-
-// Log Prisma queries in development
-if (process.env.NODE_ENV === 'development') {
-  prisma.$on('query', (e) => {
-    logger.debug('Prisma Query', {
-      query: e.query,
-      params: e.params,
-      duration: `${e.duration}ms`,
+    // Create PostgreSQL connection pool
+    pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
     });
-  });
+
+    // Create Prisma adapter for PostgreSQL
+    const adapter = new PrismaPg(pool);
+
+    // Initialize Prisma Client with adapter and logging
+    prisma = new PrismaClient({
+      adapter,
+      log: [
+        { level: 'query', emit: 'event' },
+        { level: 'error', emit: 'event' },
+        { level: 'warn', emit: 'event' },
+      ],
+    });
+
+    // Log Prisma queries in development
+    if (process.env.NODE_ENV === 'development') {
+      prisma.$on('query', (e) => {
+        logger.debug('Prisma Query', {
+          query: e.query,
+          params: e.params,
+          duration: `${e.duration}ms`,
+        });
+      });
+    }
+
+    // Log Prisma errors
+    prisma.$on('error', (e) => {
+      logger.error('Prisma Error', {
+        message: e.message,
+        target: e.target,
+      });
+    });
+
+    // Log Prisma warnings
+    prisma.$on('warn', (e) => {
+      logger.warn('Prisma Warning', {
+        message: e.message,
+      });
+    });
+
+    logger.info('📦 Prisma client initialized (DATABASE_URL found)');
+  } catch (error) {
+    logger.error('Failed to initialize Prisma', { error: error.message });
+    prisma = null;
+  }
+} else {
+  logger.info('📦 DATABASE_URL not set - running without database');
 }
-
-// Log Prisma errors
-prisma.$on('error', (e) => {
-  logger.error('Prisma Error', {
-    message: e.message,
-    target: e.target,
-  });
-});
-
-// Log Prisma warnings
-prisma.$on('warn', (e) => {
-  logger.warn('Prisma Warning', {
-    message: e.message,
-  });
-});
 
 /**
  * Database Service
@@ -55,12 +71,25 @@ class DatabaseService {
   constructor() {
     this.prisma = prisma;
     this.connected = false;
+    this.available = !!prisma;
+  }
+
+  /**
+   * Check if database is available
+   */
+  isAvailable() {
+    return this.available && this.connected;
   }
 
   /**
    * Connect to database and verify connection
    */
   async connect() {
+    if (!this.prisma) {
+      logger.info('⚠️  Database not configured - skipping connection');
+      return false;
+    }
+
     try {
       await this.prisma.$connect();
       // Test connection
@@ -72,7 +101,6 @@ class DatabaseService {
       this.connected = false;
       logger.error('❌ Database connection failed', {
         error: error.message,
-        stack: error.stack,
       });
       return false;
     }
@@ -82,6 +110,10 @@ class DatabaseService {
    * Disconnect from database
    */
   async disconnect() {
+    if (!this.prisma) {
+      return;
+    }
+
     try {
       await this.prisma.$disconnect();
       this.connected = false;
@@ -97,6 +129,10 @@ class DatabaseService {
    * Get database health status
    */
   async getHealthStatus() {
+    if (!this.prisma) {
+      return { status: 'not_configured', connected: false };
+    }
+
     try {
       await this.prisma.$queryRaw`SELECT 1`;
       return { status: 'healthy', connected: true };
@@ -113,6 +149,8 @@ class DatabaseService {
    * Find or create a user by session ID
    */
   async findOrCreateUser(sessionId, userData = {}) {
+    if (!this.isAvailable()) return null;
+
     try {
       let user = await this.prisma.user.findUnique({
         where: { sessionId },
@@ -142,7 +180,7 @@ class DatabaseService {
       return user;
     } catch (error) {
       logger.error('Error finding/creating user', { sessionId, error: error.message });
-      throw error;
+      return null;
     }
   }
 
@@ -150,6 +188,8 @@ class DatabaseService {
    * Update user profile
    */
   async updateUser(userId, data) {
+    if (!this.isAvailable()) return null;
+
     try {
       return await this.prisma.user.update({
         where: { id: userId },
@@ -160,7 +200,7 @@ class DatabaseService {
       });
     } catch (error) {
       logger.error('Error updating user', { userId, error: error.message });
-      throw error;
+      return null;
     }
   }
 
@@ -172,6 +212,8 @@ class DatabaseService {
    * Create a new conversation
    */
   async createConversation(userId, sessionId, metadata = {}) {
+    if (!this.isAvailable()) return null;
+
     try {
       const conversation = await this.prisma.conversation.create({
         data: {
@@ -189,7 +231,7 @@ class DatabaseService {
       return conversation;
     } catch (error) {
       logger.error('Error creating conversation', { userId, sessionId, error: error.message });
-      throw error;
+      return null;
     }
   }
 
@@ -197,6 +239,8 @@ class DatabaseService {
    * Get conversation by session ID
    */
   async getConversationBySessionId(sessionId) {
+    if (!this.isAvailable()) return null;
+
     try {
       return await this.prisma.conversation.findFirst({
         where: { sessionId },
@@ -209,7 +253,7 @@ class DatabaseService {
       });
     } catch (error) {
       logger.error('Error fetching conversation', { sessionId, error: error.message });
-      throw error;
+      return null;
     }
   }
 
@@ -217,6 +261,8 @@ class DatabaseService {
    * Update conversation status
    */
   async updateConversation(conversationId, data) {
+    if (!this.isAvailable()) return null;
+
     try {
       return await this.prisma.conversation.update({
         where: { id: conversationId },
@@ -224,7 +270,7 @@ class DatabaseService {
       });
     } catch (error) {
       logger.error('Error updating conversation', { conversationId, error: error.message });
-      throw error;
+      return null;
     }
   }
 
@@ -236,6 +282,8 @@ class DatabaseService {
    * Save a message to the database
    */
   async saveMessage(conversationId, role, content, metadata = {}) {
+    if (!this.isAvailable()) return null;
+
     try {
       const message = await this.prisma.message.create({
         data: {
@@ -269,7 +317,7 @@ class DatabaseService {
       return message;
     } catch (error) {
       logger.error('Error saving message', { conversationId, role, error: error.message });
-      throw error;
+      return null;
     }
   }
 
@@ -277,6 +325,8 @@ class DatabaseService {
    * Get conversation history
    */
   async getConversationHistory(conversationId, limit = 50) {
+    if (!this.isAvailable()) return [];
+
     try {
       return await this.prisma.message.findMany({
         where: { conversationId },
@@ -285,7 +335,7 @@ class DatabaseService {
       });
     } catch (error) {
       logger.error('Error fetching conversation history', { conversationId, error: error.message });
-      throw error;
+      return [];
     }
   }
 
@@ -297,6 +347,8 @@ class DatabaseService {
    * Save product recommendation
    */
   async saveProductRecommendation(messageId, productId, productName, reason = null) {
+    if (!this.isAvailable()) return null;
+
     try {
       return await this.prisma.productRecommendation.create({
         data: {
@@ -312,7 +364,7 @@ class DatabaseService {
         productId,
         error: error.message,
       });
-      throw error;
+      return null;
     }
   }
 
@@ -320,6 +372,8 @@ class DatabaseService {
    * Track product click
    */
   async trackProductClick(recommendationId) {
+    if (!this.isAvailable()) return null;
+
     try {
       return await this.prisma.productRecommendation.update({
         where: { id: recommendationId },
@@ -327,7 +381,7 @@ class DatabaseService {
       });
     } catch (error) {
       logger.error('Error tracking product click', { recommendationId, error: error.message });
-      throw error;
+      return null;
     }
   }
 
@@ -339,6 +393,8 @@ class DatabaseService {
    * Track an analytics event
    */
   async trackEvent(eventType, data, context = {}) {
+    if (!this.isAvailable()) return null;
+
     try {
       return await this.prisma.analyticsEvent.create({
         data: {
@@ -354,7 +410,6 @@ class DatabaseService {
       });
     } catch (error) {
       logger.error('Error tracking event', { eventType, error: error.message });
-      // Don't throw - analytics shouldn't break the app
       return null;
     }
   }
@@ -363,6 +418,8 @@ class DatabaseService {
    * Save system metric
    */
   async saveMetric(metricType, metricName, value, dimensions = {}) {
+    if (!this.isAvailable()) return null;
+
     try {
       return await this.prisma.systemMetric.create({
         data: {
@@ -389,6 +446,8 @@ class DatabaseService {
    * Create a lead
    */
   async createLead(userId, leadData) {
+    if (!this.isAvailable()) return null;
+
     try {
       return await this.prisma.lead.create({
         data: {
@@ -405,7 +464,7 @@ class DatabaseService {
       });
     } catch (error) {
       logger.error('Error creating lead', { userId, error: error.message });
-      throw error;
+      return null;
     }
   }
 
@@ -417,6 +476,8 @@ class DatabaseService {
    * Save user feedback
    */
   async saveFeedback(sessionId, rating, comment = null, conversationId = null) {
+    if (!this.isAvailable()) return null;
+
     try {
       return await this.prisma.feedback.create({
         data: {
@@ -428,7 +489,7 @@ class DatabaseService {
       });
     } catch (error) {
       logger.error('Error saving feedback', { sessionId, error: error.message });
-      throw error;
+      return null;
     }
   }
 
@@ -440,6 +501,8 @@ class DatabaseService {
    * Get conversation statistics
    */
   async getConversationStats(startDate, endDate) {
+    if (!this.isAvailable()) return [];
+
     try {
       const stats = await this.prisma.conversation.groupBy({
         by: ['language', 'status'],
@@ -457,7 +520,7 @@ class DatabaseService {
       return stats;
     } catch (error) {
       logger.error('Error fetching conversation stats', { error: error.message });
-      throw error;
+      return [];
     }
   }
 
@@ -465,6 +528,8 @@ class DatabaseService {
    * Get user growth statistics
    */
   async getUserGrowth(days = 30) {
+    if (!this.isAvailable()) return [];
+
     try {
       const startDate = new Date();
       startDate.setDate(startDate.getDate() - days);
@@ -480,7 +545,7 @@ class DatabaseService {
       });
     } catch (error) {
       logger.error('Error fetching user growth', { error: error.message });
-      throw error;
+      return [];
     }
   }
 }
