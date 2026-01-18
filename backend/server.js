@@ -66,7 +66,7 @@ const {
 const GuidedFlowManager = require('./guided-flow-manager');
 const QualificationSystem = require('./qualification-system');
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 // Phase 3: Initialize Sentry (must be first)
 initSentry(app);
