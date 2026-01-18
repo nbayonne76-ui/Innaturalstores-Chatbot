@@ -1111,8 +1111,29 @@ function generateSessionId() {
 // Start server with initialization
 const HOST = process.env.HOST || '0.0.0.0';
 
-app.listen(PORT, () => {
-  logger.info(`
+(async () => {
+  try {
+    // Verify API key
+    if (!process.env.OPENAI_API_KEY) {
+      logger.warn('⚠️  WARNING: OPENAI_API_KEY not found in environment variables!');
+      logger.warn('Please create a .env file with your API key.');
+      logger.warn('Get your key from: https://platform.openai.com/api-keys');
+      logger.warn('See .env.example for reference.');
+    }
+
+    // Initialize Database (Phase 1)
+    logger.info('\n💾 Initializing database connection...');
+    const dbConnected = await db.connect();
+    if (dbConnected) {
+      logger.info('✅ Database ready - conversations will be persisted');
+    } else {
+      logger.warn('⚠️  Database not available - running without persistence');
+      logger.warn('   Set DATABASE_URL in .env to enable database');
+    }
+
+    // MAINTENANT on démarre le serveur
+    app.listen(PORT, () => {
+      logger.info(`
 ╔═══════════════════════════════════════════════════════╗
 ║                                                       ║
 ║   🌿 INnatural Chatbot API Server Running! 🌿       ║
@@ -1123,25 +1144,14 @@ app.listen(PORT, () => {
 ║   Monitor: http://${HOST}:${PORT}/api/monitoring    ║
 ║                                                       ║
 ╚═══════════════════════════════════════════════════════╝
-  `);
+      `);
+    });
 
-  // Verify API key
-  if (!process.env.OPENAI_API_KEY) {
-    logger.warn('⚠️  WARNING: OPENAI_API_KEY not found in environment variables!');
-    logger.warn('Please create a .env file with your API key.');
-    logger.warn('Get your key from: https://platform.openai.com/api-keys');
-    logger.warn('See .env.example for reference.');
+  } catch (error) {
+    logger.error('Failed to start server:', error);
+    process.exit(1);
   }
-
-  // Initialize Database (Phase 1)
-  logger.info('\n💾 Initializing database connection...');
-  const dbConnected = await db.connect();
-  if (dbConnected) {
-    logger.info('✅ Database ready - conversations will be persisted');
-  } else {
-    logger.warn('⚠️  Database not available - running without persistence');
-    logger.warn('   Set DATABASE_URL in .env to enable database');
-  }
+})();
 
   // Initialize Redis (with graceful fallback)
   logger.info('\n🔌 Initializing session storage...');
