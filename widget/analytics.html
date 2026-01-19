@@ -288,7 +288,10 @@
   </div>
 
   <script>
-    const API_URL = 'http://localhost:5000';
+    // Dynamic API URL: uses localhost for local dev, Railway URL for production
+    const API_URL = window.location.hostname === 'localhost'
+        ? 'http://localhost:5001'
+        : 'https://innaturalstores-chatbot-production.up.railway.app';
 
     async function loadAnalytics() {
       try {
